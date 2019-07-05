@@ -1,0 +1,46 @@
+﻿  Bh_engine_WOC.cpp
+c:\vs_libs\include\gas.h(161): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+c:\vs_libs\include\mags_and_coils.h(166): warning C4101: z: неиспользованная локальная переменная
+c:\vs_libs\include\mags_and_coils.h(217): warning C4101: z: неиспользованная локальная переменная
+c:\vs_libs\include\mags_and_coils.h(348): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+c:\vs_libs\include\mags_and_coils.h(455): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(46): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(72): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(83): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(85): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(90): warning C4244: =: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(92): warning C4244: =: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(94): warning C4244: =: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(106): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(228): warning C4244: =: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(229): warning C4244: =: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(345): warning C4244: =: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(346): warning C4244: =: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(357): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(358): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(362): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(363): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(36): warning C4616: предупреждение #pragma: предупреждение с номером "2065" не является действительным предупреждением компилятора
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(152): warning C4838: преобразование из "double" в "GLfloat" требует сужающего преобразования
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(148): warning C4244: инициализация: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(149): warning C4244: инициализация: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(150): warning C4244: инициализация: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(151): warning C4244: инициализация: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(160): warning C4838: преобразование из "double" в "GLfloat" требует сужающего преобразования
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(156): warning C4244: инициализация: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(157): warning C4244: инициализация: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(158): warning C4244: инициализация: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(159): warning C4244: инициализация: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(167): warning C4838: преобразование из "double" в "GLfloat" требует сужающего преобразования
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(163): warning C4244: инициализация: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(164): warning C4244: инициализация: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(165): warning C4244: инициализация: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(166): warning C4244: инициализация: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(340): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+  LINK : После прошлого связывания создано модулей — 0, изменено модулей — 1 (из 70)
+  Создание не-SAFESEH образа.
+  Запуск 2-го прохода
+       Bh_engine_WOC.obj
+       MSVCRTD.lib(loadcfg.obj)
+  2-ой проход завершен
+  Bh_engine_WOC.vcxproj -> C:\Users\User\Desktop\Модели\Engine\Bh_engine_WOC\Debug\Bh_engine_WOC.exe

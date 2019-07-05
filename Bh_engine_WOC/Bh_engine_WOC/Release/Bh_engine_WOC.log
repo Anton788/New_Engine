@@ -1,0 +1,2 @@
+﻿  glad.c
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\glad.c(20): fatal error C1853: файл предкомпилированного заголовка "Release\Bh_engine_WOC.pch" создан в предыдущей версии компилятора или предкомпилированный заголовок C++ используется из C (или наоборот)

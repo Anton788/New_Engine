@@ -1,0 +1,1791 @@
+﻿  pch.cpp
+  Bh_engine_WOC.cpp
+c:\vs_libs\include\gas.h(161): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+c:\vs_libs\include\mags_and_coils.h(166): warning C4101: z: неиспользованная локальная переменная
+c:\vs_libs\include\mags_and_coils.h(217): warning C4101: z: неиспользованная локальная переменная
+c:\vs_libs\include\mags_and_coils.h(348): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+c:\vs_libs\include\mags_and_coils.h(455): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(46): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(72): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(83): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(85): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(90): warning C4244: =: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(92): warning C4244: =: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(94): warning C4244: =: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(106): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(228): warning C4244: =: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(229): warning C4244: =: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(345): warning C4244: =: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(346): warning C4244: =: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(357): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(358): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(362): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\graph_objects.h(363): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(36): warning C4616: предупреждение #pragma: предупреждение с номером "2065" не является действительным предупреждением компилятора
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(152): warning C4838: преобразование из "double" в "GLfloat" требует сужающего преобразования
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(148): warning C4244: инициализация: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(149): warning C4244: инициализация: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(150): warning C4244: инициализация: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(151): warning C4244: инициализация: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(160): warning C4838: преобразование из "double" в "GLfloat" требует сужающего преобразования
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(156): warning C4244: инициализация: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(157): warning C4244: инициализация: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(158): warning C4244: инициализация: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(159): warning C4244: инициализация: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(167): warning C4838: преобразование из "double" в "GLfloat" требует сужающего преобразования
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(163): warning C4244: инициализация: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(164): warning C4244: инициализация: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(165): warning C4244: инициализация: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(166): warning C4244: инициализация: преобразование "double" в "GLfloat", возможна потеря данных
+c:\users\user\desktop\модели\engine\bh_engine_woc\bh_engine_woc\bh_engine_woc.cpp(340): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+  glad.c
+  Создание кода...
+  
+  Запуск 1-го прохода
+  Обработан параметр /DEFAULTLIB:msvcprtd
+  Обработан параметр /DEFAULTLIB:MSVCRTD
+  Обработан параметр /DEFAULTLIB:OLDNAMES
+  
+  Поиск библиотек
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\opengl32.lib:
+        Найден __imp_glBindTexture
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен opengl32.lib(OPENGL32.dll)
+        Найден __imp_glClear
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен opengl32.lib(OPENGL32.dll)
+        Найден __imp_glClearColor
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен opengl32.lib(OPENGL32.dll)
+        Найден __imp_glDrawArrays
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен opengl32.lib(OPENGL32.dll)
+        Найден __imp_glGenTextures
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен opengl32.lib(OPENGL32.dll)
+        Найден __imp_glTexImage2D
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен opengl32.lib(OPENGL32.dll)
+        Найден __imp_glTexParameteri
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен opengl32.lib(OPENGL32.dll)
+        Найден __imp_glViewport
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен opengl32.lib(OPENGL32.dll)
+        Найден __IMPORT_DESCRIPTOR_OPENGL32
+          Имеются ссылки в opengl32.lib(OPENGL32.dll)
+          Имеются ссылки в opengl32.lib(OPENGL32.dll)
+          Имеются ссылки в opengl32.lib(OPENGL32.dll)
+          Имеются ссылки в opengl32.lib(OPENGL32.dll)
+          Имеются ссылки в opengl32.lib(OPENGL32.dll)
+          Имеются ссылки в opengl32.lib(OPENGL32.dll)
+          Имеются ссылки в opengl32.lib(OPENGL32.dll)
+          Имеются ссылки в opengl32.lib(OPENGL32.dll)
+          Загружен opengl32.lib(OPENGL32.dll)
+        Найден __NULL_IMPORT_DESCRIPTOR
+          Имеются ссылки в opengl32.lib(OPENGL32.dll)
+          Загружен opengl32.lib(OPENGL32.dll)
+        Найден OPENGL32_NULL_THUNK_DATA
+          Имеются ссылки в opengl32.lib(OPENGL32.dll)
+          Загружен opengl32.lib(OPENGL32.dll)
+      Поиск C:\VS_libs\libs\glfw3.lib:
+        Найден glfwInit
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен glfw3.lib(init.obj)
+  Обработан параметр /DEFAULTLIB:uuid.lib
+  Обработан параметр /DEFAULTLIB:MSVCRT
+        Найден glfwWindowHint
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен glfw3.lib(window.obj)
+        Найден glfwSetKeyCallback
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен glfw3.lib(input.obj)
+        Найден glfwMakeContextCurrent
+          Имеются ссылки в Bh_engine_WOC.obj
+          Имеются ссылки в glfw3.lib(window.obj)
+          Загружен glfw3.lib(context.obj)
+        Найден _glfwPlatformInit
+          Имеются ссылки в glfw3.lib(init.obj)
+          Загружен glfw3.lib(win32_init.obj)
+        Найден _glfwPlatformSetGammaRamp
+          Имеются ссылки в glfw3.lib(init.obj)
+          Загружен glfw3.lib(win32_monitor.obj)
+        Найден _glfwPlatformGetTimerValue
+          Имеются ссылки в glfw3.lib(init.obj)
+          Имеются ссылки в glfw3.lib(input.obj)
+          Загружен glfw3.lib(win32_time.obj)
+        Найден _glfwPlatformCreateTls
+          Имеются ссылки в glfw3.lib(init.obj)
+          Загружен glfw3.lib(win32_thread.obj)
+        Найден _glfwFreeMonitor
+          Имеются ссылки в glfw3.lib(init.obj)
+          Загружен glfw3.lib(monitor.obj)
+        Найден _glfwTerminateVulkan
+          Имеются ссылки в glfw3.lib(init.obj)
+          Загружен glfw3.lib(vulkan.obj)
+        Найден _glfwPlatformGetKeyScancode
+          Имеются ссылки в glfw3.lib(window.obj)
+          Имеются ссылки в glfw3.lib(input.obj)
+          Загружен glfw3.lib(win32_window.obj)
+        Найден _glfwPlatformPollJoystick
+          Имеются ссылки в glfw3.lib(input.obj)
+          Загружен glfw3.lib(win32_joystick.obj)
+        Найден _glfwTerminateWGL
+          Имеются ссылки в glfw3.lib(win32_init.obj)
+          Загружен glfw3.lib(wgl_context.obj)
+        Найден _glfwTerminateEGL
+          Имеются ссылки в glfw3.lib(win32_init.obj)
+          Загружен glfw3.lib(egl_context.obj)
+        Найден _glfwInitOSMesa
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен glfw3.lib(osmesa_context.obj)
+      Поиск C:\VS_libs\libs\glew32s.lib:
+        Найден glewInit
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен glew32s.lib(glew.obj)
+  Обработан параметр /DEFAULTLIB:LIBCMT
+      Поиск C:\VS_libs\libs\glew32.lib:
+      Поиск C:\VS_libs\libs\glut32.lib:
+      Поиск C:\VS_libs\libs\SOIL.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\kernel32.lib:
+        Найден __imp_FreeLibrary
+          Имеются ссылки в glfw3.lib(egl_context.obj)
+          Имеются ссылки в glfw3.lib(osmesa_context.obj)
+          Имеются ссылки в glad.obj
+          Имеются ссылки в glfw3.lib(win32_init.obj)
+          Имеются ссылки в glfw3.lib(vulkan.obj)
+          Имеются ссылки в glfw3.lib(wgl_context.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_GetProcAddress
+          Имеются ссылки в glfw3.lib(egl_context.obj)
+          Имеются ссылки в glfw3.lib(osmesa_context.obj)
+          Имеются ссылки в glad.obj
+          Имеются ссылки в glfw3.lib(win32_init.obj)
+          Имеются ссылки в glfw3.lib(vulkan.obj)
+          Имеются ссылки в glfw3.lib(wgl_context.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_LoadLibraryW
+          Имеются ссылки в glad.obj
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_VerSetConditionMask
+          Имеются ссылки в glfw3.lib(win32_init.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_GetLastError
+          Имеются ссылки в glfw3.lib(win32_init.obj)
+          Имеются ссылки в glfw3.lib(wgl_context.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_FormatMessageW
+          Имеются ссылки в glfw3.lib(win32_init.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_LoadLibraryA
+          Имеются ссылки в glfw3.lib(osmesa_context.obj)
+          Имеются ссылки в glfw3.lib(win32_init.obj)
+          Имеются ссылки в glfw3.lib(vulkan.obj)
+          Имеются ссылки в glfw3.lib(wgl_context.obj)
+          Имеются ссылки в glfw3.lib(egl_context.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_GetModuleHandleW
+          Имеются ссылки в glfw3.lib(win32_init.obj)
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Имеются ссылки в glfw3.lib(win32_joystick.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_MultiByteToWideChar
+          Имеются ссылки в glfw3.lib(win32_init.obj)
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_WideCharToMultiByte
+          Имеются ссылки в glfw3.lib(win32_init.obj)
+          Имеются ссылки в glfw3.lib(win32_monitor.obj)
+          Имеются ссылки в glfw3.lib(win32_joystick.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_QueryPerformanceCounter
+          Имеются ссылки в glfw3.lib(win32_time.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_QueryPerformanceFrequency
+          Имеются ссылки в glfw3.lib(win32_time.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_InitializeCriticalSection
+          Имеются ссылки в glfw3.lib(win32_thread.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_EnterCriticalSection
+          Имеются ссылки в glfw3.lib(win32_thread.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_LeaveCriticalSection
+          Имеются ссылки в glfw3.lib(win32_thread.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_DeleteCriticalSection
+          Имеются ссылки в glfw3.lib(win32_thread.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_TlsAlloc
+          Имеются ссылки в glfw3.lib(win32_thread.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_TlsGetValue
+          Имеются ссылки в glfw3.lib(win32_thread.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_TlsSetValue
+          Имеются ссылки в glfw3.lib(win32_thread.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_TlsFree
+          Имеются ссылки в glfw3.lib(win32_thread.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_GlobalAlloc
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_GlobalLock
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_GlobalUnlock
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_GlobalFree
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_SetThreadExecutionState
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __IMPORT_DESCRIPTOR_KERNEL32
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден KERNEL32_NULL_THUNK_DATA
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Загружен kernel32.lib(KERNEL32.dll)
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\user32.lib:
+        Найден __imp_TranslateMessage
+          Имеются ссылки в glfw3.lib(win32_init.obj)
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_DispatchMessageW
+          Имеются ссылки в glfw3.lib(win32_init.obj)
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_PeekMessageW
+          Имеются ссылки в glfw3.lib(win32_init.obj)
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_RegisterDeviceNotificationW
+          Имеются ссылки в glfw3.lib(win32_init.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_UnregisterDeviceNotification
+          Имеются ссылки в glfw3.lib(win32_init.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_CreateWindowExW
+          Имеются ссылки в glfw3.lib(win32_init.obj)
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_DestroyWindow
+          Имеются ссылки в glfw3.lib(win32_init.obj)
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_ShowWindow
+          Имеются ссылки в glfw3.lib(win32_init.obj)
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_ToUnicode
+          Имеются ссылки в glfw3.lib(win32_init.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_MapVirtualKeyW
+          Имеются ссылки в glfw3.lib(win32_init.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_SystemParametersInfoW
+          Имеются ссылки в glfw3.lib(win32_init.obj)
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_GetDC
+          Имеются ссылки в glfw3.lib(win32_monitor.obj)
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Имеются ссылки в glfw3.lib(wgl_context.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_ReleaseDC
+          Имеются ссылки в glfw3.lib(win32_monitor.obj)
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_ChangeDisplaySettingsExW
+          Имеются ссылки в glfw3.lib(win32_monitor.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_EnumDisplaySettingsW
+          Имеются ссылки в glfw3.lib(win32_monitor.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_EnumDisplaySettingsExW
+          Имеются ссылки в glfw3.lib(win32_monitor.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_EnumDisplayDevicesW
+          Имеются ссылки в glfw3.lib(win32_monitor.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_GetMonitorInfoW
+          Имеются ссылки в glfw3.lib(win32_monitor.obj)
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_EnumDisplayMonitors
+          Имеются ссылки в glfw3.lib(win32_monitor.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_TrackMouseEvent
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_GetMessageTime
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_SendMessageW
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_PostMessageW
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_WaitMessage
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_DefWindowProcW
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_UnregisterClassW
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_RegisterClassExW
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_GetLayeredWindowAttributes
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_SetLayeredWindowAttributes
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_FlashWindow
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_MoveWindow
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_SetWindowPos
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_IsWindowVisible
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_IsIconic
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_BringWindowToTop
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_IsZoomed
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_OpenClipboard
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_CloseClipboard
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_SetClipboardData
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_GetClipboardData
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_EmptyClipboard
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_SetFocus
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_GetActiveWindow
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_GetKeyState
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_GetAsyncKeyState
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_SetCapture
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_ReleaseCapture
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_MsgWaitForMultipleObjects
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_GetSystemMetrics
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_SetForegroundWindow
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_RedrawWindow
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_SetPropW
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_GetPropW
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_RemovePropW
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_SetWindowTextW
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_GetClientRect
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_GetWindowRect
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_AdjustWindowRectEx
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_SetCursorPos
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_SetCursor
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_GetCursorPos
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_ClipCursor
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_ClientToScreen
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_ScreenToClient
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_WindowFromPoint
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_SetRect
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_PtInRect
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_GetWindowLongW
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_SetWindowLongW
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_GetClassLongPtrW
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_LoadCursorW
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_DestroyIcon
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_LoadImageW
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_CreateIconIndirect
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_MonitorFromWindow
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_GetRawInputData
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_RegisterRawInputDevices
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_GetRawInputDeviceInfoA
+          Имеются ссылки в glfw3.lib(win32_joystick.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __imp_GetRawInputDeviceList
+          Имеются ссылки в glfw3.lib(win32_joystick.obj)
+          Загружен user32.lib(USER32.dll)
+        Найден __IMPORT_DESCRIPTOR_USER32
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Имеются ссылки в user32.lib(USER32.dll)
+          Загружен user32.lib(USER32.dll)
+        Найден USER32_NULL_THUNK_DATA
+          Имеются ссылки в user32.lib(USER32.dll)
+          Загружен user32.lib(USER32.dll)
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\gdi32.lib:
+        Найден __imp_CreateDCW
+          Имеются ссылки в glfw3.lib(win32_monitor.obj)
+          Загружен gdi32.lib(GDI32.dll)
+        Найден __imp_DeleteDC
+          Имеются ссылки в glfw3.lib(win32_monitor.obj)
+          Загружен gdi32.lib(GDI32.dll)
+        Найден __imp_GetDeviceCaps
+          Имеются ссылки в glfw3.lib(win32_monitor.obj)
+          Загружен gdi32.lib(GDI32.dll)
+        Найден __imp_GetDeviceGammaRamp
+          Имеются ссылки в glfw3.lib(win32_monitor.obj)
+          Загружен gdi32.lib(GDI32.dll)
+        Найден __imp_SetDeviceGammaRamp
+          Имеются ссылки в glfw3.lib(win32_monitor.obj)
+          Загружен gdi32.lib(GDI32.dll)
+        Найден __imp_CreateBitmap
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен gdi32.lib(GDI32.dll)
+        Найден __imp_CreateRectRgn
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен gdi32.lib(GDI32.dll)
+        Найден __imp_DeleteObject
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен gdi32.lib(GDI32.dll)
+        Найден __imp_CreateDIBSection
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен gdi32.lib(GDI32.dll)
+        Найден __imp_ChoosePixelFormat
+          Имеются ссылки в glfw3.lib(wgl_context.obj)
+          Загружен gdi32.lib(GDI32.dll)
+        Найден __imp_DescribePixelFormat
+          Имеются ссылки в glfw3.lib(wgl_context.obj)
+          Загружен gdi32.lib(GDI32.dll)
+        Найден __imp_SetPixelFormat
+          Имеются ссылки в glfw3.lib(wgl_context.obj)
+          Загружен gdi32.lib(GDI32.dll)
+        Найден __imp_SwapBuffers
+          Имеются ссылки в glfw3.lib(wgl_context.obj)
+          Загружен gdi32.lib(GDI32.dll)
+        Найден __IMPORT_DESCRIPTOR_GDI32
+          Имеются ссылки в gdi32.lib(GDI32.dll)
+          Имеются ссылки в gdi32.lib(GDI32.dll)
+          Имеются ссылки в gdi32.lib(GDI32.dll)
+          Имеются ссылки в gdi32.lib(GDI32.dll)
+          Имеются ссылки в gdi32.lib(GDI32.dll)
+          Имеются ссылки в gdi32.lib(GDI32.dll)
+          Имеются ссылки в gdi32.lib(GDI32.dll)
+          Имеются ссылки в gdi32.lib(GDI32.dll)
+          Имеются ссылки в gdi32.lib(GDI32.dll)
+          Имеются ссылки в gdi32.lib(GDI32.dll)
+          Имеются ссылки в gdi32.lib(GDI32.dll)
+          Имеются ссылки в gdi32.lib(GDI32.dll)
+          Имеются ссылки в gdi32.lib(GDI32.dll)
+          Загружен gdi32.lib(GDI32.dll)
+        Найден GDI32_NULL_THUNK_DATA
+          Имеются ссылки в gdi32.lib(GDI32.dll)
+          Загружен gdi32.lib(GDI32.dll)
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\winspool.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\comdlg32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\advapi32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\shell32.lib:
+        Найден __imp_DragQueryFileW
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен shell32.lib(SHELL32.dll)
+        Найден __imp_DragQueryPoint
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен shell32.lib(SHELL32.dll)
+        Найден __imp_DragFinish
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен shell32.lib(SHELL32.dll)
+        Найден __imp_DragAcceptFiles
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Загружен shell32.lib(SHELL32.dll)
+        Найден __IMPORT_DESCRIPTOR_SHELL32
+          Имеются ссылки в shell32.lib(SHELL32.dll)
+          Имеются ссылки в shell32.lib(SHELL32.dll)
+          Имеются ссылки в shell32.lib(SHELL32.dll)
+          Имеются ссылки в shell32.lib(SHELL32.dll)
+          Загружен shell32.lib(SHELL32.dll)
+        Найден SHELL32_NULL_THUNK_DATA
+          Имеются ссылки в shell32.lib(SHELL32.dll)
+          Загружен shell32.lib(SHELL32.dll)
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\ole32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\oleaut32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\uuid.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\odbc32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\odbccp32.lib:
+      Поиск C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\lib\x64\msvcprtd.lib:
+        Найден "__declspec(dllimport) public: __cdecl std::_Lockit::_Lockit(int)" (__imp_??0_Lockit@std@@QEAA@H@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: __cdecl std::_Lockit::~_Lockit(void)" (__imp_??1_Lockit@std@@QEAA@XZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "bool __cdecl std::uncaught_exception(void)" (?uncaught_exception@std@@YA_NXZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "void __cdecl std::_Xlength_error(char const *)" (?_Xlength_error@std@@YAXPEBD@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "void __cdecl std::_Xout_of_range(char const *)" (?_Xout_of_range@std@@YAXPEBD@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "void __cdecl std::_Facet_Register(class std::_Facet_base *)" (?_Facet_Register@std@@YAXPEAV_Facet_base@1@@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(locale0_implib.obj)
+        Найден "__declspec(dllimport) public: __cdecl std::locale::id::operator unsigned __int64(void)" (__imp_??Bid@locale@std@@QEAA_KXZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "private: static class std::locale::_Locimp * __cdecl std::locale::_Getgloballocale(void)" (?_Getgloballocale@locale@std@@CAPEAV_Locimp@12@XZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: bool __cdecl std::codecvt_base::always_noconv(void)const " (__imp_?always_noconv@codecvt_base@std@@QEBA_NXZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: int __cdecl std::codecvt<char,char,struct _Mbstatet>::in(struct _Mbstatet &,char const *,char const *,char const * &,char *,char *,char * &)const " (__imp_?in@?$codecvt@DDU_Mbstatet@@@std@@QEBAHAEAU_Mbstatet@@PEBD1AEAPEBDPEAD3AEAPEAD@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: int __cdecl std::codecvt<char,char,struct _Mbstatet>::out(struct _Mbstatet &,char const *,char const *,char const * &,char *,char *,char * &)const " (__imp_?out@?$codecvt@DDU_Mbstatet@@@std@@QEBAHAEAU_Mbstatet@@PEBD1AEAPEBDPEAD3AEAPEAD@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: int __cdecl std::codecvt<char,char,struct _Mbstatet>::unshift(struct _Mbstatet &,char *,char *,char * &)const " (__imp_?unshift@?$codecvt@DDU_Mbstatet@@@std@@QEBAHAEAU_Mbstatet@@PEAD1AEAPEAD@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: static unsigned __int64 __cdecl std::codecvt<char,char,struct _Mbstatet>::_Getcat(class std::locale::facet const * *,class std::locale const *)" (__imp_?_Getcat@?$codecvt@DDU_Mbstatet@@@std@@SA_KPEAPEBVfacet@locale@2@PEBV42@@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: bool __cdecl std::ios_base::good(void)const " (__imp_?good@ios_base@std@@QEBA_NXZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: void __cdecl std::ios_base::exceptions(int)" (__imp_?exceptions@ios_base@std@@QEAAXH@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: int __cdecl std::ios_base::flags(void)const " (__imp_?flags@ios_base@std@@QEBAHXZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: __int64 __cdecl std::ios_base::precision(__int64)" (__imp_?precision@ios_base@std@@QEAA_J_J@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: __int64 __cdecl std::ios_base::width(void)const " (__imp_?width@ios_base@std@@QEBA_JXZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: __int64 __cdecl std::ios_base::width(__int64)" (__imp_?width@ios_base@std@@QEAA_J_J@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) protected: __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::basic_streambuf<char,struct std::char_traits<char> >(void)" (__imp_??0?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAA@XZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: virtual __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::~basic_streambuf<char,struct std::char_traits<char> >(void)" (__imp_??1?$basic_streambuf@DU?$char_traits@D@std@@@std@@UEAA@XZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: class std::locale __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::getloc(void)const " (__imp_?getloc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEBA?AVlocale@2@XZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: int __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::sputc(char)" (__imp_?sputc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAAHD@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: __int64 __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::sputn(char const *,__int64)" (__imp_?sputn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAA_JPEBD_J@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) protected: char * __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::eback(void)const " (__imp_?eback@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEBAPEADXZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) protected: char * __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::gptr(void)const " (__imp_?gptr@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEBAPEADXZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) protected: char * __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::pbase(void)const " (__imp_?pbase@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEBAPEADXZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) protected: char * __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::pptr(void)const " (__imp_?pptr@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEBAPEADXZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) protected: char * __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::egptr(void)const " (__imp_?egptr@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEBAPEADXZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) protected: void __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::gbump(int)" (__imp_?gbump@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAXH@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) protected: void __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::setg(char *,char *,char *)" (__imp_?setg@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAXPEAD00@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) protected: char * __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::epptr(void)const " (__imp_?epptr@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEBAPEADXZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) protected: char * __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::_Gndec(void)" (__imp_?_Gndec@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAPEADXZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) protected: char * __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::_Gninc(void)" (__imp_?_Gninc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAPEADXZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) protected: __int64 __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::_Gnavail(void)const " (__imp_?_Gnavail@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEBA_JXZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) protected: void __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::pbump(int)" (__imp_?pbump@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAXH@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) protected: void __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::setp(char *,char *)" (__imp_?setp@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAXPEAD0@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) protected: void __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::setp(char *,char *,char *)" (__imp_?setp@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAXPEAD00@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) protected: char * __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::_Pninc(void)" (__imp_?_Pninc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAPEADXZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) protected: __int64 __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::_Pnavail(void)const " (__imp_?_Pnavail@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEBA_JXZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) protected: void __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::_Init(void)" (__imp_?_Init@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAXXZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) protected: void __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::_Init(char * *,char * *,int *,char * *,char * *,int *)" (__imp_?_Init@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAXPEAPEAD0PEAH001@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) protected: virtual __int64 __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::xsgetn(char *,__int64)" (__imp_?xsgetn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAA_JPEAD_J@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) protected: virtual __int64 __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::xsputn(char const *,__int64)" (__imp_?xsputn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAA_JPEBD_J@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: virtual __cdecl std::basic_ios<char,struct std::char_traits<char> >::~basic_ios<char,struct std::char_traits<char> >(void)" (__imp_??1?$basic_ios@DU?$char_traits@D@std@@@std@@UEAA@XZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: void __cdecl std::basic_ios<char,struct std::char_traits<char> >::clear(int,bool)" (__imp_?clear@?$basic_ios@DU?$char_traits@D@std@@@std@@QEAAXH_N@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: void __cdecl std::basic_ios<char,struct std::char_traits<char> >::setstate(int,bool)" (__imp_?setstate@?$basic_ios@DU?$char_traits@D@std@@@std@@QEAAXH_N@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: class std::basic_ostream<char,struct std::char_traits<char> > * __cdecl std::basic_ios<char,struct std::char_traits<char> >::tie(void)const " (__imp_?tie@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBAPEAV?$basic_ostream@DU?$char_traits@D@std@@@2@XZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: class std::basic_streambuf<char,struct std::char_traits<char> > * __cdecl std::basic_ios<char,struct std::char_traits<char> >::rdbuf(void)const " (__imp_?rdbuf@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBAPEAV?$basic_streambuf@DU?$char_traits@D@std@@@2@XZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: char __cdecl std::basic_ios<char,struct std::char_traits<char> >::fill(void)const " (__imp_?fill@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBADXZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: char __cdecl std::basic_ios<char,struct std::char_traits<char> >::fill(char)" (__imp_?fill@?$basic_ios@DU?$char_traits@D@std@@@std@@QEAADD@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: char __cdecl std::basic_ios<char,struct std::char_traits<char> >::widen(char)const " (__imp_?widen@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBADD@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) protected: __cdecl std::basic_ios<char,struct std::char_traits<char> >::basic_ios<char,struct std::char_traits<char> >(void)" (__imp_??0?$basic_ios@DU?$char_traits@D@std@@@std@@IEAA@XZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: void __cdecl std::basic_ostream<char,struct std::char_traits<char> >::_Osfx(void)" (__imp_?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAXXZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: class std::basic_ostream<char,struct std::char_traits<char> > & __cdecl std::basic_ostream<char,struct std::char_traits<char> >::operator<<(class std::basic_ostream<char,struct std::char_traits<char> > & (__cdecl*)(class std::basic_ostream<char,struct std::char_traits<char> > &))" (__imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@P6AAEAV01@AEAV01@@Z@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: class std::basic_ostream<char,struct std::char_traits<char> > & __cdecl std::basic_ostream<char,struct std::char_traits<char> >::operator<<(int)" (__imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@H@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: class std::basic_ostream<char,struct std::char_traits<char> > & __cdecl std::basic_ostream<char,struct std::char_traits<char> >::operator<<(double)" (__imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@N@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: class std::basic_ostream<char,struct std::char_traits<char> > & __cdecl std::basic_ostream<char,struct std::char_traits<char> >::operator<<(class std::basic_streambuf<char,struct std::char_traits<char> > *)" (__imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@PEAV?$basic_streambuf@DU?$char_traits@D@std@@@1@@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: class std::basic_ostream<char,struct std::char_traits<char> > & __cdecl std::basic_ostream<char,struct std::char_traits<char> >::put(char)" (__imp_?put@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@D@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: class std::basic_ostream<char,struct std::char_traits<char> > & __cdecl std::basic_ostream<char,struct std::char_traits<char> >::flush(void)" (__imp_?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@XZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: __cdecl std::basic_istream<char,struct std::char_traits<char> >::basic_istream<char,struct std::char_traits<char> >(class std::basic_streambuf<char,struct std::char_traits<char> > *,bool)" (__imp_??0?$basic_istream@DU?$char_traits@D@std@@@std@@QEAA@PEAV?$basic_streambuf@DU?$char_traits@D@std@@@1@_N@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: virtual __cdecl std::basic_istream<char,struct std::char_traits<char> >::~basic_istream<char,struct std::char_traits<char> >(void)" (__imp_??1?$basic_istream@DU?$char_traits@D@std@@@std@@UEAA@XZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: __cdecl std::basic_iostream<char,struct std::char_traits<char> >::basic_iostream<char,struct std::char_traits<char> >(class std::basic_streambuf<char,struct std::char_traits<char> > *)" (__imp_??0?$basic_iostream@DU?$char_traits@D@std@@@std@@QEAA@PEAV?$basic_streambuf@DU?$char_traits@D@std@@@1@@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: virtual __cdecl std::basic_iostream<char,struct std::char_traits<char> >::~basic_iostream<char,struct std::char_traits<char> >(void)" (__imp_??1?$basic_iostream@DU?$char_traits@D@std@@@std@@UEAA@XZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "struct _iobuf * __cdecl std::_Fiopen(char const *,int,int)" (?_Fiopen@std@@YAPEAU_iobuf@@PEBDHH@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "public: virtual void __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::_Lock(void)" (?_Lock@?$basic_streambuf@DU?$char_traits@D@std@@@std@@UEAAXXZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "public: virtual void __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::_Unlock(void)" (?_Unlock@?$basic_streambuf@DU?$char_traits@D@std@@@std@@UEAAXXZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "protected: virtual void __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::imbue(class std::locale const &)" (?imbue@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAAXAEBVlocale@2@@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "protected: virtual class std::basic_streambuf<char,struct std::char_traits<char> > * __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::setbuf(char *,__int64)" (?setbuf@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAAPEAV12@PEAD_J@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "protected: virtual __int64 __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::showmanyc(void)" (?showmanyc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAA_JXZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "protected: virtual int __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::sync(void)" (?sync@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAAHXZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "protected: virtual int __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::uflow(void)" (?uflow@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAAHXZ)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: static class std::locale::id std::codecvt<char,char,struct _Mbstatet>::id" (__imp_?id@?$codecvt@DDU_Mbstatet@@@std@@2V0locale@2@A)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) class std::basic_ostream<char,struct std::char_traits<char> > std::cout" (__imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден __IMPORT_DESCRIPTOR_MSVCP140D
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "void __cdecl std::_Xbad_alloc(void)" (?_Xbad_alloc@std@@YAXXZ)
+          Имеются ссылки в msvcprtd.lib(locale0_implib.obj)
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден MSVCP140D_NULL_THUNK_DATA
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+      Поиск C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\lib\x64\MSVCRTD.lib:
+        Найден "void * __cdecl operator new(unsigned __int64)" (??2@YAPEAX_K@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен MSVCRTD.lib(new_scalar.obj)
+        Найден "void __cdecl operator delete(void *,unsigned __int64)" (??3@YAXPEAX_K@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен MSVCRTD.lib(delete_scalar_size.obj)
+        Найден "void * __cdecl operator new[](unsigned __int64)" (??_U@YAPEAX_K@Z)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен MSVCRTD.lib(new_array.obj)
+        Найден __CheckForDebuggerJustMyCode
+          Имеются ссылки в Bh_engine_WOC.obj
+          Имеются ссылки в glad.obj
+          Загружен MSVCRTD.lib(debugger_jmc.obj)
+        Найден __GSHandlerCheck
+          Имеются ссылки в glfw3.lib(osmesa_context.obj)
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Имеются ссылки в glfw3.lib(win32_joystick.obj)
+          Имеются ссылки в glfw3.lib(wgl_context.obj)
+          Имеются ссылки в glfw3.lib(egl_context.obj)
+          Имеются ссылки в glfw3.lib(input.obj)
+          Имеются ссылки в glfw3.lib(context.obj)
+          Имеются ссылки в glfw3.lib(win32_init.obj)
+          Имеются ссылки в glfw3.lib(win32_monitor.obj)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Имеются ссылки в glad.obj
+          Имеются ссылки в glfw3.lib(init.obj)
+          Имеются ссылки в glfw3.lib(window.obj)
+          Загружен MSVCRTD.lib(gshandler.obj)
+        Найден __GSHandlerCheck_EH
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен MSVCRTD.lib(gshandlereh.obj)
+        Найден __chkstk
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен MSVCRTD.lib(chkstk.obj)
+        Найден __security_check_cookie
+          Имеются ссылки в glfw3.lib(osmesa_context.obj)
+          Имеются ссылки в MSVCRTD.lib(gshandler.obj)
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Имеются ссылки в glfw3.lib(win32_joystick.obj)
+          Имеются ссылки в glfw3.lib(wgl_context.obj)
+          Имеются ссылки в glfw3.lib(egl_context.obj)
+          Имеются ссылки в glfw3.lib(input.obj)
+          Имеются ссылки в glfw3.lib(context.obj)
+          Имеются ссылки в glfw3.lib(win32_init.obj)
+          Имеются ссылки в glfw3.lib(win32_monitor.obj)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Имеются ссылки в glad.obj
+          Имеются ссылки в glfw3.lib(init.obj)
+          Имеются ссылки в glfw3.lib(window.obj)
+          Загружен MSVCRTD.lib(amdsecgs.obj)
+        Найден "const type_info::`vftable'" (??_7type_info@@6B@)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен MSVCRTD.lib(std_type_info_static.obj)
+        Найден __security_cookie
+          Имеются ссылки в glfw3.lib(osmesa_context.obj)
+          Имеются ссылки в MSVCRTD.lib(amdsecgs.obj)
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Имеются ссылки в glfw3.lib(win32_joystick.obj)
+          Имеются ссылки в glfw3.lib(wgl_context.obj)
+          Имеются ссылки в glfw3.lib(egl_context.obj)
+          Имеются ссылки в glfw3.lib(input.obj)
+          Имеются ссылки в glfw3.lib(context.obj)
+          Имеются ссылки в glfw3.lib(win32_init.obj)
+          Имеются ссылки в glfw3.lib(win32_monitor.obj)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Имеются ссылки в glad.obj
+          Имеются ссылки в glfw3.lib(init.obj)
+          Имеются ссылки в glfw3.lib(window.obj)
+          Загружен MSVCRTD.lib(gs_cookie.obj)
+        Найден _fltused
+          Имеются ссылки в glfw3.lib(win32_monitor.obj)
+          Имеются ссылки в glfw3.lib(monitor.obj)
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Имеются ссылки в glfw3.lib(win32_joystick.obj)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Имеются ссылки в glfw3.lib(init.obj)
+          Имеются ссылки в glfw3.lib(window.obj)
+          Имеются ссылки в glfw3.lib(input.obj)
+          Загружен MSVCRTD.lib(fltused.obj)
+        Найден mainCRTStartup
+          Загружен MSVCRTD.lib(exe_main.obj)
+        Найден atexit
+          Имеются ссылки в msvcprtd.lib(locale0_implib.obj)
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен MSVCRTD.lib(utility.obj)
+        Найден __guard_dispatch_icall_fptr
+          Имеются ссылки в msvcprtd.lib(locale0_implib.obj)
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Имеются ссылки в MSVCRTD.lib(utility.obj)
+          Загружен MSVCRTD.lib(guard_support.obj)
+        Найден "void __cdecl __scrt_throw_std_bad_alloc(void)" (?__scrt_throw_std_bad_alloc@@YAXXZ)
+          Имеются ссылки в MSVCRTD.lib(new_scalar.obj)
+          Загружен MSVCRTD.lib(throw_bad_alloc.obj)
+        Найден "void __cdecl operator delete(void *)" (??3@YAXPEAX@Z)
+          Имеются ссылки в MSVCRTD.lib(delete_scalar_size.obj)
+          Загружен MSVCRTD.lib(delete_scalar.obj)
+        Найден __report_gsfailure
+          Имеются ссылки в MSVCRTD.lib(amdsecgs.obj)
+          Загружен MSVCRTD.lib(gs_report.obj)
+        Найден __security_init_cookie
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен MSVCRTD.lib(gs_support.obj)
+        Найден _matherr
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен MSVCRTD.lib(matherr.obj)
+        Найден _get_startup_argv_mode
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Имеются ссылки в MSVCRTD.lib(utility.obj)
+          Загружен MSVCRTD.lib(argv_mode.obj)
+        Найден _get_startup_commit_mode
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен MSVCRTD.lib(commit_mode.obj)
+        Найден _get_startup_file_mode
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен MSVCRTD.lib(file_mode.obj)
+        Найден _get_startup_new_mode
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен MSVCRTD.lib(new_mode.obj)
+        Найден _get_startup_thread_locale_mode
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен MSVCRTD.lib(thread_locale.obj)
+        Найден "void __cdecl __scrt_initialize_type_info(void)" (?__scrt_initialize_type_info@@YAXXZ)
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен MSVCRTD.lib(tncleanup.obj)
+        Найден _should_initialize_environment
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен MSVCRTD.lib(env_mode.obj)
+        Найден _initialize_invalid_parameter_handler
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен MSVCRTD.lib(invalid_parameter_handler.obj)
+        Найден _initialize_denormal_control
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен MSVCRTD.lib(denormal_control.obj)
+        Найден __scrt_initialize_default_local_stdio_options
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен MSVCRTD.lib(default_local_stdio_options.obj)
+        Найден __scrt_is_user_matherr_present
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен MSVCRTD.lib(matherr_detection.obj)
+        Найден __scrt_get_dyn_tls_init_callback
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен MSVCRTD.lib(dyn_tls_init.obj)
+        Найден __scrt_get_dyn_tls_dtor_callback
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен MSVCRTD.lib(dyn_tls_dtor.obj)
+        Найден __scrt_is_managed_app
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен MSVCRTD.lib(utility_desktop.obj)
+        Найден _RTC_Initialize
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен MSVCRTD.lib(initsect.obj)
+        Найден __xi_a
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен MSVCRTD.lib(initializers.obj)
+  Обработан параметр /DEFAULTLIB:kernel32.lib
+   Обработан /DISALLOWLIB:libcmtd.lib
+   Обработан /DISALLOWLIB:vcruntime.lib
+  Обработан параметр /DEFAULTLIB:vcruntimed.lib
+   Обработан /DISALLOWLIB:libvcruntime.lib
+   Обработан /DISALLOWLIB:libvcruntimed.lib
+   Обработан /DISALLOWLIB:ucrt.lib
+  Обработан параметр /DEFAULTLIB:ucrtd.lib
+   Обработан /DISALLOWLIB:libucrt.lib
+   Обработан /DISALLOWLIB:libucrtd.lib
+        Найден __isa_available_init
+          Имеются ссылки в MSVCRTD.lib(utility.obj)
+          Загружен MSVCRTD.lib(cpu_disp.obj)
+        Найден __scrt_is_ucrt_dll_in_use
+          Имеются ссылки в MSVCRTD.lib(utility.obj)
+          Загружен MSVCRTD.lib(ucrt_detection.obj)
+        Найден _guard_dispatch_icall_nop
+          Имеются ссылки в MSVCRTD.lib(guard_support.obj)
+          Загружен MSVCRTD.lib(guard_dispatch.obj)
+      Поиск C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\lib\x64\OLDNAMES.lib:
+      Поиск C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\lib\x64\MSVCRT.lib:
+      Поиск C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\lib\x64\LIBCMT.lib:
+      Поиск C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\lib\x64\vcruntimed.lib:
+        Найден __std_terminate
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен vcruntimed.lib(VCRUNTIME140D.dll)
+        Найден __std_exception_copy
+          Имеются ссылки в Bh_engine_WOC.obj
+          Имеются ссылки в MSVCRTD.lib(throw_bad_alloc.obj)
+          Загружен vcruntimed.lib(VCRUNTIME140D.dll)
+        Найден __std_exception_destroy
+          Имеются ссылки в Bh_engine_WOC.obj
+          Имеются ссылки в MSVCRTD.lib(throw_bad_alloc.obj)
+          Загружен vcruntimed.lib(VCRUNTIME140D.dll)
+        Найден _CxxThrowException
+          Имеются ссылки в Bh_engine_WOC.obj
+          Имеются ссылки в MSVCRTD.lib(throw_bad_alloc.obj)
+          Загружен vcruntimed.lib(VCRUNTIME140D.dll)
+        Найден __CxxFrameHandler3
+          Имеются ссылки в Bh_engine_WOC.obj
+          Имеются ссылки в msvcprtd.lib(locale0_implib.obj)
+          Имеются ссылки в MSVCRTD.lib(gshandlereh.obj)
+          Загружен vcruntimed.lib(VCRUNTIME140D.dll)
+        Найден memcpy
+          Имеются ссылки в Bh_engine_WOC.obj
+          Имеются ссылки в glfw3.lib(input.obj)
+          Имеются ссылки в glfw3.lib(win32_monitor.obj)
+          Загружен vcruntimed.lib(VCRUNTIME140D.dll)
+        Найден memmove
+          Имеются ссылки в Bh_engine_WOC.obj
+          Имеются ссылки в glfw3.lib(monitor.obj)
+          Загружен vcruntimed.lib(VCRUNTIME140D.dll)
+        Найден memset
+          Имеются ссылки в glfw3.lib(win32_init.obj)
+          Имеются ссылки в glfw3.lib(win32_monitor.obj)
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Имеются ссылки в glfw3.lib(win32_joystick.obj)
+          Имеются ссылки в Bh_engine_WOC.obj
+          Имеются ссылки в glfw3.lib(init.obj)
+          Имеются ссылки в glfw3.lib(window.obj)
+          Имеются ссылки в glfw3.lib(input.obj)
+          Загружен vcruntimed.lib(VCRUNTIME140D.dll)
+        Найден strstr
+          Имеются ссылки в glad.obj
+          Имеются ссылки в glfw3.lib(context.obj)
+          Имеются ссылки в glfw3.lib(win32_joystick.obj)
+          Загружен vcruntimed.lib(VCRUNTIME140D.dll)
+        Найден __C_specific_handler
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Имеются ссылки в MSVCRTD.lib(utility.obj)
+          Загружен vcruntimed.lib(VCRUNTIME140D.dll)
+        Найден __std_type_info_destroy_list
+          Имеются ссылки в MSVCRTD.lib(tncleanup.obj)
+          Загружен vcruntimed.lib(VCRUNTIME140D.dll)
+        Найден __IMPORT_DESCRIPTOR_VCRUNTIME140D
+          Имеются ссылки в vcruntimed.lib(VCRUNTIME140D.dll)
+          Имеются ссылки в vcruntimed.lib(VCRUNTIME140D.dll)
+          Имеются ссылки в vcruntimed.lib(VCRUNTIME140D.dll)
+          Имеются ссылки в vcruntimed.lib(VCRUNTIME140D.dll)
+          Имеются ссылки в vcruntimed.lib(VCRUNTIME140D.dll)
+          Имеются ссылки в vcruntimed.lib(VCRUNTIME140D.dll)
+          Имеются ссылки в vcruntimed.lib(VCRUNTIME140D.dll)
+          Имеются ссылки в vcruntimed.lib(VCRUNTIME140D.dll)
+          Имеются ссылки в vcruntimed.lib(VCRUNTIME140D.dll)
+          Имеются ссылки в vcruntimed.lib(VCRUNTIME140D.dll)
+          Имеются ссылки в vcruntimed.lib(VCRUNTIME140D.dll)
+          Загружен vcruntimed.lib(VCRUNTIME140D.dll)
+        Найден VCRUNTIME140D_NULL_THUNK_DATA
+          Имеются ссылки в vcruntimed.lib(VCRUNTIME140D.dll)
+          Загружен vcruntimed.lib(VCRUNTIME140D.dll)
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\ucrt\x64\ucrtd.lib:
+        Найден __imp__invalid_parameter
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp__CrtDbgReport
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp_malloc
+          Имеются ссылки в Bh_engine_WOC.obj
+          Имеются ссылки в glad.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp_lround
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp__get_stream_buffer_pointers
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp_fclose
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp_fflush
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp_fgetc
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp_fgetpos
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp_fputc
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp_fread
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp_fsetpos
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp__fseeki64
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp_fwrite
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp_setvbuf
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp_ungetc
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp__lock_file
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp__unlock_file
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp_clock
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден ceil
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден cos
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден cosf
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден exp
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден floor
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден log
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден pow
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден sin
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден sinf
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден sqrt
+          Имеются ссылки в Bh_engine_WOC.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp___stdio_common_vsscanf
+          Имеются ссылки в glad.obj
+          Имеются ссылки в glfw3.lib(context.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp_free
+          Имеются ссылки в glfw3.lib(osmesa_context.obj)
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Имеются ссылки в glfw3.lib(win32_joystick.obj)
+          Имеются ссылки в glfw3.lib(wgl_context.obj)
+          Имеются ссылки в glfw3.lib(egl_context.obj)
+          Имеются ссылки в glfw3.lib(win32_init.obj)
+          Имеются ссылки в glfw3.lib(win32_monitor.obj)
+          Имеются ссылки в glfw3.lib(monitor.obj)
+          Имеются ссылки в glfw3.lib(vulkan.obj)
+          Имеются ссылки в glad.obj
+          Имеются ссылки в glfw3.lib(init.obj)
+          Имеются ссылки в glfw3.lib(window.obj)
+          Имеются ссылки в glfw3.lib(input.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp_realloc
+          Имеются ссылки в glad.obj
+          Имеются ссылки в glfw3.lib(input.obj)
+          Имеются ссылки в glfw3.lib(win32_monitor.obj)
+          Имеются ссылки в glfw3.lib(monitor.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp_strncpy_s
+          Имеются ссылки в glad.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp_strncmp
+          Имеются ссылки в glad.obj
+          Имеются ссылки в glfw3.lib(input.obj)
+          Имеются ссылки в glfw3.lib(context.obj)
+          Имеются ссылки в glfw3.lib(egl_context.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp_calloc
+          Имеются ссылки в glfw3.lib(win32_joystick.obj)
+          Имеются ссылки в glfw3.lib(wgl_context.obj)
+          Имеются ссылки в glfw3.lib(egl_context.obj)
+          Имеются ссылки в glfw3.lib(osmesa_context.obj)
+          Имеются ссылки в glfw3.lib(win32_monitor.obj)
+          Имеются ссылки в glfw3.lib(monitor.obj)
+          Имеются ссылки в glfw3.lib(vulkan.obj)
+          Имеются ссылки в glfw3.lib(win32_window.obj)
+          Имеются ссылки в glfw3.lib(init.obj)
+          Имеются ссылки в glfw3.lib(window.obj)
+          Имеются ссылки в glfw3.lib(input.obj)
+          Имеются ссылки в glfw3.lib(win32_init.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp___stdio_common_vsprintf
+          Имеются ссылки в glfw3.lib(init.obj)
+          Имеются ссылки в glfw3.lib(win32_joystick.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp_strncpy
+          Имеются ссылки в glfw3.lib(window.obj)
+          Имеются ссылки в glfw3.lib(input.obj)
+          Имеются ссылки в glfw3.lib(win32_joystick.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp_strcspn
+          Имеются ссылки в glfw3.lib(input.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp_strspn
+          Имеются ссылки в glfw3.lib(input.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp_strtoul
+          Имеются ссылки в glfw3.lib(input.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp_qsort
+          Имеются ссылки в glfw3.lib(monitor.obj)
+          Имеются ссылки в glfw3.lib(win32_joystick.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден powf
+          Имеются ссылки в glfw3.lib(monitor.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден strcmp
+          Имеются ссылки в glfw3.lib(vulkan.obj)
+          Имеются ссылки в glfw3.lib(win32_joystick.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp__free_dbg
+          Имеются ссылки в msvcprtd.lib(locale0_implib.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp__malloc_dbg
+          Имеются ссылки в msvcprtd.lib(locale0_implib.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _callnewh
+          Имеются ссылки в MSVCRTD.lib(new_scalar.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _seh_filter_exe
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _set_app_type
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __setusermatherr
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _configure_narrow_argv
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Имеются ссылки в MSVCRTD.lib(utility.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _initialize_narrow_environment
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Имеются ссылки в MSVCRTD.lib(utility.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _get_initial_narrow_environment
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _initterm
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _initterm_e
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден exit
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _exit
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _set_fmode
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __p___argc
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __p___argv
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _cexit
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Имеются ссылки в MSVCRTD.lib(utility.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _c_exit
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _register_thread_local_exe_atexit_callback
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _configthreadlocale
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _set_new_mode
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __p__commode
+          Имеются ссылки в MSVCRTD.lib(exe_main.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _seh_filter_dll
+          Имеются ссылки в MSVCRTD.lib(utility.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _initialize_onexit_table
+          Имеются ссылки в MSVCRTD.lib(utility.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _register_onexit_function
+          Имеются ссылки в MSVCRTD.lib(utility.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _execute_onexit_table
+          Имеются ссылки в MSVCRTD.lib(utility.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _crt_atexit
+          Имеются ссылки в MSVCRTD.lib(utility.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _crt_at_quick_exit
+          Имеются ссылки в MSVCRTD.lib(utility.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден terminate
+          Имеются ссылки в MSVCRTD.lib(utility_desktop.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __IMPORT_DESCRIPTOR_ucrtbased
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден ucrtbased_NULL_THUNK_DATA
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Загружен ucrtd.lib(ucrtbased.dll)
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\opengl32.lib:
+        Найден __imp_glGetIntegerv
+          Имеются ссылки в glew32s.lib(glew.obj)
+          Загружен opengl32.lib(OPENGL32.dll)
+        Найден __imp_glGetString
+          Имеются ссылки в glew32s.lib(glew.obj)
+          Загружен opengl32.lib(OPENGL32.dll)
+        Найден __imp_wglGetCurrentDC
+          Имеются ссылки в glew32s.lib(glew.obj)
+          Загружен opengl32.lib(OPENGL32.dll)
+        Найден __imp_wglGetProcAddress
+          Имеются ссылки в glew32s.lib(glew.obj)
+          Загружен opengl32.lib(OPENGL32.dll)
+      Поиск C:\VS_libs\libs\glfw3.lib:
+      Поиск C:\VS_libs\libs\glew32s.lib:
+      Поиск C:\VS_libs\libs\glew32.lib:
+      Поиск C:\VS_libs\libs\glut32.lib:
+      Поиск C:\VS_libs\libs\SOIL.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\kernel32.lib:
+        Найден __imp_GetCurrentThreadId
+          Имеются ссылки в MSVCRTD.lib(debugger_jmc.obj)
+          Имеются ссылки в MSVCRTD.lib(gs_support.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_RtlCaptureContext
+          Имеются ссылки в MSVCRTD.lib(gs_report.obj)
+          Имеются ссылки в MSVCRTD.lib(utility_desktop.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_RtlLookupFunctionEntry
+          Имеются ссылки в MSVCRTD.lib(gs_report.obj)
+          Имеются ссылки в MSVCRTD.lib(utility_desktop.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_RtlVirtualUnwind
+          Имеются ссылки в MSVCRTD.lib(gs_report.obj)
+          Имеются ссылки в MSVCRTD.lib(utility_desktop.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_UnhandledExceptionFilter
+          Имеются ссылки в MSVCRTD.lib(gs_report.obj)
+          Имеются ссылки в MSVCRTD.lib(utility_desktop.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_SetUnhandledExceptionFilter
+          Имеются ссылки в MSVCRTD.lib(gs_report.obj)
+          Имеются ссылки в MSVCRTD.lib(utility_desktop.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_GetCurrentProcess
+          Имеются ссылки в MSVCRTD.lib(gs_report.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_TerminateProcess
+          Имеются ссылки в MSVCRTD.lib(gs_report.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден IsProcessorFeaturePresent
+          Имеются ссылки в MSVCRTD.lib(gs_report.obj)
+          Имеются ссылки в MSVCRTD.lib(utility_desktop.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_GetCurrentProcessId
+          Имеются ссылки в MSVCRTD.lib(gs_support.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_GetSystemTimeAsFileTime
+          Имеются ссылки в MSVCRTD.lib(gs_support.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_InitializeSListHead
+          Имеются ссылки в MSVCRTD.lib(tncleanup.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_IsDebuggerPresent
+          Имеются ссылки в MSVCRTD.lib(utility_desktop.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_GetStartupInfoW
+          Имеются ссылки в MSVCRTD.lib(utility_desktop.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\user32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\gdi32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\winspool.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\comdlg32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\advapi32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\shell32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\ole32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\oleaut32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\uuid.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\odbc32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\odbccp32.lib:
+      Поиск C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\lib\x64\msvcprtd.lib:
+      Поиск C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\lib\x64\MSVCRTD.lib:
+      Поиск C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\lib\x64\OLDNAMES.lib:
+      Поиск C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\lib\x64\MSVCRT.lib:
+      Поиск C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\lib\x64\LIBCMT.lib:
+      Поиск C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\lib\x64\vcruntimed.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\ucrt\x64\ucrtd.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\opengl32.lib:
+      Поиск C:\VS_libs\libs\glfw3.lib:
+      Поиск C:\VS_libs\libs\glew32s.lib:
+      Поиск C:\VS_libs\libs\glew32.lib:
+      Поиск C:\VS_libs\libs\glut32.lib:
+      Поиск C:\VS_libs\libs\SOIL.lib:
+  
+  Поиск библиотек завершен
+LINK : warning LNK4098: библиотека по умолчанию "MSVCRT" противоречит использованию других библиотек; используйте параметр /NODEFAULTLIB:library
+LINK : warning LNK4098: библиотека по умолчанию "LIBCMT" противоречит использованию других библиотек; используйте параметр /NODEFAULTLIB:library
+  
+  Поиск библиотек
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\opengl32.lib:
+      Поиск C:\VS_libs\libs\glfw3.lib:
+      Поиск C:\VS_libs\libs\glew32s.lib:
+      Поиск C:\VS_libs\libs\glew32.lib:
+      Поиск C:\VS_libs\libs\glut32.lib:
+      Поиск C:\VS_libs\libs\SOIL.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\kernel32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\user32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\gdi32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\winspool.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\comdlg32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\advapi32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\shell32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\ole32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\oleaut32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\uuid.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\odbc32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\odbccp32.lib:
+      Поиск C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\lib\x64\msvcprtd.lib:
+      Поиск C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\lib\x64\MSVCRTD.lib:
+        Найден __scrt_stub_for_acrt_initialize
+          Загружен MSVCRTD.lib(ucrt_stubs.obj)
+      Поиск C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\lib\x64\OLDNAMES.lib:
+      Поиск C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\lib\x64\MSVCRT.lib:
+      Поиск C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\lib\x64\LIBCMT.lib:
+      Поиск C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\lib\x64\vcruntimed.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\ucrt\x64\ucrtd.lib:
+  
+  Поиск библиотек завершен
+  
+  1-ый проход завершен
+  
+  
+  Поиск библиотек
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\opengl32.lib:
+      Поиск C:\VS_libs\libs\glfw3.lib:
+      Поиск C:\VS_libs\libs\glew32s.lib:
+      Поиск C:\VS_libs\libs\glew32.lib:
+      Поиск C:\VS_libs\libs\glut32.lib:
+      Поиск C:\VS_libs\libs\SOIL.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\kernel32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\user32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\gdi32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\winspool.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\comdlg32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\advapi32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\shell32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\ole32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\oleaut32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\uuid.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\odbc32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\odbccp32.lib:
+      Поиск C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\lib\x64\msvcprtd.lib:
+      Поиск C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\lib\x64\MSVCRTD.lib:
+        Найден _load_config_used
+          Загружен MSVCRTD.lib(loadcfg.obj)
+      Поиск C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\lib\x64\OLDNAMES.lib:
+      Поиск C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\lib\x64\MSVCRT.lib:
+      Поиск C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\lib\x64\LIBCMT.lib:
+      Поиск C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\lib\x64\vcruntimed.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\ucrt\x64\ucrtd.lib:
+  
+  Поиск библиотек завершен
+  
+  Вызов rc.exe:
+   /v
+   /x
+   /fo
+   "C:\Users\User\AppData\Local\Temp\lnk{12373149-439B-4470-84F6-6F4DE60BCC47}.tmp"
+   "C:\Users\User\AppData\Local\Temp\lnk{A4BE3AB1-C272-4BEF-8779-CF92BE12AC64}.tmp"
+  Microsoft (R) Windows (R) Resource Compiler Version 10.0.10011.16384
+  
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  
+  Creating C:\Users\User\AppData\Local\Temp\lnk{12373149-439B-4470-84F6-6F4DE60BCC47}.tmp
+  
+  Using codepage 1251 as default
+  
+  C:\Users\User\AppData\Local\Temp\lnk{A4BE3AB1-C272-4BEF-8779-CF92BE12AC64}.tmp.
+  Writing 24:1,	lang:0x409,	size 381
+  
+  Вызов cvtres.exe:
+   /machine:amd64
+   /verbose
+   /out:"C:\Users\User\AppData\Local\Temp\lnk{9421ADC1-410C-4EB5-B3E5-0F093475775E}.tmp"
+   /readonly
+   "C:\Users\User\AppData\Local\Temp\lnk{12373149-439B-4470-84F6-6F4DE60BCC47}.tmp"
+  ╩юэтхЁЄхЁ ЁхёєЁёют Windows т юс·хъЄ√ (Microsoft (R)), тхЁёш  14.16.27027.1
+  (C) ╩юЁяюЁрЎш  ╠рщъЁюёюЇЄ (Microsoft Corp.). ┬ёх яЁртр чр∙ш∙хэ√.
+  
+  фюсртыхэшх ЁхёєЁёр. Єшя: MANIFEST, шь : 1,  ч√ъ: 0x0409, Їыруш: 0x30, ЁрчьхЁ: 381
+  
+Bh_engine_WOC.obj : error LNK2019: ссылка на неразрешенный внешний символ SOIL_load_image в функции "public: void __cdecl object::set_texture(char const *)" (?set_texture@object@@QEAAXPEBD@Z)
+Bh_engine_WOC.obj : error LNK2019: ссылка на неразрешенный внешний символ SOIL_free_image_data в функции "public: void __cdecl object::set_texture(char const *)" (?set_texture@object@@QEAAXPEBD@Z)
+C:\VS_libs\libs\glut32.lib : warning LNK4272: тип компьютера библиотеки "x86" конфликтует с типом целевого компьютера "x64"
+C:\VS_libs\libs\SOIL.lib : warning LNK4272: тип компьютера библиотеки "x86" конфликтует с типом целевого компьютера "x64"
+  
+  Неиспользуемые библиотеки:
+    C:\VS_libs\libs\glew32.lib
+    C:\VS_libs\libs\glut32.lib
+    C:\VS_libs\libs\SOIL.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\winspool.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\comdlg32.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\advapi32.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\ole32.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\oleaut32.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\uuid.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\odbc32.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\odbccp32.lib
+    C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\lib\x64\OLDNAMES.lib
+    C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\lib\x64\MSVCRT.lib
+    C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\lib\x64\LIBCMT.lib
+  
+C:\Users\User\Desktop\Модели\Engine\Bh_engine_WOC\x64\Debug\Bh_engine_WOC.exe : fatal error LNK1120: неразрешенных внешних элементов: 2
