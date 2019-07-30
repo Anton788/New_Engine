@@ -1,0 +1,154 @@
+//g++  5.4.0
+
+#include <iostream>
+#include <vector>
+using namespace std;
+// вектор из пар вектеров vector<vecter, vecter>
+// Из того, который прикреплен к сенсеру вычитаем данный полем
+// Составить, то какая бы сатрица была если бы координата магнита была такая
+// x1, x2 составить матрицу векторов, для каждого
+
+struct Sensor {
+    vecter coordinates;
+    vecter value;
+};
+
+
+//IT WORKS ONLY IF POINT (0, 0, 0) IS IN OUR AREA AND ALSO IF IT IS A POINT!!!! OR (THE SAME) IF X AND Y AXIS HAVE (2*N + 1) POINTS
+vector<vector<vecter>>> SearchingCommonArea(vector<Magnet>& static_magnets) {
+    double overlap_left = 0;
+    double overlap_right = 0;
+    for (int i = 0; i < static_magnets.size(); ++i) {
+        double x_left = static_magnets[i].position.x_proj - static_magnets[i].Mag_field.size_x;
+        double x_right = static_magnets[i].position.x_proj + static_magnets[i].Mag_field.size_x;
+        if (i == 0 || overlap_left < x_left){
+            overlap_left = x_left;
+        }
+        if (i == 0 || overlap_right > x_right){
+            overlap_right = x_right;
+        }
+    }
+    vecter zero_vecter(0, 0, 0);
+    int length_x = static_cast<int>((overlap_right - overlap_left));
+    int length_y = static_magnets[0].Mag_field.size_y * 2;
+    vector<vector<vecter>>> area(length_x, vector<vecter>(static_magnets[0].Mag_field.size_y, zero_vecter));  
+    
+    for (int mag = 0; mag < static_magnets.size(); ++mag) {
+        if (fabs(static_magnets[mag].position.x_proj) - static_cast<int>(fabs(static_magnets[mag].position.x_proj)) < MIN_ERROR_IN_VECTOR) {
+            for (int y = 0; y < length_y; ++y) {
+                for (int x = 1; x < length_x - 1; ++x) {
+                    int local_x = abs(x - static_cast<int>(static_magnets[mag].position.x_proj) - length_x / 2);
+                    area[x][y].z_proj += 
+                        static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.z_proj;
+                    area[x][y].x_proj += 
+                        static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.x_proj * 
+                        sign(static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.y_proj);
+                    area[x][y].y_proj += 
+                        static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.y_proj * 
+                        sign(static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.x_proj);
+                    // Not exist in 3/4 part of area. We need to look it for from 1/4 part of area. DONE! 
+                    // IS SIGN WORK AS I WANT??? (-1, 0, 1)
+                    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!????????????
+                }
+            }
+        } else {
+            double right_variation = fabs(static_magnets[mag].position.x_proj) - static_cast<int>(fabs(static_magnets[mag].position.x_proj));
+            double left_variation = 1 - right_variation;
+            for (int y = 0; y < length_y; ++y) {
+                for (int x = 1; x < length_x - 1; ++x) {
+                    int local_x = 0; // The nearest point to (x, 0, 0) in our Area. Will be got below.
+                    if (static_magnets[mag].position.x_proj > 0) {
+                        local_x = abs(x - static_cast<int>(static_magnets[mag].position.x_proj) - length_x / 2);
+                        
+                        area[x][y].z_proj += 
+                            static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.z_proj;
+
+                        area[x][y].x_proj += 
+                            static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.x_proj * 
+                            sign(static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.y_proj) * right_variation + 
+                            static_magnets[mag].Mag_field.cells[local_x - 1][y].Mag_vec.x_proj * 
+                            sign(static_magnets[mag].Mag_field.cells[local_x - 1][y].Mag_vec.y_proj) * left_variation;
+
+                        area[x][y].y_proj += 
+                            static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.y_proj * 
+                            sign(static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.x_proj * right_variation + 
+                            static_magnets[mag].Mag_field.cells[local_x - 1][y].Mag_vec.x_proj * left_variation);
+                        
+                    } else {
+                        local_x = abs(x - static_cast<int>(static_magnets[mag].position.x_proj) - length_x / 2 + 1);
+                        // (+ 1) in the end because of rounding of static_cast in less side
+                        
+                        area[x][y].z_proj += 
+                            static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.z_proj;
+                        
+                        area[x][y].x_proj += 
+                            static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.x_proj * 
+                            sign(static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.y_proj) * left_variation + 
+                            static_magnets[mag].Mag_field.cells[local_x + 1][y].Mag_vec.x_proj * 
+                            sign(static_magnets[mag].Mag_field.cells[local_x + 1][y].Mag_vec.y_proj) * right_variation;
+
+                        area[x][y].y_proj += 
+                            static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.y_proj * 
+                            sign(static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.x_proj * left_variation + 
+                            static_magnets[mag].Mag_field.cells[local_x + 1][y].Mag_vec.x_proj * right_variation);
+                    }
+                }
+            }
+        }
+    }
+    return area;
+}
+
+
+std::pair<int, int> Search_positition_magnet(vector<vector<vecter>>>& area, vector<Magnet>& action_magnets, vector<Sensor>& sensors){
+    vector<vecter> sensors_coordinates_in_area(sensors.size());
+    
+    int x_length = area.size();
+    int y_length = area[0].size();
+    int x_dist = area.size() / 2;
+    int y_dist = area[0].size() / 2;
+    
+    for (int i = 0; i < sensors.size(); ++i) {
+        // (x_dist + x, y_dist - y, 0) - coordinates to get area's analog of vecter with sensor's coordinates
+        sensors_coordinates_in_area[i].x_proj = x_dist + sensors[i].coordinates.x_proj;
+        sensors_coordinates_in_area[i].y_proj = y_dist - sensors[i].coordinates.y_proj;
+        sensors_coordinates_in_area[i].z_proj = sensors[i].coordinates.z_proj;
+    }
+    
+    vector<vecter> sensors_without_static_area(sensors.size());
+    for (int i = 0; i < sensors.size(); ++i){
+        sensors_without_static_area[i] = sensors[i].value - area[sensors_coordinates_in_area[i].x_proj][sensors_coordinates_in_area[i].y_proj];
+    }
+    
+    //Create matrix of all places of magnets for each vecter in "sensors_without_static_area" to get the nearest vecter
+    vector<vector<vector<vecter>>> magnets_places(sensors_without_static_area.size(), vector<vector<vecter>>(x_length, vector<vecter>(x_length)));
+    for (int i = 0; i < sensors_without_static_area.size(); ++i) {
+        
+        //vector<vector<vecter>> magnets_places(x_length, vector<vecter>(x_length));
+        for (int first_magnet = 0; first_magnet < x_length; ++first_magnet) {
+            for (int second_magnet = 0; second_magnet < x_length; ++second_magnet) {
+                //Get vecter from area from both magnets in this position (need to convert in new center (0, 0, 0))
+                magnets_places[i][first_magnet][second_magnet] = 
+                    action_magnets[0].Mag_field.cells[sensors_coordinates_in_area[i].x_proj - (first_magnet - x_dist)][sensors_coordinates_in_area[i].y_proj].Mag_vec + 
+                    action_magnets[1].Mag_field.cells[sensors_coordinates_in_area[i].x_proj - (second_magnet - x_dist)][sensors_coordinates_in_area[i].y_proj].Mag_vec;
+            }
+        }
+        
+    }
+    //`````````````````````````````````````````````````````````````````````````````
+    // + A* - algorithm for each founding of the nearest vecter
+    // We get aproximately the same results after getting coordinates of magnets from 1st iteration. 
+    // We needn't do this algorithm on other iterations, because we will have a little bit different vecters in the nearest neighborhood.
+    
+    for (int i = 0; i < magnets_places.size(); ++i) {
+        vecter curr_vec(0, 0, 0);
+        queue<vecter> nearest_points;
+        // Idea: get center point and from it choose the shortest way to our point (answer) with the help of evristic of distance. 
+        // If I need bool matrix? OR my matrix (magnets_place[i]) is guarantee linear?
+        // vector<vector<bool>> is_used(x_length, vector<bool>(x_length, false); // NEED?????????
+        while (/*DO I HAVE func ABS IN VECTERS?*/ abs(curr_vec - sensors_without_static_area[i]) < MIN_DISTANCE_BTW_VECTERS) {
+            //DO SMTH
+        }
+    }
+    
+}
