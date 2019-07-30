@@ -173,14 +173,16 @@ inline vecter Vec_Rotate_X(vecter vec, double angle)
 }
 inline vecter& operator -(vecter vec)
 {
- vecter tmp(0,0,0);
-tmp-=vec;
-return tmp;
+	vecter tmp;
+	tmp.x_proj = -vec.x_proj;
+	tmp.y_proj = -vec.y_proj;
+	tmp.z_proj = -vec.z_proj;
+	return tmp;
 }
 
-short sign(double x)
+inline int sign(double x)
 {
 	if (x > 0) { return 1; }
-	else if (x = 0) { return 0; }
-			else return -1;
+	else if (x < 0) { return -1; }
+			else return 0;
 }
