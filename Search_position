@@ -49,7 +49,16 @@ vector<vector<vecter>>> SearchingCommonArea(vector<Magnet>& static_magnets) {
                         static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.y_proj * 
                         sign(static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.x_proj);
                     // Not exist in 3/4 part of area. We need to look it for from 1/4 part of area. DONE! 
-                    // IS SIGN WORK AS I WANT??? (-1, 0, 1)
+                    // IS SIGN WORK AS I WANT??? (-1, 0, 1) ???????????????
+                    // ATTENTION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    // ATTENTION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    // I AM NOT SURE, IF THIS CODE WORKS IN GOOD WAY WITH ZERO-COORDINATES, 
+                    // FOR EXAMPLE (X, 0) OR (0, Y). 
+                    // IN THESE COORDINATES SIGN CAN MAKE VECTORS TO (0, 0) AND THIS IS UNCORRECT!!!!!!!!!!!!!!!
+                    // MAY BE WE NEEDN'T WORRY ABOUT IT, BECAUSE THE REAL ZERO (0) IN DOUBLE-FORMAT IS DIFFICULT TO GET.
+                    // THANK YOU, AFTER YOU WILL THINK ABOUT IT AND GET NEW COMMENTS AND CORRECTIONS IN CODE!
+                    // IF YOU HAVE QUESTIONS, WRITE HERE: denis.mitr99@mail.ru
+                    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                     // !!!!!!!!!!!!!!!!!!!!!!!!!!!!????????????
                 }
             }
@@ -93,6 +102,11 @@ vector<vector<vecter>>> SearchingCommonArea(vector<Magnet>& static_magnets) {
                             static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.y_proj * 
                             sign(static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.x_proj * left_variation + 
                             static_magnets[mag].Mag_field.cells[local_x + 1][y].Mag_vec.x_proj * right_variation);
+                            
+                        // ATTENTION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                        // WE ALSO HAVE SUCH PROBLEMS WITH SIGN HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                        // ATTENTION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                        
                     }
                 }
             }
