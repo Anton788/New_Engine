@@ -1,5 +1,5 @@
 // О том как собирать проект в Microsoft Visual Studio
-1. Скачать папку Bh_Engine_VS
+1. Скачать архив Bh_Engine_VS
 2. Установить Microsoft Visual Studio
 3. Перекинуть папку Bh_Engine_WOC в удобное для вас место ( По умолчанию Visual Studio сохраняет проекты в C:\Users\User\source\repos)
 4. Переместить папку VS_Libs в C:\
