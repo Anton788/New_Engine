@@ -27,7 +27,7 @@ struct Sensor {
 
 
 //IT WORKS ONLY IF POINT (0, 0, 0) IS IN OUR AREA AND ALSO IF IT IS A POINT!!!! OR (THE SAME) IF X AND Y AXIS HAVE (2*N + 1) POINTS
-vector<vector<vecter>> SearchingCommonArea(vector<Magnet>& static_magnets) {		//!!!!BH_correct
+vector<vector<vecter>> SearchingCommonArea(vector<Electromagnet>& static_magnets) {		//!!!!BH_correct
     double overlap_left = 0;
     double overlap_right = 0;
     for (int i = 0; i < static_magnets.size(); ++i) {
@@ -237,7 +237,7 @@ pair<pair<int, int>, double> create_elem_for_queue(int fst_magnet, int snd_magne
 	return para;														//!!!!BH_correct
 }
 
-pair<double, double> Search_positition_magnet(double dtime, vector<vector<vecter>>& area, vector<Magnet>& magnets, vector<Sensor>& sensors,			//!!!!BH_correct
+pair<double, double> Search_positition_magnet(double dtime, vector<vector<vecter>>& area, vector<Electromagnet>& magnets, vector<Sensor>& sensors,			//!!!!BH_correct
                                              vector<vector<vector<vecter>>>& MATRIX_OF_ALL_MAGNETS_POSITIONS_FOR_ALL_HALL_SENSORS) {
     
     vector<vecter> sensors_coordinates_in_area(sensors.size());
