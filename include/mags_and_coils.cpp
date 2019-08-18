@@ -104,7 +104,7 @@ void Magnet::relocate(double dtime) {
 	speed_SI = speed / convert_to_SI;
 }
 
-void Magnet::show_field(int cherez_n) {
+void Electromagnet::show_field(int cherez_n) {
 	int n = cherez_n;
 	cout.width(3);
 	cout.precision(3);
@@ -326,7 +326,7 @@ vecter Coil::Force_from_coil(Magnet mag)
 	return (force / convert_to_SI);
 }
 
-double Coil::flow_X_from_mag(Magnet& magnit)
+double Coil::flow_X_from_mag(Electromagnet& magnit)
 {
 	double tmp = 0, ll, ttmp = (double)height / turns;
 	for (int i = -turns / 2; i <= turns / 2; i++)
@@ -341,7 +341,6 @@ double Coil::set_voltage(double dtime) {
 	voltage = (flow[1] - flow[0]) / dtime;
 	return voltage;
 }
-
 
 void Coil::Set_Field2D_Conf(int prec_R, int _size_x, int _size_y) /* USE FIELD MULTIPLYIER (CURRENT) TO CALCULATE REAL FIELD*/{
 	int x, y, z, angle;
@@ -394,7 +393,7 @@ void Coil::Set_Field2D_Conf(int prec_R, int _size_x, int _size_y) /* USE FIELD M
 };
 
 
-double Flow_X_flat(Magnet mag, double distance, int diametr)
+double Flow_X_flat(Electromagnet mag, double distance, int diametr)
 {
 	int x, y;
 	double tmp = 0;
@@ -438,53 +437,7 @@ double Flow_X_flat(Magnet mag, double distance, int diametr)
 	else
 		return 0;
 }
-
-double Flow_X_flat(Coil solenoid, double distance, int diametr)
-{
-	int x, y;
-	double tmp = 0;
-
-	double prm, f1, f2;
-	x = floor(fabs(distance) + 1);
-
-
-	if (x < solenoid.Mag_field.size_x)
-	{
-
-		for (y = 1; y <= diametr; y++) {
-			if (!((x <= solenoid.height / 2) && (((y / 2) == solenoid.diametr / 2)
-				|| (((y - 1) / 2) == solenoid.diametr / 2)))) {
-
-				prm = (solenoid.Mag_field.cells[x][y / 2].Mag_vec.x_proj + (solenoid.Mag_field.cells[x][(y - 1) / 2].Mag_vec.x_proj) / 2);
-				tmp += prm * π * (y * y - (y - 1) * (y - 1)) / 4;
-			}
-			else tmp += 0;
-		}
-
-		f1 = tmp;
-
-		tmp = 0;
-
-		for (y = 1; y <= diametr; y++) {
-			if (!((x - 1 <= solenoid.height / 2) && (((y / 2) == solenoid.diametr / 2)
-				|| (((y - 1) / 2) == solenoid.diametr / 2)))) {
-
-				prm = (solenoid.Mag_field.cells[x - 1][y / 2].Mag_vec.x_proj + (solenoid.Mag_field.cells[x - 1][(y - 1) / 2].Mag_vec.x_proj) / 2);
-				tmp += prm * π * (y * y - (y - 1) * (y - 1)) / 4;
-			}
-			else tmp += 0;
-		}
-
-		f2 = tmp;
-
-		tmp = f2 * (x - distance) + f1 * (1 - (x - distance));
-
-		return (tmp * solenoid.current);
-	}
-	else
-		return 0;
-}
-
+// дописать градиент потока
 double Flow_X_flat(Field_2D field, double distance, int diametr) /*AHTUNG!!!WITHOUT CHEKING INF*/ {
 	int x, y;
 	double tmp = 0;
