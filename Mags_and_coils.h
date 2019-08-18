@@ -63,21 +63,21 @@ public:
 	Electromagnet();
 	Electromagnet(int destiny_of_mag_pixels, double _diametr,
 		double _height, vecter _position);
-	
+	void show_field(int cherez_n);
 };
 
 class Magnet : public Electromagnet {
 
-	double strength;
-	double weight;
-	
-	vecter speed;
+	double strength;		
+				
 
 public:
 
 	int sight;
+	double weight;
 
 	vecter speed_SI;
+	vecter speed;
 	vecter accel;
 	
 	Gas* left;
@@ -87,8 +87,6 @@ public:
 
 	Magnet(int destiny_of_mag_pixels, double _strength, double _diametr, double _weight,
 		double _height, vecter _position, vecter _speed, int _sight);
-
-	void show_field(int cherez_n);
 	 
 	void relocate(double dtime);
 
@@ -114,19 +112,52 @@ public:
 	Coil(int destiny_of_mag_pixels, double _current, double _diametr,
 		double _height, vecter _position, int _turns);
 
-	void show_field(int cherez_n);
-
 	void Set_Field2D_Conf(int prec_R, int _size_x, int _size_y); /* USE FIELD MULTIPLYIER (CURRENT) TO CALCULATE REAL FIELD*/ /*FOR NORMAL PRECISION MANY TURNS NEEDED*/
 
-	double flow_X_from_mag(Magnet& magnit);
+	double flow_X_from_mag(Electromagnet& magnit);
 
 	double set_voltage(double dtime);
 
 	vecter Force_from_coil(Magnet mag);
 };
 
+class Coil_System {
+
+	int coil_num;
+
+	vector<Coil*> coils;
+
+	vector<vector<double>> inductive_coupling;
+
+	Coil_System();
+	Coil_System(int num_of_coils, Coil coil1, ...);
+
+	int set_coupling();		// returns 1 if coupling calculated correctly, else 0
+
+	void update(double dtime);
+};
 
 
+
+double Flow_X_flat(Electromagnet mag, double distance, int diametr);
+
+double Flow_X_flat(Field_2D field, double distance, int diametr);
+
+
+
+//struct Coil {
+//	double diametr, radius, height, flow[2], current, voltage, resist;
+//	double diametr_SI, height_SI, convert_to_SI;
+//	vecter position, position_SI, force_on;
+//	Field_2D Mag_field;
+//	int turns;
+//	vecter direction;
+//	Coil();
+//	Coil(int destiny_of_mag_pixels, double _current, double _diametr,
+//		double _height, vecter _position, int _turns);
+//	double flow_X_from_mag(Magnet& magnit);
+//	vecter Force_from_coil(Magnet mag);
+//};
 //struct Magnet
 //{
 //	double strength, diametr, radius, weight, height;
@@ -213,24 +244,4 @@ public:
 //	void Set_Field2D_Conf(int prec_H, int prec_R, int _size_x, int _size_y);
 //	vecter Mag_Mag_Force(Magnet mag, int H_prec);
 //
-//};
-
-double Flow_X_flat(Magnet mag, double distance, int diametr);
-
-double Flow_X_flat(Field_2D field, double distance, int diametr);
-
-double Flow_X_flat(Coil solenoid, double distance, int diametr);
-
-//struct Coil {
-//	double diametr, radius, height, flow[2], current, voltage, resist;
-//	double diametr_SI, height_SI, convert_to_SI;
-//	vecter position, position_SI, force_on;
-//	Field_2D Mag_field;
-//	int turns;
-//	vecter direction;
-//	Coil();
-//	Coil(int destiny_of_mag_pixels, double _current, double _diametr,
-//		double _height, vecter _position, int _turns);
-//	double flow_X_from_mag(Magnet& magnit);
-//	vecter Force_from_coil(Magnet mag);
 //};
