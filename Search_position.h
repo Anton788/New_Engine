@@ -33,13 +33,14 @@ vector<vector<vecter>> SearchingCommonArea(vector<Electromagnet>& static_magnets
     for (int i = 0; i < static_magnets.size(); ++i) {
         double x_left = static_magnets[i].position.x_proj - static_magnets[i].Mag_field.size_x;
         double x_right = static_magnets[i].position.x_proj + static_magnets[i].Mag_field.size_x;
-        if (i == 0 || overlap_left < x_left){
+        if (overlap_left < x_left || i == 0){
             overlap_left = x_left;
         }
-        if (i == 0 || overlap_right > x_right){
+        if (overlap_right > x_right || i == 0){
             overlap_right = x_right;
         }
     }
+	
     vecter zero_vecter(0, 0, 0);
     int length_x = static_cast<int>((overlap_right - overlap_left));
     int length_y = static_magnets[0].Mag_field.size_y * 2;
@@ -47,7 +48,57 @@ vector<vector<vecter>> SearchingCommonArea(vector<Electromagnet>& static_magnets
     
     for (int mag = 0; mag < static_magnets.size(); ++mag) {
         if (fabs(static_magnets[mag].position.x_proj) - static_cast<int>(fabs(static_magnets[mag].position.x_proj)) < MIN_ERROR_IN_VECTOR) {
-            for (int y = 0; y < length_y; ++y) {
+            
+		//NEED TO WORK WITH OVERLAP FOR EACH MAGNET HERE
+		
+		///////////////////////////////////
+		
+		// NEW CIRCLES!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		
+		//////////////////////////////////
+		
+		for (int y = -length_y / 2; y <= length_y / 2; ++y) { // may be static_cast too?
+			for (int x = static_cast<int>(max(overlap_left, static_magnets[mag].position.x_proj - static_magnets[mag].Mag_field.size_x)); 
+			     x <= static_cast<int>(min(overlap_right, static_magnets[mag].position.x_proj + static_magnets[mag].Mag_field.size_x));
+			     ++x) {
+				int local_x = x + static_cast<int>(length_x / 2); // coordinate in common field
+				int local_y = y + static_cast<int>(length_y / 2); // ????????? Не уверен насчет направления поля (вверх\вниз). 
+				// Тип не ясно, откуда считаем наше поле и нужно ли переворчаивать все y-вектора от магнитов и катушек?
+				
+				if (local_x < 0) {
+					cout << "ERROR IN SEARCH_POSITION: FIELD IS NOT SYMMETRIC AND WE GET MINUS-COORDINATES (local_x = "
+						<< local_x << "\n mag = " << mag << "\n x = " << x << endl;
+					system("pause");
+				}
+				
+				//area[local_x][local_y].z_proj += static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.z_proj;
+				//z-coordinate is not needed ?
+				
+				if (x < 0) {
+					area[local_x][local_y].x_proj += 
+						static_magnets[mag].Mag_field.cells[-x][abs(y)].Mag_vec.x_proj * (-1);
+				} else {
+					area[local_x][local_y].x_proj += 
+						static_magnets[mag].Mag_field.cells[x][abs(y)].Mag_vec.x_proj;
+				}
+				if (y < 0) {
+					area[local_x][local_y].y_proj += 
+						static_magnets[mag].Mag_field.cells[abs(x)][-y].Mag_vec.y_proj * (-1);
+				} else {
+					area[local_x][local_y].y_proj += 
+						static_magnets[mag].Mag_field.cells[abs(x)][y].Mag_vec.y_proj;
+				}
+			}
+		}
+		
+		///////////////////////////////////////////////
+		
+		// THE END OF NEW CODE!!!!
+		
+		///////////////////////////////////////////////
+		
+		
+		for (int y = 0; y < length_y; ++y) {
                 for (int x = 1; x < length_x - 1; ++x) {
                     int local_x = abs(x - static_cast<int>(static_magnets[mag].position.x_proj) - length_x / 2);
                     area[x][y].z_proj += 
