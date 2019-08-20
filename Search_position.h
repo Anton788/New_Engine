@@ -290,11 +290,9 @@ pair<pair<int, int>, double> create_elem_for_queue(int fst_magnet, int snd_magne
 
 pair<double, double> Search_positition_magnet(double dtime, vector<vector<vecter>>& area, vector<Electromagnet>& magnets, vector<Sensor>& sensors,			//!!!!BH_correct
                                              vector<vector<vector<vecter>>>& MATRIX_OF_ALL_MAGNETS_POSITIONS_FOR_ALL_HALL_SENSORS) {
-    
-    vector<vecter> sensors_coordinates_in_area(sensors.size());
-    
-    int x_length = area.size();
-    int y_length = area[0].size();
+	vector<vecter> sensors_coordinates_in_area(sensors.size());
+	int x_length = area.size();
+	int y_length = area[0].size();
     int x_dist = area.size() / 2;
     int y_dist = area[0].size() / 2;
     
@@ -335,14 +333,15 @@ pair<double, double> Search_positition_magnet(double dtime, vector<vector<vecter
                                                  (MATRIX_OF_ALL_MAGNETS_POSITIONS_FOR_ALL_HALL_SENSORS[i][fst_magnet][snd_magnet] - sensors_without_static_area[i]).len()));	//!!!!BH_correct
         int num_visit_cells = 0;
         //is_visit[fst_magnet][snd_magnet] = true;
-        while (!vecters_queue.empty() || num_of_all_cells != num_visit_cells || vecters_queue.top().second > MIN_DISTANCE_BTW_VECTERS) {
-            pair<pair<int, int>, double> curr_position = vecters_queue.top();
+	pair<pair<int, int>, double> curr_position = vecters_queue.top();
+	while (!vecters_queue.empty() || num_of_all_cells != num_visit_cells || vecters_queue.top().second > MIN_DISTANCE_BTW_VECTERS) {
+	curr_position = vecters_queue.top();
             vecters_queue.pop();
             is_visit[curr_position.first.first][curr_position.first.second] = true;
             ++num_visit_cells;
-			for (int insert_elem_index = max(curr_position.first.first - 1, 0); insert_elem_index < min(length_x, curr_position.first.first + 1); ++insert_elem_index) {		//!!!!BH_correct// where is length_x?
-                for (int insert_elem_index_y = max(curr_position.first.second - 1, 0), insert_elem_index_y < min(length_x, curr_position.first.second + 1); ++insert_elem_index_y){
-                    if (!is_visit[insert_elem_index][insert_elem_index_y]){
+	    for (int insert_elem_index = max(curr_position.first.first - 1, 0); insert_elem_index < min(length_x, curr_position.first.first + 1); ++insert_elem_index) { //!!!!BH_correct// where is length_x?
+	    for (int insert_elem_index_y = max(curr_position.first.second - 1, 0), insert_elem_index_y < min(length_x, curr_position.first.second + 1); ++insert_elem_index_y) {
+			if (!is_visit[insert_elem_index][insert_elem_index_y]) {
                         vecters_queue.push(create_elem_for_queue(insert_elem_index, 
                                                                  insert_elem_index_y, 
                                                                  (MATRIX_OF_ALL_MAGNETS_POSITIONS_FOR_ALL_HALL_SENSORS[i][insert_elem_index][insert_elem_index_y] - sensors_without_static_area[i]).len()));	//!!!!BH_correct
@@ -352,8 +351,8 @@ pair<double, double> Search_positition_magnet(double dtime, vector<vector<vecter
             
         }
         if (!vecters_queue.empty() && vecters_queue.top().second < MIN_DISTANCE_BTW_VECTERS) {
-            fst_magnet_x[i] = curr_position.first.first;		* //!!!!
-            snd_magnet_x[i] = curr_position.first.second;
+            fst_magnet_x[i] = vecters_queue.top().first.first;		// That's ok?
+            snd_magnet_x[i] = vecters_queue.top().first.second;
         } else {
             cerr << "ATTENTION!!! ERROR : Vecter is not found in matrix. (31.07.2019)\n :( \n Hello, Boris, Denis, Anton, Maks and other! Dolbimsya!!!!" << endl;
             cerr << "Function: Search_positition_magnet\n";
