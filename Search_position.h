@@ -88,6 +88,10 @@ vector<vector<vecter>> SearchingCommonArea(vector<Electromagnet>& static_magnets
 					area[local_x][local_y].y_proj += 
 						static_magnets[mag].Mag_field.cells[abs(x)][y].Mag_vec.y_proj;
 				}
+				
+				area[local_x][local_y].y_proj += static_magnets[mag].Mag_field.cells[x][y].Mag_vec.y_proj;
+				area[local_x][local_y].x_proj += static_magnets[mag].Mag_field.cells[x][y].Mag_vec.x_proj;
+				
 			}
 		}
 		
