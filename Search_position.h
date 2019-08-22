@@ -57,7 +57,7 @@ vector<vector<vecter>> SearchingCommonArea(vector<Electromagnet>& static_magnets
 		
 		//////////////////////////////////
 		
-		for (int y = -length_y / 2; y <= length_y / 2; ++y) { // may be static_cast too?
+		for (int y = static_cast<int>(-length_y / 2); y <= static_cast<int>(length_y / 2); ++y) {
 			for (int x = static_cast<int>(max(overlap_left, static_magnets[mag].position.x_proj - static_magnets[mag].Mag_field.size_x)); 
 			     x <= static_cast<int>(min(overlap_right, static_magnets[mag].position.x_proj + static_magnets[mag].Mag_field.size_x));
 			     ++x) {
@@ -74,21 +74,6 @@ vector<vector<vecter>> SearchingCommonArea(vector<Electromagnet>& static_magnets
 				//area[local_x][local_y].z_proj += static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.z_proj;
 				//z-coordinate is not needed ?
 				
-				if (x < 0) {
-					area[local_x][local_y].x_proj += 
-						static_magnets[mag].Mag_field.cells[-x][abs(y)].Mag_vec.x_proj * (-1);
-				} else {
-					area[local_x][local_y].x_proj += 
-						static_magnets[mag].Mag_field.cells[x][abs(y)].Mag_vec.x_proj;
-				}
-				if (y < 0) {
-					area[local_x][local_y].y_proj += 
-						static_magnets[mag].Mag_field.cells[abs(x)][-y].Mag_vec.y_proj * (-1);
-				} else {
-					area[local_x][local_y].y_proj += 
-						static_magnets[mag].Mag_field.cells[abs(x)][y].Mag_vec.y_proj;
-				}
-				
 				area[local_x][local_y].y_proj += static_magnets[mag].Mag_field.cells[x][y].Mag_vec.y_proj;
 				area[local_x][local_y].x_proj += static_magnets[mag].Mag_field.cells[x][y].Mag_vec.x_proj;
 				
@@ -101,43 +86,42 @@ vector<vector<vecter>> SearchingCommonArea(vector<Electromagnet>& static_magnets
 		
 		///////////////////////////////////////////////
 		
-		
-		for (int y = 0; y < length_y; ++y) {
-                for (int x = 1; x < length_x - 1; ++x) {
-                    int local_x = abs(x - static_cast<int>(static_magnets[mag].position.x_proj) - length_x / 2);
-                    area[x][y].z_proj += 
-                        static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.z_proj;
-                    area[x][y].x_proj += 
-                        static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.x_proj * 
-                        sign(static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.y_proj);   //UNCORRECT
-                    area[x][y].y_proj += 
-                        static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.y_proj * 
-                        sign(static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.x_proj);	//UNCORRECT
-                    // Not exist in 3/4 part of area. We need to look it for from 1/4 part of area. DONE! 
-                    // IS SIGN WORK AS I WANT??? (-1, 0, 1) ???????????????	           /// YES
-                    // ATTENTION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                    // ATTENTION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                    // I AM NOT SURE, IF THIS CODE WORKS IN GOOD WAY WITH ZERO-COORDINATES, 
-                    // FOR EXAMPLE (X, 0) OR (0, Y). 
-                    // IN THESE COORDINATES SIGN CAN MAKE VECTORS TO (0, 0) AND THIS IS UNCORRECT!!!!!!!!!!!!!!!
-                    // MAY BE WE NEEDN'T WORRY ABOUT IT, BECAUSE THE REAL ZERO (0) IN DOUBLE-FORMAT IS DIFFICULT TO GET.
-                    // THANK YOU, AFTER YOU WILL THINK ABOUT IT AND GET NEW COMMENTS AND CORRECTIONS IN CODE!
-                    // IF YOU HAVE QUESTIONS, WRITE HERE: denis.mitr99@mail.ru
-                    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!????????????
-                }
-            }
         } else {
             double right_variation = fabs(static_magnets[mag].position.x_proj) - static_cast<int>(fabs(static_magnets[mag].position.x_proj));
             double left_variation = 1 - right_variation;
-            for (int y = 0; y < length_y; ++y) {
+            for (int y = static_cast<int>(-length_y / 2); y <= static_cast<int>(length_y / 2); ++y) {
+			for (int x = static_cast<int>(max(overlap_left, static_magnets[mag].position.x_proj - static_magnets[mag].Mag_field.size_x)) + 1; 
+			     x <= static_cast<int>(min(overlap_right, static_magnets[mag].position.x_proj + static_magnets[mag].Mag_field.size_x)) - 1;
+			     ++x) {
+				
+				int local_x = x + static_cast<int>(length_x / 2); // coordinate in common field
+				int local_y = y + static_cast<int>(length_y / 2); // ????????? Не уверен насчет направления поля (вверх\вниз). 
+				// Тип не ясно, откуда считаем наше поле и нужно ли переворчаивать все y-вектора от магнитов и катушек?
+				
+				if (local_x < 0) {
+					cout << "ERROR IN SEARCH_POSITION: FIELD IS NOT SYMMETRIC AND WE GET MINUS-COORDINATES (local_x = "
+						<< local_x << "\n mag = " << mag << "\n x = " << x << endl;
+					system("pause");
+				}
+				/*if (static_magnets[mag].position.x_proj > 0) {
+					
+				} else {
+					
+				}*/ //Почему мы сделали разбиение на 2 случая ниже?.. Вроде можно забить на края, но я явно что-то упускаю из виду.
+								
+				area[local_x][local_y].y_proj += static_magnets[mag].Mag_field.cells[x][y].Mag_vec.y_proj * right_variation +
+					static_magnets[mag].Mag_field.cells[x - 1][y].Mag_vec.y_proj * left_variation;
+				area[local_x][local_y].x_proj += static_magnets[mag].Mag_field.cells[x][y].Mag_vec.x_proj * right_variation +
+					static_magnets[mag].Mag_field.cells[x - 1][y].Mag_vec.x_proj * left_variation;
+				
+			}
+	    }
+	/*	
+		for (int y = 0; y < length_y; ++y) {
                 for (int x = 1; x < length_x - 1; ++x) {
                     int local_x = 0; // The nearest point to (x, 0, 0) in our Area. Will be got below.
                     if (static_magnets[mag].position.x_proj > 0) {
                         local_x = abs(x - static_cast<int>(static_magnets[mag].position.x_proj) - length_x / 2);
-                        
-                        area[x][y].z_proj += 
-                            static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.z_proj;
 
                         area[x][y].x_proj += 
                             static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.x_proj * 
@@ -174,7 +158,7 @@ vector<vector<vecter>> SearchingCommonArea(vector<Electromagnet>& static_magnets
                         
                     }
                 }
-            }
+            }*/
         }
     }
     return area;
