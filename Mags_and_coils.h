@@ -2,27 +2,32 @@
 #include <cstdio>
 #include <iostream>
 #include <math.h>
+#include <cmath>
 #include <vecters.h>
 #include <Gas.h>
 #include <vector>
+#include <queue>
 
 using namespace std;
 
 
 #define π 3.14159265358979323846
 #define μ (1.25663706 / 1000000 )
+
 typedef struct Field_cell
 {
 	vecter Mag_vec;
-	vector<vecter> jacobian;
-	Field_cell() : jacobian(3) {
+	vector<vecter> jacobian_plus;
+	vector<vecter> jacobian_minus;
+	Field_cell() : jacobian_plus(3), jacobian_minus(3) {
 
 	}
-	Field_cell operator +(Field_cell & cell) {
+	Field_cell operator +(Field_cell cell) {
 		Field_cell tmp = *this;
 		tmp.Mag_vec += cell.Mag_vec;
 		for (unsigned int i = 0; i < 3; i++) {
-			tmp.jacobian[i] += cell.jacobian[i];
+			tmp.jacobian_plus[i] += cell.jacobian_plus[i];
+			tmp.jacobian_minus[i] += cell.jacobian_minus[i];
 		}
 		return tmp;
 	}
@@ -33,28 +38,31 @@ typedef struct Field_cell
 	
 } Field_cell;
 
-Field_cell approx(Field_cell first, Field_cell cells[4], double dx, double dy) {
+inline Field_cell approx(Field_cell first, double dx, double dy) {
 	Field_cell tmp = first;
-	tmp.Mag_vec += first.jacobian[0] * dx + first.jacobian[1] * dy;
-	for (int i = 0; i < 3; i++) {
-		if ((dx > 0) && (dy > 0)) {
-			tmp.jacobian[i] = (1 - dx) * first.jacobian[i] + dx * cells[0].jacobian[i];
+	
+	if (dx > 0) {
+		if (dy > 0) {
+			tmp.Mag_vec += first.jacobian_plus[0] * fabs(dx) + first.jacobian_plus[1] * fabs(dy);
 		}
-		if ((dx < 0) && (dy > 0)) {
-			tmp.jacobian[i] = (1 - dx) * first.jacobian[i] + dx * cells[1].jacobian[i];
+		else {
+			tmp.Mag_vec += first.jacobian_plus[0] * fabs(dx) + first.jacobian_minus[1] * fabs(dy);
 		}
-		if ((dx < 0) && (dy < 0)) {
-			tmp.jacobian[i] = (1 - dx) * first.jacobian[i] + dx * cells[2].jacobian[i];
-		}
-		if ((dx > 0) && (dy < 0)) {
-			tmp.jacobian[i] = (1 - dx) * first.jacobian[i] + dx * cells[3].jacobian[i];
-		}
-		
 	}
+	else if (dy > 0) {
+		tmp.Mag_vec += first.jacobian_minus[0] * fabs(dx) + first.jacobian_plus[1] * fabs(dy);
+	}
+	else {
+		tmp.Mag_vec += first.jacobian_minus[0] * fabs(dx) + first.jacobian_minus[1] * fabs(dy);
+	}
+		
 	return tmp;
-	
-	
 }
+class Flow_map {
+	int size_x;
+	vector<pair<vector<double>, double>> flows;
+};
+
 class Field_2D {
 public:
 	void *magnit;
@@ -78,100 +86,6 @@ public:
 	double Flow_X_flat(double distance, int diametr);
 };
 
-class Full_Field_Line {
-public:
-	vector<Field_cell> up;
-	vector<Field_cell> down;
-	Field_cell& operator [](int y) {
-		if (y > 0) {
-			return (up[y]);
-		}
-		else {
-			return (down[-y]);
-		}
-	}
-	/*vecter operator [](double y) {
-		if (y > 0) {
-			return (up[y].Mag_vec);
-		}
-		else {
-			return (down[-y].Mag_vec);
-		}
-	}*/
-	Full_Field_Line() {};
-	Full_Field_Line(int size_y) :up(size_y), down(size_y) {}
-};
-
-class Full_Field {
-public:
-	vecter center_coord;
-
-	int size_x, size_y;
-
-	vector<Full_Field_Line> left;
-	vector<Full_Field_Line> right;
-
-	Full_Field_Line& operator [] (int x)
-	{
-		if (x >= 0) {
-			return (right[x]);
-		}
-		else {
-			return (left[-x]);
-		}
-	};
-	Full_Field() {};
-	Full_Field(Electromagnet magnet) :
-		size_x(magnet.Mag_field.size_x),
-		size_y(magnet.Mag_field.size_y),
-		center_coord(magnet.position),
-		left(magnet.Mag_field.size_x, Full_Field_Line(size_y)),
-		right(magnet.Mag_field.size_x, Full_Field_Line(size_y)) {
-		for (int x = 0; x++; x < magnet.Mag_field.size_x) {
-			for (int y = 0; y++; y < magnet.Mag_field.size_y) {
-				right[x].up[y].Mag_vec = magnet.Mag_field.cells[x][y].Mag_vec;
-
-				right[x].down[y].Mag_vec = magnet.Mag_field.cells[x][y].Mag_vec;
-				right[x].down[y].Mag_vec.y_proj = -magnet.Mag_field.cells[x][y].Mag_vec.y_proj;
-
-				left[x].down[y].Mag_vec = magnet.Mag_field.cells[x][y].Mag_vec;
-
-				left[x].up[y].Mag_vec = -right[x].down[y].Mag_vec;
-			}
-		}
-	}
-	Full_Field(int size_x, int size_y) :
-		size_x(size_x),
-		size_y(size_y),
-		left(size_x, size_y),
-		right(size_x, size_y)
-	{
-		for (int i = 0; i < size_x; i++) {
-			for (int k = 0; k < size_y; k++) {
-				right[i].up[k].Mag_vec.set(1, 1, 0);
-				left[i].up[k].Mag_vec.set(-1, 1, 0);
-				left[i].down[k].Mag_vec.set(-1, -1, 0);
-				right[i].down[k].Mag_vec.set(1, -1, 0);
-			}
-		};
-	};
-	Full_Field &operator + (Full_Field Field2) {
-		int tmp_x, tmp_y;
-		tmp_x = (size_x + Field2.size_x + abs(center_coord.x_proj - Field2.center_coord.x_proj)) / 2;
-		tmp_y = (size_y + Field2.size_y + abs(center_coord.y_proj - Field2.center_coord.y_proj)) / 2;
-		Full_Field tmp(tmp_x, tmp_y);
-		tmp.center_coord.x_proj = min(center_coord.x_proj + size_x, Field2.center_coord.x_proj + Field2.size_x) - tmp_x;
-		tmp.center_coord.y_proj = min(center_coord.y_proj + size_y, Field2.center_coord.y_proj + Field2.size_y) - tmp_y;
-		for (int _x = -tmp_x + 1; _x < tmp_x; _x++) {
-			for (int _y = -tmp_y + 1; _y < tmp_y; _y++) {
-				tmp[_x][_y] = (*this)[ -center_coord.x_proj + tmp.center_coord.x_proj + _x][-center_coord.y_proj + tmp.center_coord.y_proj + _y] +
-					Field2[-Field2.center_coord.x_proj + tmp.center_coord.x_proj + _x][-Field2.center_coord.y_proj + tmp.center_coord.y_proj + _y];
-			}
-		}//APROX SUKAAAAAAA!HHH!UG!GY!TYGTY!GU!U!UY!G!G!GG!UG!UGIY!GIYT!TYU !DYTCdrRYDY R@RD !@D Y Yut @# @#H VV@ T YDCV  #uV#H#$gh
-
-	}
-};
-
 class Electromagnet {
 
 public:
@@ -191,11 +105,210 @@ public:
 	//vecter speed;
 
 	Field_2D Mag_field;
+//	Full_Field Full_mag_field;
 	Electromagnet();
 	Electromagnet(int destiny_of_mag_pixels, double _diametr,
 		double _height, vecter _position);
 	void show_field(int cherez_n);
 };
+class Full_Field_Line {
+public:
+	vector<Field_cell> up;
+	vector<Field_cell> down;
+	int size_y;
+	Field_cell& operator [](int y) {
+		if (abs(y) < size_y) {
+			if (y > 0) {
+				return (up[y]);
+			}
+			else {
+				return (down[-y]);
+			}
+		}
+		else {
+			
+			return (*this)[sign(y)*(size_y - 1)];
+		}
+	}
+	/*vecter operator [](double y) {
+		if (y > 0) {
+			return (up[y].Mag_vec);
+		}
+		else {
+			return (down[-y].Mag_vec);
+		}
+	}*/
+	Full_Field_Line() {};
+	Full_Field_Line(int size_y) :up(size_y), down(size_y), size_y(size_y) {}
+};
+
+class Full_Field {
+public:
+	vecter center_coord;
+
+	int size_x, size_y;
+
+	vector<Full_Field_Line> left;
+	vector<Full_Field_Line> right;
+
+	Full_Field_Line& operator [] (int x)
+	{
+		if (abs(x) < size_x) {
+			if (x >= 0) {
+				return (right[x]);
+			}
+			else {
+				return (left[-x]);
+			}
+		}
+		else {
+			return (*this)[sign(x)*(size_x - 1)];
+		}
+	};
+	Full_Field() {};
+	Full_Field( Electromagnet magnet) :
+		size_x(magnet.Mag_field.size_x),
+		size_y(magnet.Mag_field.size_y),
+		center_coord(magnet.position),
+		left(magnet.Mag_field.size_x, Full_Field_Line(size_y)),
+		right(magnet.Mag_field.size_x, Full_Field_Line(size_y)) {
+		for (int x = 0; x++; x < magnet.Mag_field.size_x) {
+			for (int y = 0; y++; y < magnet.Mag_field.size_y) {
+				right[x].up[y].Mag_vec = magnet.Mag_field.cells[x][y].Mag_vec;
+
+				right[x].down[y].Mag_vec = magnet.Mag_field.cells[x][y].Mag_vec;
+				right[x].down[y].Mag_vec.y_proj = -magnet.Mag_field.cells[x][y].Mag_vec.y_proj;
+
+				left[x].down[y].Mag_vec = magnet.Mag_field.cells[x][y].Mag_vec;
+
+				left[x].up[y].Mag_vec = -right[x].down[y].Mag_vec;
+			}
+		}
+		set_jacobians();
+	}
+	Full_Field(int size_x, int size_y) :
+		size_x(size_x),
+		size_y(size_y),
+		left(size_x, size_y),
+		right(size_x, size_y)
+	{
+		for (int i = 0; i < size_x; i++) {
+			for (int k = 0; k < size_y; k++) {
+				right[i].up[k].Mag_vec.set(sign(i), sign(k), 0);
+				left[i].up[k].Mag_vec.set(-sign(i), sign(k), 0);
+				left[i].down[k].Mag_vec.set(-sign(i), -sign(k), 0);
+				right[i].down[k].Mag_vec.set(sign(i), -sign(k), 0);
+			}
+		};
+	};
+	void set_jacobians() {
+		for (int x = -size_x + 1; x <= size_x - 1; x++) {
+			for (int y = (size_y - 1); y >= -size_y + 1; y--) {
+				if ((x + 1) < size_x) {
+					(*this)[x][y].jacobian_plus[0] = -(*this)[x][y].Mag_vec + (*this)[x + 1][y].Mag_vec;
+				}
+				else {
+					(*this)[x][y].jacobian_plus[0].set(0, 0, 0);
+				}
+				if ((y + 1) < size_y) {
+					(*this)[x][y].jacobian_plus[1] = -(*this)[x][y].Mag_vec + (*this)[x][y + 1].Mag_vec;
+				}
+				else {
+					(*this)[x][y].jacobian_plus[1].set(0, 0, 0);
+				}
+				if ((x - 1) > -size_x) {
+					(*this)[x][y].jacobian_minus[0] = -(*this)[x][y].Mag_vec + (*this)[x - 1][y].Mag_vec;
+				}
+				else {
+					(*this)[x][y].jacobian_minus[0].set(0, 0, 0);
+				}
+				if ((y - 1) > -size_y) {
+					(*this)[x][y].jacobian_minus[1] = -(*this)[x][y].Mag_vec + (*this)[x][y - 1].Mag_vec;
+				}
+				else {
+					(*this)[x][y].jacobian_minus[1].set(0, 0, 0);
+				}
+				
+			}
+		}
+	}
+	Full_Field operator + (Full_Field Field2) {
+		double tmp_x, tmp_y;
+		tmp_x =  (min(size_x + center_coord.x_proj, Field2.size_x + Field2.center_coord.x_proj) -
+			max(- size_x + center_coord.x_proj, - Field2.size_x + Field2.center_coord.x_proj)) / 2;
+		if (tmp_x < 0) {
+			cerr << "FIELD IS NOT ENOUGH BY X AND WE GET MINUS-SIZES ";
+			exit(1);
+		}
+		tmp_y =  (min(size_y + center_coord.y_proj, Field2.size_y + Field2.center_coord.y_proj) -
+			max(- size_y + center_coord.y_proj, - Field2.size_y + Field2.center_coord.y_proj)) / 2;
+		if (tmp_y < 0) {
+			cerr << "FIELD IS NOT ENOUGH BY Y AND WE GET MINUS-COORDINATES ";
+			exit(1);
+		}
+		Full_Field tmp(abs(trunc(tmp_x)) , abs(trunc(tmp_y)) );
+		tmp.center_coord.x_proj = min(size_x + center_coord.x_proj, Field2.size_x + Field2.center_coord.x_proj) - tmp_x;
+
+		tmp.center_coord.y_proj = min(center_coord.y_proj + size_y, Field2.center_coord.y_proj + Field2.size_y) - tmp_y;
+
+		vecter relative_coord = -center_coord + tmp.center_coord;
+		double relative_x = relative_coord.x_proj;
+		double relative_y = relative_coord.y_proj;
+
+		vecter relative_coord2 = -Field2.center_coord + tmp.center_coord;
+		double relative_x2 = relative_coord2.x_proj;
+		double relative_y2 = relative_coord2.y_proj;
+		for (int _x = -tmp_x + 1; _x < tmp_x; _x++) {
+			for (int _y = -tmp_y + 1; _y < tmp_y; _y++) {
+
+				double local_x = relative_x + _x;
+				double local_y = relative_y + _y;
+				double dx = local_x - round(local_x);
+				double dy = local_y - round(local_y);
+
+				double local_x2 = relative_x2 + _x;
+				double local_y2 = relative_y2 + _y;
+				double dx2 = local_x2 - round(local_x2);
+				double dy2 = local_y2 - round(local_y2);
+			
+				tmp[_x][_y] = approx((*this)[lround(local_x)][lround(local_y)], dx, dy) +
+					approx(Field2[lround(local_x2)][lround(local_y2)], dx2, dy2);
+			}
+		}//AHTUNG!!! 
+		set_jacobians();
+		return tmp;
+	}
+	void show_field(int cherez_n) {
+		int n = cherez_n;
+		cout.width(3);
+		cout.precision(3);
+		cout.fill('0');
+		cout.left;
+		cout.fixed;
+		cout << " X projection: " << endl << endl;
+		for (int x = -size_x / n + 1; x <= size_x / n - 1; x++) {
+			cout << endl;
+			for (int y = (size_y / n - 1); y >= -size_y / n + 1; y--) {
+				/*if ((n*x < ((Magnet*)magnit)->height / 2) && (n*y == ((Magnet*)magnit)->diametr / 2))
+					cout << "  III    ";
+				else*/
+				cout << (*this)[n*x][n*y].Mag_vec.x_proj << "  ";
+			}
+		}
+		cout << endl << endl << endl << " Y projection: " << endl << endl;
+		for (int x = -size_x / n + 1; x <= size_x / n - 1; x++) {
+			cout << endl;
+			for (int y = (size_y / n - 1); y >= -size_y / n + 1; y--) {
+				/*if ((n*x < ((Magnet*)magnit)->height / 2) && (n*y == ((Magnet*)magnit)->diametr / 2))
+					cout << "  III    ";
+				else*/
+				cout << (*this)[n*x][n*y].Mag_vec.y_proj << "  ";
+			}
+		}
+	}
+};
+
+
 
 class Magnet : public Electromagnet {
 
@@ -218,8 +331,6 @@ public:
 
 	Magnet(int destiny_of_mag_pixels, double _strength, double _diametr, double _weight,
 		double _height, vecter _position, vecter _speed, int _sight);
-	 
-	void show_field(int cherez_n);
 
 	void relocate(double dtime);
 
@@ -263,9 +374,20 @@ class Coil_System {
 	vector<vector<double>> inductive_coupling;
 
 	Coil_System();
-	Coil_System(int num_of_coils, Coil coil1, ...);
+	Coil_System(int num_of_coils, Coil coil1, ...):
+		coil_num(num_of_coils),
+		inductive_coupling(num_of_coils, vector<double>(num_of_coils)),
+		coils(num_of_coils){
 
-	int set_coupling();		// returns 1 if coupling calculated correctly, else 0
+	}
+
+	int set_coupling() {	// returns 1 if coupling calculated correctly, else 0
+		for (int i = 0; i < coil_num; i++) {
+			for (int k = i + 1; k < coil_num; k++) {
+				inductive_coupling[i][k] = coils[i]->flow_X_from_mag(*coils[k]);
+			}
+		}
+	}
 
 	void update(double dtime);
 };
