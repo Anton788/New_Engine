@@ -37,7 +37,7 @@ Magnet::Magnet() {
 	cin >> position.x_proj >> position.y_proj >> position.z_proj;
 	cout << "Speed vector: ";
 	cin >> speed.x_proj >> speed.y_proj >> speed.z_proj;
-	cout << "Magnit's weight: ";
+	cout << "Magnit's mass: ";
 	cin >> weight;
 	cout << "Density of mag pixels: ";
 	cin >> convert_to_SI;
@@ -61,7 +61,7 @@ Magnet::Magnet() {
 	radius = diametr / 2;
 }
 
-Magnet::Magnet(int destiny_of_mag_pixels, double _strength, double _diametr, double _weight,
+Magnet::Magnet(int destiny_of_mag_pixels, double _strength, double _diametr, double _mass,
 	double _height, vecter _position, vecter _speed, int _sight) : Electromagnet (
 		destiny_of_mag_pixels,
 		_diametr,
@@ -74,7 +74,7 @@ Magnet::Magnet(int destiny_of_mag_pixels, double _strength, double _diametr, dou
 	position = _position * convert_to_SI;
 	speed_SI = _speed;
 	speed = _speed * convert_to_SI;
-	weight = _weight;
+	weight = _mass;
 	//direction.x_proj = direction.y_proj = direction.z_proj =
 	force_on.x_proj = force_on.x_proj = force_on.x_proj =
 		accel.x_proj = accel.y_proj = accel.y_proj = 0;
