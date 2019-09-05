@@ -108,7 +108,7 @@ class Flow_map {
 };
 
 
-inline Field_cell approx(Field_cell first, double dx, double dy) {
+inline Field_cell approx(Field_cell& first, double dx, double dy) {
 	Field_cell tmp = first;
 	
 	if (dx > 0) {
