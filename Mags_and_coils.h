@@ -153,8 +153,9 @@ public:
 	double Flow_X_flat(double distance, int diametr);
 };
 
-class Electromagnet {
+class Magnet {
 
+	
 public:
 
 	double diametr;
@@ -170,15 +171,16 @@ public:
 	vecter force_on;
 	//vecter direction;
 	//vecter speed;
+	
 
 	Field_2D Mag_field;
-//	Full_Field Full_mag_field;
-	Electromagnet();
-	Electromagnet(int destiny_of_mag_pixels, double _diametr,
+	Full_Field Full_mag_field;
+	Magnet();
+	Magnet(int destiny_of_mag_pixels, double _diametr,
 		double _height, vecter _position);
 	void show_field(int cherez_n);
 };
-
+//Приём!Ты тут?
 
 class Full_Field_Line {			// Класс для удобства использования отрицательных значений в [][]. И ТОЛЬКО ДЛЯ ЭТОГО!!! НЕ ВНИКАТЬ, ОПАСНО!!!
 public:
@@ -206,7 +208,7 @@ public:
 class Full_Field {
 public:
 	vecter center_coord;
-
+	void* magnit;
 	int size_x, size_y;		// Размеры поля от центра координат в сторону по х и по у
 
 	vector<Full_Field_Line> left;	// Наше поле, разбитое на линии по х < 0.
@@ -227,7 +229,7 @@ public:
 		}
 	};
 	Full_Field() {};
-	Full_Field( Electromagnet magnet) :
+	Full_Field( Magnet magnet) :
 		size_x(magnet.Mag_field.size_x),
 		size_y(magnet.Mag_field.size_y),
 		center_coord(magnet.position),
@@ -367,11 +369,12 @@ public:
 			}
 		}
 	}
+	double Flow_X_flat(double distance, int diametr);
 };
 
 
 
-class Magnet : public Electromagnet {
+class Permanent_Magnet : public Magnet {
 
 	double strength;		
 				
@@ -388,19 +391,19 @@ public:
 	Gas* left;
 	Gas* right;
 
-	Magnet();
+	Permanent_Magnet();
 
-	Magnet(int destiny_of_mag_pixels, double _strength, double _diametr, double _weight,
+	Permanent_Magnet(int destiny_of_mag_pixels, double _strength, double _diametr, double _weight,
 		double _height, vecter _position, vecter _speed, int _sight);
 
 	void relocate(double dtime);
 
 	void Set_Field2D_Conf(int prec_H, int prec_R, int _size_x, int _size_y);
 
-	vecter Mag_Mag_Force(Magnet mag, int H_prec);
+	vecter Mag_Mag_Force(Permanent_Magnet mag, int H_prec);
 };
 
-class Coil : public Electromagnet {
+class Electromagnet : public Magnet {
 
 	double flow[2];
 
@@ -412,30 +415,30 @@ public:
 	double voltage;
 	double resist;
 
-	Coil();
+	Electromagnet();
 
-	Coil(int destiny_of_mag_pixels, double _current, double _diametr,
+	Electromagnet(int destiny_of_mag_pixels, double _current, double _diametr,
 		double _height, vecter _position, int _turns);
 
 	void Set_Field2D_Conf(int prec_R, int _size_x, int _size_y); /* USE FIELD MULTIPLYIER (CURRENT) TO CALCULATE REAL FIELD*/ /*FOR NORMAL PRECISION MANY TURNS NEEDED*/
 
-	double flow_X_from_mag(Electromagnet& magnit);
+	double flow_X_from_mag(Magnet& magnit);
 
 	double set_voltage(double dtime);
 
-	vecter Force_from_coil(Magnet mag);
+	vecter Force_from_coil(Permanent_Magnet mag);
 };
 
 class Coil_System {
 
 	int coil_num;
 
-	vector<Coil*> coils;
+	vector<Electromagnet*> coils;
 
 	vector<vector<double>> inductive_coupling;
 
 	Coil_System();
-	Coil_System(int num_of_coils, Coil coil1, ...):
+	Coil_System(int num_of_coils, Electromagnet coil1, ...):
 		coil_num(num_of_coils),
 		inductive_coupling(num_of_coils, vector<double>(num_of_coils)),
 		coils(num_of_coils){
@@ -455,7 +458,7 @@ class Coil_System {
 
 
 
-double Flow_X_flat(Electromagnet mag, double distance, int diametr);
+double Flow_X_flat(Magnet mag, double distance, int diametr);
 
 double Flow_X_flat(Field_2D field, double distance, int diametr);
 

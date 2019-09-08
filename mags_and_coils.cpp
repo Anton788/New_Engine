@@ -9,9 +9,9 @@
 
 using namespace std;
 
-Electromagnet::Electromagnet() {}
+Magnet::Magnet() {}
 
-Electromagnet::Electromagnet(int destiny_of_mag_pixels, double _diametr,
+Magnet::Magnet(int destiny_of_mag_pixels, double _diametr,
 	double _height, vecter _position) {
 
 	convert_to_SI = destiny_of_mag_pixels;
@@ -31,7 +31,7 @@ Electromagnet::Electromagnet(int destiny_of_mag_pixels, double _diametr,
 }
 
 
-Magnet::Magnet() {
+Permanent_Magnet::Permanent_Magnet() {
 
 	cout << "Coordinates of centre: ";
 	cin >> position.x_proj >> position.y_proj >> position.z_proj;
@@ -61,8 +61,8 @@ Magnet::Magnet() {
 	radius = diametr / 2;
 }
 
-Magnet::Magnet(int destiny_of_mag_pixels, double _strength, double _diametr, double _mass,
-	double _height, vecter _position, vecter _speed, int _sight) : Electromagnet (
+Permanent_Magnet::Permanent_Magnet(int destiny_of_mag_pixels, double _strength, double _diametr, double _mass,
+	double _height, vecter _position, vecter _speed, int _sight) : Magnet (
 		destiny_of_mag_pixels,
 		_diametr,
 		_height,
@@ -92,7 +92,7 @@ Magnet::Magnet(int destiny_of_mag_pixels, double _strength, double _diametr, dou
 	radius = diametr / 2;
 }
 
-void Magnet::relocate(double dtime) {
+void Permanent_Magnet::relocate(double dtime) {
 	accel = force_on * (1 / weight);
 
 	speed.y_proj = accel.y_proj = speed.z_proj = accel.z_proj = 0;
@@ -104,7 +104,7 @@ void Magnet::relocate(double dtime) {
 	speed_SI = speed / convert_to_SI;
 }
 
-void Electromagnet::show_field(int cherez_n) {
+void Magnet::show_field(int cherez_n) {
 	int n = cherez_n;
 	cout.width(3);
 	cout.precision(3);
@@ -139,7 +139,7 @@ void Electromagnet::show_field(int cherez_n) {
 	}
 }
 
-void Magnet::Set_Field2D_Conf(int prec_H, int prec_R, int _size_x, int _size_y)
+void Permanent_Magnet::Set_Field2D_Conf(int prec_H, int prec_R, int _size_x, int _size_y)
 {
 	int x, y, z, h, angle;
 	double len;
@@ -190,7 +190,7 @@ void Magnet::Set_Field2D_Conf(int prec_H, int prec_R, int _size_x, int _size_y)
 	cout << "Field configuration is installed  " << endl;
 }
 
-vecter Magnet::Mag_Mag_Force(Magnet mag, int H_prec)
+vecter Permanent_Magnet::Mag_Mag_Force(Permanent_Magnet mag, int H_prec)
 {
 	//	vecter force;
 	//	vecter cur;
@@ -254,7 +254,7 @@ vecter Magnet::Mag_Mag_Force(Magnet mag, int H_prec)
 }
 
 
-Coil::Coil()
+Electromagnet::Electromagnet()
 {
 
 	cout << "Coordinates of centre: ";
@@ -276,8 +276,8 @@ Coil::Coil()
 
 }
 
-Coil::Coil(int destiny_of_mag_pixels, double _current, double _diametr,
-	double _height, vecter _position, int _turns) : Electromagnet(
+Electromagnet::Electromagnet(int destiny_of_mag_pixels, double _current, double _diametr,
+	double _height, vecter _position, int _turns) : Magnet(
 		destiny_of_mag_pixels,
 		_diametr,
 		_height,
@@ -289,7 +289,7 @@ Coil::Coil(int destiny_of_mag_pixels, double _current, double _diametr,
 
 }
 
-vecter Coil::Force_from_coil(Magnet mag)
+vecter Electromagnet::Force_from_coil(Permanent_Magnet mag)
 {
 	vecter force(0, 0, 0), dforce1(0, 0, 0), dforce2(0, 0, 0);
 	vecter cur;
@@ -326,7 +326,7 @@ vecter Coil::Force_from_coil(Magnet mag)
 	return (force / convert_to_SI);
 }
 
-double Coil::flow_X_from_mag(Electromagnet& magnit)
+double Electromagnet::flow_X_from_mag(Magnet& magnit)
 {
 	double tmp = 0, ll, ttmp = (double)height / turns;
 	for (int i = -turns / 2; i <= turns / 2; i++)
@@ -337,12 +337,12 @@ double Coil::flow_X_from_mag(Electromagnet& magnit)
 	return (tmp / convert_to_SI / convert_to_SI);
 }
 
-double Coil::set_voltage(double dtime) {
+double Electromagnet::set_voltage(double dtime) {
 	voltage = (flow[1] - flow[0]) / dtime;
 	return voltage;
 }
 
-void Coil::Set_Field2D_Conf(int prec_R, int _size_x, int _size_y) /* USE FIELD MULTIPLYIER (CURRENT) TO CALCULATE REAL FIELD*/{
+void Electromagnet::Set_Field2D_Conf(int prec_R, int _size_x, int _size_y) /* USE FIELD MULTIPLYIER (CURRENT) TO CALCULATE REAL FIELD*/{
 	int x, y, z, angle;
 	double len, h;
 
@@ -393,7 +393,7 @@ void Coil::Set_Field2D_Conf(int prec_R, int _size_x, int _size_y) /* USE FIELD M
 };
 
 
-double Flow_X_flat(Electromagnet mag, double distance, int diametr)
+double Flow_X_flat(Magnet mag, double distance, int diametr)
 {
 	int x, y;
 	double tmp = 0;
@@ -536,3 +536,6 @@ void Field_2D::show_field(int cherez_n) {
 	}
 }
 
+void Coil_System::update(double dtime)
+{
+}
