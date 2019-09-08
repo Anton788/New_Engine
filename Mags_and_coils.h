@@ -229,20 +229,20 @@ public:
 		}
 	};
 	Full_Field() {};
-	Full_Field( Magnet magnet) :
-		size_x(magnet.Mag_field.size_x),
-		size_y(magnet.Mag_field.size_y),
-		center_coord(magnet.position),
-		left(magnet.Mag_field.size_x, Full_Field_Line(size_y)),
-		right(magnet.Mag_field.size_x, Full_Field_Line(size_y)) {
-		for (int x = 0; x++; x < magnet.Mag_field.size_x) {
-			for (int y = 0; y++; y < magnet.Mag_field.size_y) {
-				right[x].up[y].Mag_vec = magnet.Mag_field.cells[x][y].Mag_vec;
+	Full_Field( Magnet mag) :
+		size_x(mag.Mag_field.size_x),
+		size_y(mag.Mag_field.size_y),
+		center_coord(mag.position),
+		left(mag.Mag_field.size_x, Full_Field_Line(size_y)),
+		right(mag.Mag_field.size_x, Full_Field_Line(size_y)) {
+		for (int x = 0; x++; x < mag.Mag_field.size_x) {
+			for (int y = 0; y++; y < mag.Mag_field.size_y) {
+				right[x].up[y].Mag_vec = mag.Mag_field.cells[x][y].Mag_vec;
 
-				right[x].down[y].Mag_vec = magnet.Mag_field.cells[x][y].Mag_vec;
-				right[x].down[y].Mag_vec.y_proj = -magnet.Mag_field.cells[x][y].Mag_vec.y_proj;
+				right[x].down[y].Mag_vec = mag.Mag_field.cells[x][y].Mag_vec;
+				right[x].down[y].Mag_vec.y_proj = -mag.Mag_field.cells[x][y].Mag_vec.y_proj;
 
-				left[x].down[y].Mag_vec = magnet.Mag_field.cells[x][y].Mag_vec;
+				left[x].down[y].Mag_vec = mag.Mag_field.cells[x][y].Mag_vec;
 
 				left[x].up[y].Mag_vec = -right[x].down[y].Mag_vec;
 			}
