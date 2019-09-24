@@ -27,7 +27,9 @@ int main() {
 	magnit2.Set_Field2D_Conf(H_precision, R_precision, x_size, y_size); // задание магнитного поля
 	magnit1.show_field(20);				// показ поля в консоли
 	vecter sensor_pos(0,0.2,0);
-	cout << search_position(sensor_pos,magnit1,magnit2);
+	if (search_position(sensor_pos,magnit1,magnit2) = position){
+		cout<< "It is working nafig"<<endl;
+	} else cout << "Vi ne ochen. Perepisivaite kod";
 	getchar(); getchar();
 
 }
