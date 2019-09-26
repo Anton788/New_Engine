@@ -34,7 +34,7 @@ int main() {
 	double y2 = (holl_vec-magnit1.position).y_proj; 
 	
 	holl_vec = approx(magnit1.Full_mag_field[x1][y1],x1-round(x1),y1-round(y1))+approx(magnit2.Full_mag_field[x1][y1],x1-round(x1),y1-round(y1));
-	if (search_position(sensor_pos,magnit1,magnit2) = position){
+	if (search_position(holl_vec,magnit1,magnit2) = position){
 		cout<< "It is working nafig"<<endl;
 	} else cout << "Vi ne ochen. Perepisivaite kod";
 	getchar(); getchar();
