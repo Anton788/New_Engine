@@ -15,25 +15,25 @@ using namespace std;
 #define MAX_DOUBLE 1
 #define MIN_DISTANCE_BTW_VECTERS 1
 
-// вектор из пар вектеров vector<vecter, vecter>
+// вектор из пар вектеров vector<Vecter, Vecter>
 // Из того, который прикреплен к сенсеру вычитаем данный полем
 // Составить, то какая бы сатрица была если бы координата магнита была такая
 // x1, x2 составить матрицу векторов, для каждого
 
 
 struct Sensor {
-	vecter coordinates;
-	vecter value;
+	Vecter coordinates;
+	Vecter value;
 };
 
 
 //IT WORKS ONLY IF POINT (0, 0, 0) IS IN OUR AREA AND ALSO IF IT IS A POINT!!!! OR (THE SAME) IF X AND Y AXIS HAVE (2*N + 1) POINTS
-vector<vector<vecter>> SearchingCommonArea(vector<Electromagnet>& static_magnets) {		//!!!!BH_correct
+vector<vector<Vecter>> SearchingCommonArea(vector<Magnet>& static_magnets) {		//!!!!BH_correct
 	double overlap_left = 0;
 	double overlap_right = 0;
 	for (int i = 0; i < static_magnets.size(); ++i) {
-		double x_left = static_magnets[i].position.x_proj - static_magnets[i].Mag_field.size_x;
-		double x_right = static_magnets[i].position.x_proj + static_magnets[i].Mag_field.size_x;
+		double x_left = static_magnets[i].position.x_proj - static_magnets[i].Quater_mag_field.size_x;
+		double x_right = static_magnets[i].position.x_proj + static_magnets[i].Quater_mag_field.size_x;
 		if (overlap_left < x_left || i == 0) {
 			overlap_left = x_left;
 		}
@@ -42,10 +42,10 @@ vector<vector<vecter>> SearchingCommonArea(vector<Electromagnet>& static_magnets
 		}
 	}
 
-	vecter zero_vecter(0, 0, 0);
+	Vecter zero_vecter(0, 0, 0);
 	int length_x = static_cast<int>((overlap_right - overlap_left));
-	int length_y = static_magnets[0].Mag_field.size_y * 2;
-	vector<vector<vecter>> area(length_x, vector<vecter>(static_magnets[0].Mag_field.size_y, zero_vecter));		//!!!!BH_correct
+	int length_y = static_magnets[0].Quater_mag_field.size_y * 2;
+	vector<vector<Vecter>> area(length_x, vector<Vecter>(static_magnets[0].Quater_mag_field.size_y, zero_vecter));		//!!!!BH_correct
 
 	for (int mag = 0; mag < static_magnets.size(); ++mag) {
 		if (fabs(static_magnets[mag].position.x_proj) - static_cast<int>(fabs(static_magnets[mag].position.x_proj)) < MIN_ERROR_IN_VECTOR) {
@@ -59,8 +59,8 @@ vector<vector<vecter>> SearchingCommonArea(vector<Electromagnet>& static_magnets
 			//////////////////////////////////
 
 			for (int y = static_cast<int>(-length_y / 2); y <= static_cast<int>(length_y / 2); ++y) {
-				for (int x = static_cast<int>(max(overlap_left, static_magnets[mag].position.x_proj - static_magnets[mag].Mag_field.size_x));
-					x <= static_cast<int>(min(overlap_right, static_magnets[mag].position.x_proj + static_magnets[mag].Mag_field.size_x));
+				for (int x = static_cast<int>(max(overlap_left, static_magnets[mag].position.x_proj - static_magnets[mag].Quater_mag_field.size_x));
+					x <= static_cast<int>(min(overlap_right, static_magnets[mag].position.x_proj + static_magnets[mag].Quater_mag_field.size_x));
 					++x) {
 					int local_x = x + static_cast<int>(length_x / 2); // coordinate in common field
 					int local_y = y + static_cast<int>(length_y / 2); // ????????? Не уверен насчет направления поля (вверх\вниз). 
@@ -72,11 +72,11 @@ vector<vector<vecter>> SearchingCommonArea(vector<Electromagnet>& static_magnets
 						system("pause");
 					}
 
-					//area[local_x][local_y].z_proj += static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.z_proj;
+					//area[local_x][local_y].z_proj += static_magnets[mag].Quater_mag_field.cells[local_x][y].Mag_vec.z_proj;
 					//z-coordinate is not needed ?
 
-					area[local_x][local_y].y_proj += static_magnets[mag].Mag_field.cells[x][y].Mag_vec.y_proj;
-					area[local_x][local_y].x_proj += static_magnets[mag].Mag_field.cells[x][y].Mag_vec.x_proj;
+					area[local_x][local_y].y_proj += static_magnets[mag].Quater_mag_field.cells[x][y].Mag_vec.y_proj;
+					area[local_x][local_y].x_proj += static_magnets[mag].Quater_mag_field.cells[x][y].Mag_vec.x_proj;
 
 				}
 			}
@@ -92,8 +92,8 @@ vector<vector<vecter>> SearchingCommonArea(vector<Electromagnet>& static_magnets
 			double right_variation = fabs(static_magnets[mag].position.x_proj) - static_cast<int>(fabs(static_magnets[mag].position.x_proj));
 			double left_variation = 1 - right_variation;
 			for (int y = static_cast<int>(-length_y / 2); y <= static_cast<int>(length_y / 2); ++y) {
-				for (int x = static_cast<int>(max(overlap_left, static_magnets[mag].position.x_proj - static_magnets[mag].Mag_field.size_x)) + 1;
-					x <= static_cast<int>(min(overlap_right, static_magnets[mag].position.x_proj + static_magnets[mag].Mag_field.size_x)) - 1;
+				for (int x = static_cast<int>(max(overlap_left, static_magnets[mag].position.x_proj - static_magnets[mag].Quater_mag_field.size_x)) + 1;
+					x <= static_cast<int>(min(overlap_right, static_magnets[mag].position.x_proj + static_magnets[mag].Quater_mag_field.size_x)) - 1;
 					++x) {
 
 					int local_x = x + static_cast<int>(length_x / 2); // coordinate in common field
@@ -111,10 +111,10 @@ vector<vector<vecter>> SearchingCommonArea(vector<Electromagnet>& static_magnets
 
 					}*/ //Почему мы сделали разбиение на 2 случая ниже?.. Вроде можно забить на края, но я явно что-то упускаю из виду.
 
-					area[local_x][local_y].y_proj += static_magnets[mag].Mag_field.cells[x][y].Mag_vec.y_proj * right_variation +
-						static_magnets[mag].Mag_field.cells[x - 1][y].Mag_vec.y_proj * left_variation;
-					area[local_x][local_y].x_proj += static_magnets[mag].Mag_field.cells[x][y].Mag_vec.x_proj * right_variation +
-						static_magnets[mag].Mag_field.cells[x - 1][y].Mag_vec.x_proj * left_variation;
+					area[local_x][local_y].y_proj += static_magnets[mag].Quater_mag_field.cells[x][y].Mag_vec.y_proj * right_variation +
+						static_magnets[mag].Quater_mag_field.cells[x - 1][y].Mag_vec.y_proj * left_variation;
+					area[local_x][local_y].x_proj += static_magnets[mag].Quater_mag_field.cells[x][y].Mag_vec.x_proj * right_variation +
+						static_magnets[mag].Quater_mag_field.cells[x - 1][y].Mag_vec.x_proj * left_variation;
 
 				}
 			}
@@ -125,31 +125,31 @@ vector<vector<vecter>> SearchingCommonArea(vector<Electromagnet>& static_magnets
 							if (static_magnets[mag].position.x_proj > 0) {
 								local_x = abs(x - static_cast<int>(static_magnets[mag].position.x_proj) - length_x / 2);
 								area[x][y].x_proj +=
-									static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.x_proj *
-									sign(static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.y_proj) * right_variation + //UNCORRECT
-									static_magnets[mag].Mag_field.cells[local_x - 1][y].Mag_vec.x_proj *
-									sign(static_magnets[mag].Mag_field.cells[local_x - 1][y].Mag_vec.y_proj) * left_variation;//UNCORRECT
+									static_magnets[mag].Quater_mag_field.cells[local_x][y].Mag_vec.x_proj *
+									sign(static_magnets[mag].Quater_mag_field.cells[local_x][y].Mag_vec.y_proj) * right_variation + //UNCORRECT
+									static_magnets[mag].Quater_mag_field.cells[local_x - 1][y].Mag_vec.x_proj *
+									sign(static_magnets[mag].Quater_mag_field.cells[local_x - 1][y].Mag_vec.y_proj) * left_variation;//UNCORRECT
 								area[x][y].y_proj +=
-									static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.y_proj *
-									sign(static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.x_proj * right_variation + //UNCORRECT
-									static_magnets[mag].Mag_field.cells[local_x - 1][y].Mag_vec.x_proj * left_variation);
+									static_magnets[mag].Quater_mag_field.cells[local_x][y].Mag_vec.y_proj *
+									sign(static_magnets[mag].Quater_mag_field.cells[local_x][y].Mag_vec.x_proj * right_variation + //UNCORRECT
+									static_magnets[mag].Quater_mag_field.cells[local_x - 1][y].Mag_vec.x_proj * left_variation);
 
 							} else {
 								local_x = abs(x - static_cast<int>(static_magnets[mag].position.x_proj) - length_x / 2 + 1);
 								// (+ 1) in the end because of rounding of static_cast in less side
 
 								area[x][y].z_proj +=
-									static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.z_proj;
+									static_magnets[mag].Quater_mag_field.cells[local_x][y].Mag_vec.z_proj;
 
 								area[x][y].x_proj +=
-									static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.x_proj *
-									sign(static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.y_proj) * left_variation +
-									static_magnets[mag].Mag_field.cells[local_x + 1][y].Mag_vec.x_proj *
-									sign(static_magnets[mag].Mag_field.cells[local_x + 1][y].Mag_vec.y_proj) * right_variation;
+									static_magnets[mag].Quater_mag_field.cells[local_x][y].Mag_vec.x_proj *
+									sign(static_magnets[mag].Quater_mag_field.cells[local_x][y].Mag_vec.y_proj) * left_variation +
+									static_magnets[mag].Quater_mag_field.cells[local_x + 1][y].Mag_vec.x_proj *
+									sign(static_magnets[mag].Quater_mag_field.cells[local_x + 1][y].Mag_vec.y_proj) * right_variation;
 								area[x][y].y_proj +=
-									static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.y_proj *
-									sign(static_magnets[mag].Mag_field.cells[local_x][y].Mag_vec.x_proj * left_variation +
-									static_magnets[mag].Mag_field.cells[local_x + 1][y].Mag_vec.x_proj * right_variation);
+									static_magnets[mag].Quater_mag_field.cells[local_x][y].Mag_vec.y_proj *
+									sign(static_magnets[mag].Quater_mag_field.cells[local_x][y].Mag_vec.x_proj * left_variation +
+									static_magnets[mag].Quater_mag_field.cells[local_x + 1][y].Mag_vec.x_proj * right_variation);
 
 								// ATTENTION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 								// WE ALSO HAVE SUCH PROBLEMS WITH SIGN HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -164,10 +164,10 @@ vector<vector<vecter>> SearchingCommonArea(vector<Electromagnet>& static_magnets
 }
 
 
-pair<double, double> First_Search_positition_magnet(vector<vector<vecter>>& area, vector<Magnet>& action_magnets,		//!!!!BH_correct
-	vector<Sensor>& sensors, vector<vector<vector<vecter>>>& MATRIX_OF_ALL_MAGNETS_POSITIONS_FOR_ALL_HALL_SENSORS
+pair<double, double> First_Search_positition_magnet(vector<vector<Vecter>>& area, vector<PermanentMagnet>& action_magnets,		//!!!!BH_correct
+	vector<Sensor>& sensors, vector<vector<vector<Vecter>>>& MATRIX_OF_ALL_MAGNETS_POSITIONS_FOR_ALL_HALL_SENSORS
 /*NEED TO MAKE AND SAVE THIS MATRIX FOR THE NEXT ITERATIONS!!!!!*/) {
-	vector<vecter> sensors_coordinates_in_area(sensors.size());
+	vector<Vecter> sensors_coordinates_in_area(sensors.size());
 
 	int x_length = area.size();
 	int y_length = area[0].size();
@@ -175,27 +175,27 @@ pair<double, double> First_Search_positition_magnet(vector<vector<vecter>>& area
 	int y_dist = area[0].size() / 2;
 
 	for (int i = 0; i < sensors.size(); ++i) {
-		// (x_dist + x, y_dist - y, 0) - coordinates to get area's analog of vecter with sensor's coordinates
+		// (x_dist + x, y_dist - y, 0) - coordinates to get area's analog of Vecter with sensor's coordinates
 		sensors_coordinates_in_area[i].x_proj = x_dist + sensors[i].coordinates.x_proj;
 		sensors_coordinates_in_area[i].y_proj = y_dist - sensors[i].coordinates.y_proj;
 		sensors_coordinates_in_area[i].z_proj = sensors[i].coordinates.z_proj;
 	}
 
-	vector<vecter> sensors_without_static_area(sensors.size());
+	vector<Vecter> sensors_without_static_area(sensors.size());
 	for (int i = 0; i < sensors.size(); ++i) {
 		sensors_without_static_area[i] = sensors[i].value - area[sensors_coordinates_in_area[i].x_proj][sensors_coordinates_in_area[i].y_proj];
 	}
 
-	//Create matrix of all places of magnets for each vecter in "sensors_without_static_area" to get the nearest vecter
-	vector<vector<vector<vecter>>> magnets_places(sensors_without_static_area.size(), vector<vector<vecter>>(x_length, vector<vecter>(x_length)));
+	//Create matrix of all places of magnets for each Vecter in "sensors_without_static_area" to get the nearest Vecter
+	vector<vector<vector<Vecter>>> magnets_places(sensors_without_static_area.size(), vector<vector<Vecter>>(x_length, vector<Vecter>(x_length)));
 	for (int i = 0; i < sensors_without_static_area.size(); ++i) {
-		//vector<vector<vecter>> magnets_places(x_length, vector<vecter>(x_length));
+		//vector<vector<Vecter>> magnets_places(x_length, vector<Vecter>(x_length));
 		for (int first_magnet = 0; first_magnet < x_length; ++first_magnet) {
 			for (int second_magnet = 0; second_magnet < x_length; ++second_magnet) {
-				//Get vecter from area from both magnets in this position (need to convert in new center (0, 0, 0))
+				//Get Vecter from area from both magnets in this position (need to convert in new center (0, 0, 0))
 				magnets_places[i][first_magnet][second_magnet] =
-					action_magnets[0].Mag_field.cells[sensors_coordinates_in_area[i].x_proj - (first_magnet - x_dist)][sensors_coordinates_in_area[i].y_proj].Mag_vec +
-					action_magnets[1].Mag_field.cells[sensors_coordinates_in_area[i].x_proj - (second_magnet - x_dist)][sensors_coordinates_in_area[i].y_proj].Mag_vec;
+					action_magnets[0].Quater_mag_field.cells[sensors_coordinates_in_area[i].x_proj - (first_magnet - x_dist)][sensors_coordinates_in_area[i].y_proj].Mag_vec +
+					action_magnets[1].Quater_mag_field.cells[sensors_coordinates_in_area[i].x_proj - (second_magnet - x_dist)][sensors_coordinates_in_area[i].y_proj].Mag_vec;
 			}
 		}
 	}
@@ -203,7 +203,7 @@ pair<double, double> First_Search_positition_magnet(vector<vector<vecter>>& area
 	MATRIX_OF_ALL_MAGNETS_POSITIONS_FOR_ALL_HALL_SENSORS = magnets_places; // !!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 	//`````````````````````````````````````````````````````````````````````````````
-	// + A* - algorithm for each founding of the nearest vecter
+	// + A* - algorithm for each founding of the nearest Vecter
 	// We get aproximately the same results after getting coordinates of magnets from 1st iteration. 
 	// We needn't do this algorithm on other iterations, because we will have a little bit different vecters in the nearest neighborhood.
 
@@ -213,8 +213,8 @@ pair<double, double> First_Search_positition_magnet(vector<vector<vecter>>& area
 	vector<int> snd_magnet_x(magnets_places.size());
 
 	for (int i = 0; i < magnets_places.size(); ++i) {
-		vecter curr_vec(0, 0, 0);
-		//queue<vecter> nearest_points;
+		Vecter curr_vec(0, 0, 0);
+		//queue<Vecter> nearest_points;
 
 		// Idea: get center point and from it choose the shortest way to our point (answer) with the help of evristic of distance. 
 		// If I need bool matrix? OR my matrix (magnets_place[i]) is guarantee linear?
@@ -249,7 +249,7 @@ pair<double, double> First_Search_positition_magnet(vector<vector<vecter>>& area
 		if (!is_found) {
 			cerr << "ATTENTION!!! ERROR : Vecter is not found in matrix. (31.07.2019)\n :( \n Hello, Boris, Denis, Anton, Maks and other! Dolbimsya!" << endl;
 			cerr << "Function: First_Search_positition_magnet\n";
-			cerr << "The nearest vecter has distance " << min_distance_in_iteration << endl;
+			cerr << "The nearest Vecter has distance " << min_distance_in_iteration << endl;
 			getchar(); getchar();
 		}
 	}
@@ -276,22 +276,22 @@ pair<pair<int, int>, double> create_elem_for_queue(int fst_magnet, int snd_magne
 	return para;														//!!!!BH_correct
 }
 
-pair<double, double> Search_positition_magnet(double dtime, vector<vector<vecter>>& area, vector<Magnet>& magnets, vector<Sensor>& sensors,			//!!!!BH_correct
-	vector<vector<vector<vecter>>>& MATRIX_OF_ALL_MAGNETS_POSITIONS_FOR_ALL_HALL_SENSORS) {
-	vector<vecter> sensors_coordinates_in_area(sensors.size());
+pair<double, double> Search_positition_magnet(double dtime, vector<vector<Vecter>>& area, vector<PermanentMagnet>& magnets, vector<Sensor>& sensors,			//!!!!BH_correct
+	vector<vector<vector<Vecter>>>& MATRIX_OF_ALL_MAGNETS_POSITIONS_FOR_ALL_HALL_SENSORS) {
+	vector<Vecter> sensors_coordinates_in_area(sensors.size());
 	int x_length = area.size();
 	int y_length = area[0].size();
 	int x_dist = area.size() / 2;
 	int y_dist = area[0].size() / 2;
 
 	for (int i = 0; i < sensors.size(); ++i) {
-		// (x_dist + x, y_dist - y, 0) - coordinates to get area's analog of vecter with sensor's coordinates
+		// (x_dist + x, y_dist - y, 0) - coordinates to get area's analog of Vecter with sensor's coordinates
 		sensors_coordinates_in_area[i].x_proj = x_dist + sensors[i].coordinates.x_proj;
 		sensors_coordinates_in_area[i].y_proj = y_dist - sensors[i].coordinates.y_proj;
 		sensors_coordinates_in_area[i].z_proj = sensors[i].coordinates.z_proj;
 	}
 
-	vector<vecter> sensors_without_static_area(sensors.size());
+	vector<Vecter> sensors_without_static_area(sensors.size());
 	for (int i = 0; i < sensors.size(); ++i) {
 		sensors_without_static_area[i] = sensors[i].value - area[sensors_coordinates_in_area[i].x_proj][sensors_coordinates_in_area[i].y_proj];
 	}
@@ -303,7 +303,7 @@ pair<double, double> Search_positition_magnet(double dtime, vector<vector<vecter
 	vector<vector<bool>> is_visit(x_length, vector<bool>(x_length, false));
 
 	// We needn't to do new matrix.
-	//vector<vector<vector<vecter>>> magnets_places(sensors_without_static_area.size(), vector<vector<vecter>>(delta_fst_magnet, vector<vecter>(delta_snd_magnet)));
+	//vector<vector<vector<Vecter>>> magnets_places(sensors_without_static_area.size(), vector<vector<Vecter>>(delta_fst_magnet, vector<Vecter>(delta_snd_magnet)));
 
 	int num_of_all_cells = x_length * x_length;
 

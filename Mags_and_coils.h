@@ -107,7 +107,24 @@ typedef struct FieldCell
 	{
 		cout << Mag_vec.x_proj << "	" << Mag_vec.y_proj << "	" << Mag_vec.z_proj << endl;
 	}
-
+	inline Vecter approx(double dx, double dy) {
+		Vecter tmp(Mag_vec.x_proj, Mag_vec.y_proj, Mag_vec.z_proj);
+		if (dx > 0) {
+			if (dy > 0) {
+				tmp += jacobian_plus[0] * fabs(dx) + jacobian_plus[1] * fabs(dy);
+			}
+			else {
+				tmp += jacobian_plus[0] * fabs(dx) + jacobian_minus[1] * fabs(dy);
+			}
+		}
+		else if (dy > 0) {
+			tmp += jacobian_minus[0] * fabs(dx) + jacobian_plus[1] * fabs(dy);
+		}
+		else {
+			tmp += jacobian_minus[0] * fabs(dx) + jacobian_minus[1] * fabs(dy);
+		}
+		return tmp;
+	}
 } FieldCell;
 class Field_2D {
 public:
@@ -132,7 +149,26 @@ public:
 	double Flow_X_flat(double distance, int diametr);
 };
 
+inline FieldCell approx(FieldCell& first, double dx, double dy) {
+	FieldCell tmp = first;
 
+	if (dx > 0) {
+		if (dy > 0) {
+			tmp.Mag_vec += first.jacobian_plus[0] * fabs(dx) + first.jacobian_plus[1] * fabs(dy);
+		}
+		else {
+			tmp.Mag_vec += first.jacobian_plus[0] * fabs(dx) + first.jacobian_minus[1] * fabs(dy);
+		}
+	}
+	else if (dy > 0) {
+		tmp.Mag_vec += first.jacobian_minus[0] * fabs(dx) + first.jacobian_plus[1] * fabs(dy);
+	}
+	else {
+		tmp.Mag_vec += first.jacobian_minus[0] * fabs(dx) + first.jacobian_minus[1] * fabs(dy);
+	}
+
+	return tmp;
+}
 
 
 class FullFieldLine {			// Класс для удобства использования отрицательных значений в [][]. И ТОЛЬКО ДЛЯ ЭТОГО!!! НЕ ВНИКАТЬ, ОПАСНО!!!
@@ -292,8 +328,8 @@ public:
 				double dx2 = local_x2 - round(local_x2);
 				double dy2 = local_y2 - round(local_y2);
 			
-				tmp[_x][_y] = approx((*this)[lround(local_x)][lround(local_y)], dx, dy) +
-					approx(Field2[lround(local_x2)][lround(local_y2)], dx2, dy2);
+				tmp[_x][_y].Mag_vec = ((*this)[lround(local_x)][lround(local_y)].approx(dx, dy) +
+					Field2[lround(local_x2)][lround(local_y2)].approx(dx2, dy2));
 			}
 		}//AHTUNG!!! 
 		set_jacobians();
