@@ -17,6 +17,7 @@ using namespace std;
 #define aem 1.660539040E-027
 
 struct Substance {
+	Substance();
 	Substance(double adiabatical_index,
 		long double molecular_mass,
 		double molar_mass,
@@ -222,7 +223,8 @@ class Gas {
 			for (int j = i; j < NUM_OF_ELEMENTS; j++) {
 				for (int k = 0; k < REACTION_EQUATIONS[i][j].second.size(); k++) {
 					if (!elements_in_gas[REACTION_EQUATIONS[i][j].second[k].first]) {
-						// ADD IN COMPOSITION THIS ELEMENT!!!!!!!!!!!!!!!!!!!!
+						//composition.insert(REACTION_EQUATIONS[i][j].second[k]);
+						//ADD IN COMPOSITION THIS ELEMENT!!!!!!!!!!!!!!!!!!!!
 						//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 					}
 					elements_in_gas[REACTION_EQUATIONS[i][j].second[k].first] = true;
@@ -399,7 +401,7 @@ class Gas {
 	
 	void total_reset_injection() {
 
-		reset_Concs;
+		reset_Concs();
 		reset_amount_of_gas();
 		reset_total_Cv();
 		reset_average_Cv();
@@ -441,81 +443,84 @@ class Gas {
 		double total_Q = 0;
 
 		for (int i = 0; i < NUM_OF_ELEMENTS; i++) {
-
-			double total_reaction_speed_i = 0;
-			for (int j = i; j < NUM_OF_ELEMENTS; j++) {
-				total_reaction_speed_i += chemical_reaction_speed[i][j] * REACTION_EQUATIONS[i][j].first.first;
-			}
-			if (composition[i].concentration < total_reaction_speed_i * dtime) {
-				//ПРОВЕРКА НА СЛУЧАЙ, ЕСЛИ ВЕЩЕСТВО СГОРЕЛО БОЛЬШЕ, ЧЕМ ПОЛНОСТЬЮ!!!!
-				// ПОКА ЗАБИЛИ НА ЭТО, ИБО СЛОЖНО. ДОБАВИЛИ ПРОВЕРКУ НА СЛУЧАЙБ ЕСЛИ РЕАЛЬНО СРАБОТАЕТ ЭТА ЕРЕСЬ:
-				cerr << "ERROR (composition[" << i <<  "].concentration < total_reaction_speed_i * dtime) IN dQ_GasBurning \n Concentration less than zero :(\n\n PRESS F\n\n";
-				system("pause");
-				//sleep(30);
-				exit(1);
-
-				/*for (int j = 0; j < NUM_OF_ELEMENTS; j++) {
-					total_Q += REACTION_ENERGY[i][j] * V * composition[i].concentration;
+			if (elements_in_gas[i]) {							//!!!!
+				double total_reaction_speed_i = 0;
+				for (int j = i; j < NUM_OF_ELEMENTS; j++) {
+					total_reaction_speed_i += chemical_reaction_speed[i][j] * REACTION_EQUATIONS[i][j].first.first;
 				}
-				C[2] += C[0] * cstech[2] / cstech[0];
-				C[i] = 0;
+				if (composition[i].concentration < total_reaction_speed_i * dtime) {
+					//ПРОВЕРКА НА СЛУЧАЙ, ЕСЛИ ВЕЩЕСТВО СГОРЕЛО БОЛЬШЕ, ЧЕМ ПОЛНОСТЬЮ!!!!
+					// ПОКА ЗАБИЛИ НА ЭТО, ИБО СЛОЖНО. ДОБАВИЛИ ПРОВЕРКУ НА СЛУЧАЙБ ЕСЛИ РЕАЛЬНО СРАБОТАЕТ ЭТА ЕРЕСЬ:
+					cerr << "ERROR (composition[" << i << "].concentration < total_reaction_speed_i * dtime) IN dQ_GasBurning \n Concentration less than zero :(\n\n PRESS F\n\n";
+					system("pause");
+					//sleep(30);
+					exit(1);
 
-				C[1] -= chemical_reaction_speed * dtime * cstech[1];
-				if (C[1] <= 0)
-				{
-					C[1] = 0;
-				}
-				C[3] -= chemical_reaction_speed * dtime * cstech[3];
-				if (C[3] <= 0)
-				{
-					C[3] = 0;
-				}
-
-				reset_ν_from_concs();
-				reset_total_Cv();
-				reset_total_molecular_volume();
-				reset_ν2();
-				reset_amount_of_gas();
-				//return heat_quantity;*/
-			}
-
-			/*if (C[0] < chemical_reaction_speed * dtime * cstech[0]) {
-
-				heat_quantity = burnE * V * C[0];
-				C[2] += C[0] * cstech[2] / cstech[0];
-				C[0] = 0;
-
-				C[1] -= chemical_reaction_speed * dtime * cstech[1];
-				if (C[1] <= 0)
-				{
-					C[1] = 0;
-				}
-				C[3] -= chemical_reaction_speed * dtime * cstech[3];
-				if (C[3] <= 0)
-				{
-					C[3] = 0;
-				}
-
-				reset_ν_from_concs();
-				reset_total_Cv();
-				reset_total_molecular_volume();
-				reset_ν2();
-				reset_amount_of_gas();
-				return heat_quantity;
-			}*/
-
-			for (int j = i; j < NUM_OF_ELEMENTS; j++) {
-				if (fabs(chemical_reaction_speed[i][j]) > MIN_SPEED_REACTION) {
-					composition[i].concentration -= chemical_reaction_speed[i][j] * dtime *
-						REACTION_EQUATIONS[i][j].first.first;
-					composition[j].concentration -= chemical_reaction_speed[i][j] * dtime *
-						REACTION_EQUATIONS[i][j].first.second;
-					for (int k = 0; k < REACTION_EQUATIONS[i][j].second.size(); k++) {
-						composition[REACTION_EQUATIONS[i][j].second[k].first].concentration += chemical_reaction_speed[i][j] * dtime *
-							REACTION_EQUATIONS[i][j].second[k].second;
+					/*for (int j = 0; j < NUM_OF_ELEMENTS; j++) {
+						total_Q += REACTION_ENERGY[i][j] * V * composition[i].concentration;
 					}
-					total_Q += chemical_reaction_speed[i][j] * dtime * 
-						REACTION_EQUATIONS[i][j].first.first * REACTION_ENERGY[i][j] * V;
+					C[2] += C[0] * cstech[2] / cstech[0];
+					C[i] = 0;
+
+					C[1] -= chemical_reaction_speed * dtime * cstech[1];
+					if (C[1] <= 0)
+					{
+						C[1] = 0;
+					}
+					C[3] -= chemical_reaction_speed * dtime * cstech[3];
+					if (C[3] <= 0)
+					{
+						C[3] = 0;
+					}
+
+					reset_ν_from_concs();
+					reset_total_Cv();
+					reset_total_molecular_volume();
+					reset_ν2();
+					reset_amount_of_gas();
+					//return heat_quantity;*/
+				}
+
+				/*if (C[0] < chemical_reaction_speed * dtime * cstech[0]) {
+
+					heat_quantity = burnE * V * C[0];
+					C[2] += C[0] * cstech[2] / cstech[0];
+					C[0] = 0;
+
+					C[1] -= chemical_reaction_speed * dtime * cstech[1];
+					if (C[1] <= 0)
+					{
+						C[1] = 0;
+					}
+					C[3] -= chemical_reaction_speed * dtime * cstech[3];
+					if (C[3] <= 0)
+					{
+						C[3] = 0;
+					}
+
+					reset_ν_from_concs();
+					reset_total_Cv();
+					reset_total_molecular_volume();
+					reset_ν2();
+					reset_amount_of_gas();
+					return heat_quantity;
+				}*/
+			
+				for (int j = i; j < NUM_OF_ELEMENTS; j++) {
+					if (elements_in_gas[j]) {					//!!!!
+						if (fabs(chemical_reaction_speed[i][j]) > MIN_SPEED_REACTION) {
+							composition[i].concentration -= chemical_reaction_speed[i][j] * dtime *
+								REACTION_EQUATIONS[i][j].first.first;
+							composition[j].concentration -= chemical_reaction_speed[i][j] * dtime *
+								REACTION_EQUATIONS[i][j].first.second;
+							for (int k = 0; k < REACTION_EQUATIONS[i][j].second.size(); k++) {
+								composition[REACTION_EQUATIONS[i][j].second[k].first].concentration += chemical_reaction_speed[i][j] * dtime *
+									REACTION_EQUATIONS[i][j].second[k].second;
+							}
+							total_Q += chemical_reaction_speed[i][j] * dtime *
+								REACTION_EQUATIONS[i][j].first.first * REACTION_ENERGY[i][j] * V;
+						}
+					}
 				}
 			}
 		}
@@ -549,8 +554,10 @@ class Gas {
 	void set_K_chem() {
 		for (int i = 0; i < NUM_OF_ELEMENTS; i++) {
 			for (int j = i; j < NUM_OF_ELEMENTS; j++) {
-				reaction_speed_index[i][j] = LOCAL_REACTION_MULTIPLIER_INDEX[i][j] * sqrt(T) * 
-					exp(-ACTIVATION_ENERGY[i][j] / (R * T));
+				if (elements_in_gas[j] && (elements_in_gas[i])) {		//!!!!
+					reaction_speed_index[i][j] = LOCAL_REACTION_MULTIPLIER_INDEX[i][j] * sqrt(T) *
+						exp(-ACTIVATION_ENERGY[i][j] / (R * T));
+				}
 			}
 		}
 		//reaction_speed_index = local_reaction_multiplier_index * sqrt(T) * exp(-Eact / (R * T));
@@ -559,13 +566,16 @@ class Gas {
 	void set_V_chem() {
 		for (int i = 0; i < NUM_OF_ELEMENTS; i++) {
 			for (int j = i; j < NUM_OF_ELEMENTS; j++) {
-				if ((composition[i].concentration > 0) && (composition[j].concentration > 0)) {
-					set_K_chem();
-					chemical_reaction_speed[i][j] = reaction_speed_index[i][j] * 
-						exp(log(composition[i].concentration) * REACTION_EQUATIONS[i][j].first.first * 
-							log(composition[j].concentration) * REACTION_EQUATIONS[i][j].first.second);
-				} else {
-					chemical_reaction_speed[i][j] = 0;
+				if (elements_in_gas[j] && (elements_in_gas[i])) {		//!!!!
+					if ((composition[i].concentration > 0) && (composition[j].concentration > 0)) {
+						set_K_chem();
+						chemical_reaction_speed[i][j] = reaction_speed_index[i][j] *
+							exp(log(composition[i].concentration) * REACTION_EQUATIONS[i][j].first.first *
+								log(composition[j].concentration) * REACTION_EQUATIONS[i][j].first.second);
+					}
+					else {
+						chemical_reaction_speed[i][j] = 0;
+					}
 				}
 			}
 		}
@@ -653,37 +663,37 @@ class Gas {
 
 		if (phase == 1) {
 			if (counter == 0) {
-				reset_TV();
+				reset_TV(); 
 				counter = 1;
-			}
+			} 
 
-			if ((counter == 3) && (abs(V) < abs(V_new))) {
-				reset_TV();
-				counter = 1;
-			}
-
-			if ((abs(V) > abs(V_new)) && (counter == 1)) {
-				start_adi_compression();
-				counter = 0;
-			}
-
-			time += dtime;
-			resetTemperatureAdi(V_new);
-		}
-
-		if (phase == 0) {
-			time += dtime;
-			dInject(dtime);
-
+			if ((counter == 3) && (abs(V) < abs(V_new))) { 
+				reset_TV(); 
+				counter = 1; 
+			} 
+			 
+			if ((abs(V) > abs(V_new)) && (counter == 1)) { 
+				start_adi_compression(); 
+				counter = 0; 
+			} 
+			 
+			time += dtime ;
+			resetTemperatureAdi(V_new); 
+		} 
+		 
+		if (phase == 0) { 
+			time += dtime; 
+			dInject(dtime); 
+			 
 			if ((counter == 3) && (abs(V) < abs(V_new))) {	
 				counter = 1;
-			}
-
+			} 
+			  
 			if (time >= injection_time){
 				close_in_valve();
-				counter = 3;
+				counter = 3;  
 			}
-			/*if ((abs(V) > abs(V_new)) && (counter == 1))
+			/*if ((abs(V) > abs(V_new))  && (counter == 1))
 			{
 				start_adi_compression();
 				counter = 0;

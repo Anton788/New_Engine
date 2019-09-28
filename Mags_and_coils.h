@@ -15,53 +15,31 @@ using namespace std;
 #define μ (1.25663706 / 1000000 )
 
 
-typedef struct Field_cell
-{
-	vecter Mag_vec;
-	vector<vecter> jacobian_plus;
-	vector<vecter> jacobian_minus;
-	Field_cell() : jacobian_plus(3), jacobian_minus(3) {
 
-	}
-	Field_cell operator +(Field_cell cell) {
-		Field_cell tmp = *this;
-		tmp.Mag_vec += cell.Mag_vec;
-		for (unsigned int i = 0; i < 3; i++) {
-			tmp.jacobian_plus[i] += cell.jacobian_plus[i];
-			tmp.jacobian_minus[i] += cell.jacobian_minus[i];
-		}
-		return tmp;
-	}
-	void show()
-	{
-		cout << Mag_vec.x_proj << "	" << Mag_vec.y_proj << "	" << Mag_vec.z_proj << endl;
-	}
-	
-} Field_cell;
 
-typedef struct Flow_cell
+typedef struct FlowCell
 {
 	double flow;
 	double derivative_plus;
 	double derivative_minus;
-	Flow_cell(): flow(0), derivative_plus(0), derivative_minus(0){
+	FlowCell(): flow(0), derivative_plus(0), derivative_minus(0){
 
 	}
 	
 
-} Flow_cell;
+} FlowCell;
 
-class Flow_map {
+class FlowMap {
 	int size_x;
 	double diametr;
 
-	vector<Flow_cell> minus;
-	vector<Flow_cell> plus;
+	vector<FlowCell> minus;
+	vector<FlowCell> plus;
 
-	Flow_map() {};
-	Flow_map(int size_x,double diametr) : size_x(size_x), minus(size_x), plus(size_x), diametr(diametr) {};
+	FlowMap() {};
+	FlowMap(int size_x,double diametr) : size_x(size_x), minus(size_x), plus(size_x), diametr(diametr) {};
 	
-	Flow_cell& operator [](int x) {
+	FlowCell& operator [](int x) {
 		if (x >= 0) {
 			return (plus[round(x)]);
 		}
@@ -108,33 +86,34 @@ class Flow_map {
 };
 
 
-inline Field_cell approx(Field_cell& first, double dx, double dy) {
-	Field_cell tmp = first;
-	
-	if (dx > 0) {
-		if (dy > 0) {
-			tmp.Mag_vec += first.jacobian_plus[0] * fabs(dx) + first.jacobian_plus[1] * fabs(dy);
-		}
-		else {
-			tmp.Mag_vec += first.jacobian_plus[0] * fabs(dx) + first.jacobian_minus[1] * fabs(dy);
-		}
-	}
-	else if (dy > 0) {
-		tmp.Mag_vec += first.jacobian_minus[0] * fabs(dx) + first.jacobian_plus[1] * fabs(dy);
-	}
-	else {
-		tmp.Mag_vec += first.jacobian_minus[0] * fabs(dx) + first.jacobian_minus[1] * fabs(dy);
-	}
-		
-	return tmp;
-}
+typedef struct FieldCell
+{
+	Vecter Mag_vec;
+	vector<Vecter> jacobian_plus;
+	vector<Vecter> jacobian_minus;
+	FieldCell() : jacobian_plus(3), jacobian_minus(3) {
 
+	}
+	FieldCell operator +(FieldCell cell) {
+		FieldCell tmp = *this;
+		tmp.Mag_vec += cell.Mag_vec;
+		for (unsigned int i = 0; i < 3; i++) {
+			tmp.jacobian_plus[i] += cell.jacobian_plus[i];
+			tmp.jacobian_minus[i] += cell.jacobian_minus[i];
+		}
+		return tmp;
+	}
+	void show()
+	{
+		cout << Mag_vec.x_proj << "	" << Mag_vec.y_proj << "	" << Mag_vec.z_proj << endl;
+	}
 
+} FieldCell;
 class Field_2D {
 public:
 	void *magnit;
 
-	vector<vector<Field_cell>> cells;
+	vector<vector<FieldCell>> cells;
 
 	int size_x, size_y;
 
@@ -145,7 +124,7 @@ public:
 	Field_2D(size_t size_x, size_t size_y):
 	size_x(size_x),
 	size_y(size_y), 
-	cells(size_x, vector<Field_cell>(size_y)) 
+	cells(size_x, vector<FieldCell>(size_y)) 
 	{}
 
 	void show_field(int cherez_n);
@@ -153,43 +132,17 @@ public:
 	double Flow_X_flat(double distance, int diametr);
 };
 
-class Magnet {
 
-	
+
+
+class FullFieldLine {			// Класс для удобства использования отрицательных значений в [][]. И ТОЛЬКО ДЛЯ ЭТОГО!!! НЕ ВНИКАТЬ, ОПАСНО!!!
 public:
-
-	double diametr;
-	double radius;
-	double height;
-
-	double diametr_SI;
-	double height_SI;
-	double convert_to_SI;
-
-	vecter position;
-	vecter position_SI;
-	vecter force_on;
-	//vecter direction;
-	//vecter speed;
-	
-
-	Field_2D Mag_field;
-	Full_Field Full_mag_field;
-	Magnet();
-	Magnet(int destiny_of_mag_pixels, double _diametr,
-		double _height, vecter _position);
-	void show_field(int cherez_n);
-};
-//Приём!Ты тут?
-
-class Full_Field_Line {			// Класс для удобства использования отрицательных значений в [][]. И ТОЛЬКО ДЛЯ ЭТОГО!!! НЕ ВНИКАТЬ, ОПАСНО!!!
-public:
-	vector<Field_cell> up;		// Вверх по у > 0 
-	vector<Field_cell> down;	// Вниз по y < 0 
+	vector<FieldCell> up;		// Вверх по у > 0 
+	vector<FieldCell> down;	// Вниз по y < 0 
 	int size_y;
-	Field_cell& operator [](int y) {
+	FieldCell& operator [](int y) {
 		if (abs(y) < size_y) {
-			if (y > 0) {
+			if (y >= 0) {
 				return (up[y]);
 			}
 			else {
@@ -201,20 +154,20 @@ public:
 			return (*this)[sign(y)*(size_y - 1)];
 		}
 	}
-	Full_Field_Line() {};
-	Full_Field_Line(int size_y) :up(size_y), down(size_y), size_y(size_y) {}
+	FullFieldLine() {};
+	FullFieldLine(int size_y): up(size_y), down(size_y), size_y(size_y) {}
 };
 
-class Full_Field {
+class FullField {
 public:
-	vecter center_coord;
+	Vecter center_coord;
 	void* magnit;
 	int size_x, size_y;		// Размеры поля от центра координат в сторону по х и по у
 
-	vector<Full_Field_Line> left;	// Наше поле, разбитое на линии по х < 0.
-	vector<Full_Field_Line> right;	// Наше поле, разбитое на линии по х > 0.
+	vector<FullFieldLine> left;	// Наше поле, разбитое на линии по х < 0.
+	vector<FullFieldLine> right;	// Наше поле, разбитое на линии по х > 0.
 
-	Full_Field_Line& operator [] (int x)
+	FullFieldLine& operator [] (int x)
 	{
 		if (abs(x) < size_x) {
 			if (x >= 0) {
@@ -228,28 +181,31 @@ public:
 			return (*this)[sign(x)*(size_x - 1)];
 		}
 	};
-	Full_Field() {};
-	Full_Field( Magnet mag) :
-		size_x(mag.Mag_field.size_x),
-		size_y(mag.Mag_field.size_y),
-		center_coord(mag.position),
-		left(mag.Mag_field.size_x, Full_Field_Line(size_y)),
-		right(mag.Mag_field.size_x, Full_Field_Line(size_y)) {
-		for (int x = 0; x++; x < mag.Mag_field.size_x) {
-			for (int y = 0; y++; y < mag.Mag_field.size_y) {
-				right[x].up[y].Mag_vec = mag.Mag_field.cells[x][y].Mag_vec;
 
-				right[x].down[y].Mag_vec = mag.Mag_field.cells[x][y].Mag_vec;
-				right[x].down[y].Mag_vec.y_proj = -mag.Mag_field.cells[x][y].Mag_vec.y_proj;
+	FullField() {};
 
-				left[x].down[y].Mag_vec = mag.Mag_field.cells[x][y].Mag_vec;
+	FullField(Field_2D Quater_mag_field, Vecter center) :
+		size_x(Quater_mag_field.size_x),
+		size_y(Quater_mag_field.size_y),
+		center_coord(center),
+		left(Quater_mag_field.size_x, FullFieldLine(size_y)),
+		right(Quater_mag_field.size_x, FullFieldLine(size_y)) {
+		for (int x = 0; x++; x < Quater_mag_field.size_x) {
+			for (int y = 0; y++; y < Quater_mag_field.size_y) {
+				right[x].up[y].Mag_vec = Quater_mag_field.cells[x][y].Mag_vec;
+
+				right[x].down[y].Mag_vec = Quater_mag_field.cells[x][y].Mag_vec;
+				right[x].down[y].Mag_vec.y_proj = -Quater_mag_field.cells[x][y].Mag_vec.y_proj;
+
+				left[x].down[y].Mag_vec = Quater_mag_field.cells[x][y].Mag_vec;
 
 				left[x].up[y].Mag_vec = -right[x].down[y].Mag_vec;
 			}
 		}
 		set_jacobians();
 	}
-	Full_Field(int size_x, int size_y) :
+
+	FullField(int size_x, int size_y) :
 		size_x(size_x),
 		size_y(size_y),
 		left(size_x, size_y),
@@ -264,6 +220,7 @@ public:
 			}
 		};
 	};
+
 	void set_jacobians() {
 		for (int x = -size_x + 1; x <= size_x - 1; x++) {
 			for (int y = (size_y - 1); y >= -size_y + 1; y--) {
@@ -295,7 +252,8 @@ public:
 			}
 		}
 	}
-	Full_Field operator + (Full_Field Field2) {
+
+	FullField operator + (FullField Field2) {
 		double tmp_x, tmp_y;
 		tmp_x =  (min(size_x + center_coord.x_proj, Field2.size_x + Field2.center_coord.x_proj) -
 			max(- size_x + center_coord.x_proj, - Field2.size_x + Field2.center_coord.x_proj)) / 2;
@@ -309,16 +267,16 @@ public:
 			cerr << "FIELD IS NOT ENOUGH BY Y AND WE GET MINUS-COORDINATES ";
 			exit(1);
 		}
-		Full_Field tmp(abs(trunc(tmp_x)) , abs(trunc(tmp_y)) );
+		FullField tmp(abs(trunc(tmp_x)) , abs(trunc(tmp_y)) );
 		tmp.center_coord.x_proj = min(size_x + center_coord.x_proj, Field2.size_x + Field2.center_coord.x_proj) - tmp_x;
 
 		tmp.center_coord.y_proj = min(center_coord.y_proj + size_y, Field2.center_coord.y_proj + Field2.size_y) - tmp_y;
 
-		vecter relative_coord = -center_coord + tmp.center_coord;
+		Vecter relative_coord = -center_coord + tmp.center_coord;
 		double relative_x = relative_coord.x_proj;
 		double relative_y = relative_coord.y_proj;
 
-		vecter relative_coord2 = -Field2.center_coord + tmp.center_coord;
+		Vecter relative_coord2 = -Field2.center_coord + tmp.center_coord;
 		double relative_x2 = relative_coord2.x_proj;
 		double relative_y2 = relative_coord2.y_proj;
 		for (int _x = -tmp_x + 1; _x < tmp_x; _x++) {
@@ -341,6 +299,7 @@ public:
 		set_jacobians();
 		return tmp;
 	}
+
 	void show_field(int cherez_n) {
 		int n = cherez_n;
 		cout.width(3);
@@ -369,12 +328,39 @@ public:
 			}
 		}
 	}
+
 	double Flow_X_flat(double distance, int diametr);
 };
 
+class Magnet {
 
 
-class Permanent_Magnet : public Magnet {
+public:
+
+	double diametr;
+	double radius;
+	double height;
+
+	double diametr_SI;
+	double height_SI;
+	double convert_to_SI;
+
+	Vecter position;
+	Vecter position_SI;
+	Vecter force_on;
+	//Vecter direction;
+	//Vecter speed;
+
+
+	Field_2D Quater_mag_field;
+	FullField Mag_field;
+	Magnet();
+	Magnet(int destiny_of_mag_pixels, double _diametr,
+		double _height, Vecter _position);
+	void show_field(int cherez_n);
+};
+
+class PermanentMagnet: public Magnet {
 
 	double strength;		
 				
@@ -384,26 +370,26 @@ public:
 	int sight;
 	double weight;
 
-	vecter speed_SI;
-	vecter speed;
-	vecter accel;
+	Vecter speed_SI;
+	Vecter speed;
+	Vecter accel;
 	
 	Gas* left;
 	Gas* right;
 
-	Permanent_Magnet();
+	PermanentMagnet();
 
-	Permanent_Magnet(int destiny_of_mag_pixels, double _strength, double _diametr, double _weight,
-		double _height, vecter _position, vecter _speed, int _sight);
+	PermanentMagnet(int destiny_of_mag_pixels, double _strength, double _diametr, double _weight,
+		double _height, Vecter _position, Vecter _speed, int _sight);
 
 	void relocate(double dtime);
 
 	void Set_Field2D_Conf(int prec_H, int prec_R, int _size_x, int _size_y);
 
-	vecter Mag_Mag_Force(Permanent_Magnet mag, int H_prec);
+	Vecter Mag_Mag_Force(PermanentMagnet mag, int H_prec);
 };
 
-class Electromagnet : public Magnet {
+class ElectroMagnet : public Magnet {
 
 	double flow[2];
 
@@ -415,10 +401,10 @@ public:
 	double voltage;
 	double resist;
 
-	Electromagnet();
+	ElectroMagnet();
 
-	Electromagnet(int destiny_of_mag_pixels, double _current, double _diametr,
-		double _height, vecter _position, int _turns);
+	ElectroMagnet(int destiny_of_mag_pixels, double _current, double _diametr,
+		double _height, Vecter _position, int _turns);
 
 	void Set_Field2D_Conf(int prec_R, int _size_x, int _size_y); /* USE FIELD MULTIPLYIER (CURRENT) TO CALCULATE REAL FIELD*/ /*FOR NORMAL PRECISION MANY TURNS NEEDED*/
 
@@ -426,19 +412,19 @@ public:
 
 	double set_voltage(double dtime);
 
-	vecter Force_from_coil(Permanent_Magnet mag);
+	Vecter Force_from_coil(PermanentMagnet mag);
 };
 
-class Coil_System {
+class CoilSystem {
 
 	int coil_num;
 
-	vector<Electromagnet*> coils;
+	vector<ElectroMagnet*> coils;
 
 	vector<vector<double>> inductive_coupling;
 
-	Coil_System();
-	Coil_System(int num_of_coils, Electromagnet coil1, ...):
+	CoilSystem();
+	CoilSystem(int num_of_coils, ElectroMagnet coil1, ...):
 		coil_num(num_of_coils),
 		inductive_coupling(num_of_coils, vector<double>(num_of_coils)),
 		coils(num_of_coils){
@@ -448,7 +434,7 @@ class Coil_System {
 	int set_coupling() {	// returns 1 if coupling calculated correctly, else 0
 		for (int i = 0; i < coil_num; i++) {
 			for (int k = i + 1; k < coil_num; k++) {
-				inductive_coupling[i][k] = coils[i]->flow_X_from_mag(*coils[k]);
+				inductive_coupling[i][k] = coils[i]->flow_X_from_mag(*(coils[k]));
 			}
 		}
 	}
@@ -457,110 +443,8 @@ class Coil_System {
 };
 
 
-
 double Flow_X_flat(Magnet mag, double distance, int diametr);
 
 double Flow_X_flat(Field_2D field, double distance, int diametr);
 
 
-
-//struct Coil {
-//	double diametr, radius, height, flow[2], current, voltage, resist;
-//	double diametr_SI, height_SI, convert_to_SI;
-//	vecter position, position_SI, force_on;
-//	Field_2D Mag_field;
-//	int turns;
-//	vecter direction;
-//	Coil();
-//	Coil(int destiny_of_mag_pixels, double _current, double _diametr,
-//		double _height, vecter _position, int _turns);
-//	double flow_X_from_mag(Magnet& magnit);
-//	vecter Force_from_coil(Magnet mag);
-//};
-//struct Magnet
-//{
-//	double strength, diametr, radius, weight, height;
-//	double diametr_SI, height_SI, convert_to_SI;
-//	
-//	vecter position, position_SI, speed, speed_SI, accel, force_on;
-//	Field_2D Mag_field;
-//	vecter direction;
-//	Gas* left;
-//	Gas* right;
-//	int sight;
-//	void relocate(double dtime);
-//	Magnet();
-//	/*Magnet(int destiny_of_mag_pixels)
-//	{
-//		convert_to_SI = destiny_of_mag_pixels;
-//		position.x_proj = position.y_proj = position.z_proj = speed.x_proj =
-//			speed.y_proj = speed.z_proj = weight =
-//			direction.x_proj = direction.y_proj = direction.z_proj =
-//			force_on.x_proj = force_on.x_proj = force_on.x_proj =
-//			accel.x_proj = accel.y_proj = accel.y_proj = 0;
-//		cout << "Height: ";
-//		cin >> height_SI;
-//		height = height_SI*convert_to_SI;
-//		cout << "Diametr: ";
-//		cin >> diametr_SI;
-//		diametr = diametr_SI*convert_to_SI;
-//		cout << "Magnet strength: ";
-//		cin >> strength;
-//		strength = strength / convert_to_SI / 4 / π;
-//		cout << "Sight to X axis(1 or -1): ";
-//		cin >> sight;
-//		Mag_field.magnit = this;
-//		radius=diametr/2;
-//	}*/
-//	Magnet(int destiny_of_mag_pixels, double _strength, double _diametr, double _weight,
-//		double _height, vecter _position, vecter _speed, int _sight);
-//	void show_field(int cherez_n);
-//	/*void Set_Field2D_Conf()
-//	{
-//		int x, y, z, h, angle, prec_H, prec_R;
-//		double len;
-//		cout << "Height precision:";
-//		cin >> prec_H;
-//		cout << "Radial precision:";
-//		cin >> prec_R;
-//		cout << "X size of field: ";
-//		cin >> Mag_field.size_x;
-//		cout << "Y size of field: ";
-//		cin >> Mag_field.size_y;
-//		Mag_field.magnit = this;
-//		Mag_field.mult = 1;
-//		Mag_field.cells = (Field_cell**)malloc((Mag_field.size_x ) * sizeof(Field_cell*));
-//		for (int i = 0; i < (Mag_field.size_x ); i++)
-//		{
-//			Mag_field.cells[i] = (Field_cell*)malloc((Mag_field.size_y ) * sizeof(Field_cell));
-//		}
-//		vecter radius, tmp, koltso, cur;
-//		koltso.set(0, diametr / 2, 0);
-//		cur.set(0, 0, (strength / prec_H * height) * (π * diametr / prec_R));
-//		for (x = 0; x < Mag_field.size_x; x++)
-//		{
-//			for (y = 0; y < Mag_field.size_y; y++)
-//			{
-//				tmp.set(x, y, 0);
-//				Mag_field.cells[x][y].Mag_vec.set(0, 0, 0);
-//				for (h = -prec_H / 2; h < prec_H / 2; h++)
-//				{
-//					koltso.x_proj = h * height / prec_H;
-//					for (angle = 0; angle < prec_R; angle++)
-//					{
-//						radius = tmp - Vec_Rotate_X(koltso, π * 2 / prec_R * angle);
-//						len = radius.len();
-//						Mag_field.cells[x][y].Mag_vec += ((radius * Vec_Rotate_X(cur, π * 2 / prec_R * angle))* (1 / len / len / len));
-//					}
-//				}
-//				Mag_field.cells[x][y].Mag_vec = Mag_field.cells[x][y].Mag_vec*sight*μ*convert_to_SI;
-//				Mag_field.cells[x][y].Mag_vec.z_proj = 0;
-//			}
-//		}
-//		cout << "Field configuration is installed  " << endl;
-//		
-//	}*/
-//	void Set_Field2D_Conf(int prec_H, int prec_R, int _size_x, int _size_y);
-//	vecter Mag_Mag_Force(Magnet mag, int H_prec);
-//
-//};

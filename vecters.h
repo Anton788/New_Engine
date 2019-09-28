@@ -1,14 +1,14 @@
 #pragma once
-typedef struct vecter
+typedef struct Vecter
 {
 	double x_proj, y_proj, z_proj;
-	vecter()
+	Vecter()
 	{
 		x_proj = 0;
 		y_proj = 0;
 		z_proj = 0;
 	}
-	vecter(double x, double y, double z)
+	Vecter(double x, double y, double z)
 	{
 		x_proj = x;
 		y_proj = y;
@@ -24,91 +24,91 @@ typedef struct vecter
 		y_proj = y;
 		z_proj = z;
 	}
-	inline vecter Rotate_X(double angle)
+	inline Vecter Rotate_X(double angle)
 	{
-		vecter tmp;
+		Vecter tmp;
 		tmp.x_proj = x_proj;
 		tmp.y_proj = y_proj*cos(angle) - z_proj*sin(angle);
 		tmp.z_proj = y_proj*sin(angle) + z_proj*cos(angle);
 		return tmp;
 	}
-	inline vecter Rotate_Y(double angle)
+	inline Vecter Rotate_Y(double angle)
 	{
-		vecter tmp;
+		Vecter tmp;
 		
 		tmp.y_proj = y_proj;
 		tmp.x_proj = x_proj*cos(angle) + z_proj*sin(angle);
 		tmp.z_proj = -x_proj*sin(angle) + z_proj*cos(angle);
 		return tmp;
 	}
-	inline vecter Rotate_Z(double angle)
+	inline Vecter Rotate_Z(double angle)
 	{
-		vecter tmp;
+		Vecter tmp;
 		
 		tmp.z_proj = z_proj;
 		tmp.y_proj = x_proj*sin(angle) + y_proj*cos(angle); 
 		tmp.x_proj = x_proj*cos(angle) - y_proj*sin(angle);
 		return tmp;
 	}
-	vecter Rotate(double angle_x, double angle_y, double angle_z)
+	Vecter Rotate(double angle_x, double angle_y, double angle_z)
 	{
 		return this->Rotate_X(angle_x).Rotate_Y(angle_y).Rotate_Z(angle_z);
 	}
-} vecter;
+} Vecter;
 
 
-inline vecter operator * (vecter a, vecter b)
+inline Vecter operator * (Vecter a, Vecter b)
 {
-	vecter tmp;
+	Vecter tmp;
 	tmp.x_proj = (a.y_proj * b.z_proj) - (a.z_proj * b.y_proj);
 	tmp.y_proj = (a.z_proj * b.x_proj) - (a.x_proj * b.z_proj);
 	tmp.z_proj = (a.x_proj * b.y_proj) - (a.y_proj * b.x_proj);
 	return tmp;
 }
-inline vecter operator + (vecter a, vecter b)
+inline Vecter operator + (Vecter a, Vecter b)
 {
-	vecter tmp;
+	Vecter tmp;
 	tmp.x_proj = a.x_proj + b.x_proj;
 	tmp.y_proj = a.y_proj + b.y_proj;
 	tmp.z_proj = a.z_proj + b.z_proj;
 	return tmp;
 }
-inline vecter operator - (vecter a, vecter b)
+inline Vecter operator - (Vecter a, Vecter b)
 {
-	vecter tmp;
+	Vecter tmp;
 	tmp.x_proj = a.x_proj - b.x_proj;
 	tmp.y_proj = a.y_proj - b.y_proj;
 	tmp.z_proj = a.z_proj - b.z_proj;
 	return tmp;
 }
-inline vecter operator *(vecter a, double b)
+inline Vecter operator *(Vecter a, double b)
 {
-	vecter tmp;
+	Vecter tmp;
 	tmp.x_proj = a.x_proj * b;
 	tmp.y_proj = a.y_proj * b;
 	tmp.z_proj = a.z_proj * b;
 	return tmp;
 }
-inline vecter operator /(vecter a, double b)
+inline Vecter operator /(Vecter a, double b)
 {
-	vecter tmp;
+	Vecter tmp;
 	tmp.x_proj = a.x_proj / b;
 	tmp.y_proj = a.y_proj / b;
 	tmp.z_proj = a.z_proj / b;
 	return tmp;
 }
-inline vecter operator *(double b, vecter a)
+inline Vecter operator *(double b, Vecter a)
 {
-	vecter tmp;
+	Vecter tmp;
 	tmp.x_proj = a.x_proj * b;
 	tmp.y_proj = a.y_proj * b;
 	tmp.z_proj = a.z_proj * b;
 	return tmp;
 }
-inline vecter&  operator *=(vecter &a, const double b)
+inline Vecter&  operator *=(Vecter &a, const double b)
 {
 
-	vecter tmp;
+	Vecter tmp;
 	tmp.x_proj = a.x_proj * b;
 	tmp.y_proj = a.y_proj * b;
 	tmp.z_proj = a.z_proj * b;
@@ -116,10 +116,10 @@ inline vecter&  operator *=(vecter &a, const double b)
 	return a;
 	
 }
-inline vecter&  operator /=(vecter &a, const double b)
+inline Vecter&  operator /=(Vecter &a, const double b)
 {
 
-	vecter tmp;
+	Vecter tmp;
 	tmp.x_proj = a.x_proj / b;
 	tmp.y_proj = a.y_proj / b;
 	tmp.z_proj = a.z_proj / b;
@@ -127,15 +127,15 @@ inline vecter&  operator /=(vecter &a, const double b)
 	return a;
 
 }
-inline double operator & (vecter a, vecter b)
+inline double operator & (Vecter a, Vecter b)
 {
 	double tmp;
 	tmp = a.x_proj * b.x_proj + a.y_proj * b.y_proj + a.z_proj * b.z_proj;
 	return tmp;
 }
-inline vecter&  operator += (vecter &a, vecter b)
+inline Vecter&  operator += (Vecter &a, Vecter b)
 {
-	vecter tmp;
+	Vecter tmp;
 	tmp.x_proj = a.x_proj + b.x_proj;
 	tmp.y_proj = a.y_proj + b.y_proj;
 	tmp.z_proj = a.z_proj + b.z_proj;
@@ -143,9 +143,9 @@ inline vecter&  operator += (vecter &a, vecter b)
 	return a;
 }
 
-inline vecter&  operator *= (vecter &a, vecter b)
+inline Vecter&  operator *= (Vecter &a, Vecter b)
 {
-	vecter tmp;
+	Vecter tmp;
 	tmp = a;
 	tmp.x_proj = (a.y_proj * b.z_proj) - (a.z_proj * b.y_proj);
 	tmp.y_proj = (a.z_proj * b.x_proj) - (a.x_proj * b.z_proj);
@@ -153,27 +153,27 @@ inline vecter&  operator *= (vecter &a, vecter b)
 	a = tmp;
 
 }
-inline  vecter& operator -= (vecter &a, const vecter b)
+inline  Vecter& operator -= (Vecter &a, const Vecter b)
 {
-	vecter tmp;
+	Vecter tmp;
 	tmp.x_proj = a.x_proj - b.x_proj;
 	tmp.y_proj = a.y_proj - b.y_proj;
 	tmp.z_proj = a.z_proj - b.z_proj;
 	a = tmp;
 	return a;
 }
-inline vecter Vec_Rotate_X(vecter vec, double angle)
+inline Vecter Vec_Rotate_X(Vecter vec, double angle)
 {
 	
-	vecter tmp;
+	Vecter tmp;
 	tmp.x_proj = vec.x_proj;
 	tmp.y_proj = vec.y_proj*cos(angle) - vec.z_proj*sin(angle);
 	tmp.z_proj = vec.y_proj*sin(angle) + vec.z_proj*cos(angle);
 	return tmp;
 }
-inline vecter& operator -(vecter vec)
+inline Vecter& operator -(Vecter vec)
 {
-	vecter tmp;
+	Vecter tmp;
 	tmp.x_proj = -vec.x_proj;
 	tmp.y_proj = -vec.y_proj;
 	tmp.z_proj = -vec.z_proj;
