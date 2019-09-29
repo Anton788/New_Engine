@@ -22,8 +22,11 @@ using namespace std;
 
 
 struct Sensor {
+	
 	Vecter coordinates;
 	Vecter value;
+public:
+	Sensor(Vecter position, Vecter MagVec) : coordinates(position), value(MagVec) {};
 };
 
 
