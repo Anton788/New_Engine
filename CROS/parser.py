@@ -1,4 +1,5 @@
 import sympy as sym
+import re
 
 TF_0 = 5
 VII_0 = 10.0
