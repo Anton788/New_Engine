@@ -1,6 +1,7 @@
 #include<stdio.h>												//Задача без анализа чувствительности
 #include <stdlib.h>
 #include<math.h>
+using namespace std;
 
 /*double TF_0=5, VII_0=0.7, TF__VII_0=0.0, VII_a_0=0.1, TF__VII_a_0=0.0, IX_0=90.0, IX_a_0=0.009, IX_m_0=0.0, IX_a_m_0=0.0;
 double X_0=170.0, X_a_0=0.017, X_m_0=0.0, X_a_m_0=0.0, II_0=1400.0, II_a_0=0.140, II_m_0=0.0, II_a_m_0=0.0, PL_0=10.0, AP_0=0.001;
@@ -31,952 +32,952 @@ double K_M14 = 1;
 double h, T=800;
 int N = 32000;
 
-double J_0_0(double y[34])            //Функция задачи элемента массива J
+double J_0_0(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_T7_pl*y[1] - k_T7a_pl*y[3];
 }
 
-double J_0_1(double y[34])            //Функция задачи элемента массива J
+double J_0_1(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_T7_pl*y[0];
 }
 
-double J_0_2(double y[34])            //Функция задачи элемента массива J
+double J_0_2(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_T7_min;
 }
 
-double J_0_3(double y[34])            //Функция задачи элемента массива J
+double J_0_3(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_T7a_pl*y[0];
 }
 
-double J_0_4(double y[34])            //Функция задачи элемента массива J
+double J_0_4(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_T7a_min;
 }
 
-double J_1_0(double y[34])            //Функция задачи элемента массива J
+double J_1_0(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_T7_pl*y[1];
 }
 
-double J_1_1(double y[34])            //Функция задачи элемента массива J
+double J_1_1(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_T7_pl*y[0] - k_TF7*y[4] - k_10_7*y[10] - k_2_7*y[14];
 }
 
-double J_1_2(double y[34])            //Функция задачи элемента массива J
+double J_1_2(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_T7_min;
 }
 
-double J_1_4(double y[34])            //Функция задачи элемента массива J
+double J_1_4(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_TF7*y[1];
 }
 
-double J_1_10(double y[34])            //Функция задачи элемента массива J
+double J_1_10(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_10_7*y[1];
 }
 
-double J_1_14(double y[34])            //Функция задачи элемента массива J
+double J_1_14(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_2_7*y[1];
 }
 
-double J_2_0(double y[34])            //Функция задачи элемента массива J
+double J_2_0(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_T7_pl*y[1];
 }
 
-double J_2_1(double y[34])            //Функция задачи элемента массива J
+double J_2_1(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_T7_pl*y[0];
 }
 
-double J_2_2(double y[34])            //Функция задачи элемента массива J
+double J_2_2(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_T7_min;
 }
 
-double J_3_0(double y[34])            //Функция задачи элемента массива J
+double J_3_0(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_T7a_pl*y[3];
 }
 
-double J_3_1(double y[34])            //Функция задачи элемента массива J
+double J_3_1(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_TF7*y[4] + k_10_7*y[10] + k_2_7*y[14];
 }
 
-double J_3_3(double y[34])            //Функция задачи элемента массива J
+double J_3_3(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_T7a_pl*y[0];
 }
 
-double J_3_4(double y[34])            //Функция задачи элемента массива J
+double J_3_4(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_T7a_min + k_TF7*y[1];
 }
 
-double J_3_10(double y[34])            //Функция задачи элемента массива J
+double J_3_10(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_10_7*y[1];
 }
 
-double J_3_14(double y[34])            //Функция задачи элемента массива J
+double J_3_14(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_2_7*y[1];
 }
 
-double J_4_0(double y[34])            //Функция задачи элемента массива J
+double J_4_0(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_T7a_pl*y[3];
 }
 
-double J_4_3(double y[34])            //Функция задачи элемента массива J
+double J_4_3(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_T7a_pl*y[0];
 }
 
-double J_4_4(double y[34])            //Функция задачи элемента массива J
+double J_4_4(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_T7a_min - h_7_TP*y[32] - h_7_AT*y[33];
 }
 
-double J_4_32(double y[34])            //Функция задачи элемента массива J
+double J_4_32(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -h_7_TP*y[4];
 }
 
-double J_4_33(double y[34])            //Функция задачи элемента массива J
+double J_4_33(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -h_7_AT*y[4];
 }
 
-double J_5_4(double y[34])            //Функция задачи элемента массива J
+double J_5_4(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_9*y[5]/(K_9M + y[5]);
 }
 
-double J_5_5(double y[34])            //Функция задачи элемента массива J
+double J_5_5(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_9*K_9M*y[4]/(K_9M + y[5])/(K_9M + y[5]) - k_9_pl*N_9*y[18];
 }
 
-double J_5_7(double y[34])            //Функция задачи элемента массива J
+double J_5_7(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_9_min;
 }
 
-double J_5_18(double y[34])            //Функция задачи элемента массива J
+double J_5_18(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_9_pl*N_9*y[5];
 }
 
-double J_6_4(double y[34])            //Функция задачи элемента массива J
+double J_6_4(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_9*y[5]/(K_9M + y[5]);
 }
 
-double J_6_5(double y[34])            //Функция задачи элемента массива J
+double J_6_5(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_9*K_9M*y[4]/(K_9M + y[5])/(K_9M + y[5]);
 }
 
-double J_6_6(double y[34])            //Функция задачи элемента массива J
+double J_6_6(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_9_pl*N_9a*y[18] - h_9*y[33];
 }
 
-double J_6_8(double y[34])            //Функция задачи элемента массива J
+double J_6_8(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_9_min;
 }
 
-double J_6_18(double y[34])            //Функция задачи элемента массива J
+double J_6_18(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_9_pl*N_9a*y[6];
 }
 
-double J_6_33(double y[34])            //Функция задачи элемента массива J
+double J_6_33(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -h_9*y[6];
 }
 
-double J_7_5(double y[34])            //Функция задачи элемента массива J
+double J_7_5(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_9_pl*N_9*y[18];
 }
 
-double J_7_7(double y[34])            //Функция задачи элемента массива J
+double J_7_7(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_9_min;
 }
 
-double J_7_18(double y[34])            //Функция задачи элемента массива J
+double J_7_18(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_9_pl*N_9*y[5];
 }
 
-double J_8_6(double y[34])            //Функция задачи элемента массива J
+double J_8_6(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_9_pl*N_9a*y[18];
 }
 
-double J_8_8(double y[34])            //Функция задачи элемента массива J
+double J_8_8(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_TEN_pl*y[22] - k_9_min;
 }
 
-double J_8_18(double y[34])            //Функция задачи элемента массива J
+double J_8_18(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_9_pl*N_9a*y[6];
 }
 
-double J_8_22(double y[34])            //Функция задачи элемента массива J
+double J_8_22(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_TEN_pl*y[8];
 }
 
-double J_8_23(double y[34])            //Функция задачи элемента массива J
+double J_8_23(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_TEN_min;
 }
 
-double J_9_4(double y[34])            //Функция задачи элемента массива J
+double J_9_4(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_7_10*y[9]/(K_7_10M + y[9]);
 }
 
-double J_9_9(double y[34])            //Функция задачи элемента массива J
+double J_9_9(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_7_10*K_7_10M*y[4]/(K_7_10M + y[9])/(K_7_10M + y[9]) - k_10_pl*N_10*y[18];
 }
 
-double J_9_11(double y[34])            //Функция задачи элемента массива J
+double J_9_11(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_10_min;
 }
 
-double J_9_18(double y[34])            //Функция задачи элемента массива J
+double J_9_18(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_10_pl*N_10*y[9];
 }
 
-double J_10_4(double y[34])            //Функция задачи элемента массива J
+double J_10_4(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_7_10*y[9]/(K_7_10M + y[9]);
 }
 
-double J_10_9(double y[34])            //Функция задачи элемента массива J
+double J_10_9(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_7_10*K_7_10M*y[4]/(K_7_10M + y[9])/(K_7_10M + y[9]);
 }
 
-double J_10_10(double y[34])            //Функция задачи элемента массива J
+double J_10_10(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -h_10_TP_pl*y[31] - h_10_AT*y[33] - k_10_pl*N_10*y[18];
 }
 
-double J_10_12(double y[34])            //Функция задачи элемента массива J
+double J_10_12(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_10_min;
 }
 
-double J_10_18(double y[34])            //Функция задачи элемента массива J
+double J_10_18(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_10_pl*N_10*y[10];
 }
 
-double J_10_31(double y[34])            //Функция задачи элемента массива J
+double J_10_31(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -h_10_TP_pl*y[10];
 }
 
-double J_10_32(double y[34])            //Функция задачи элемента массива J
+double J_10_32(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return h_10_TP_min;
 }
 
-double J_10_33(double y[34])            //Функция задачи элемента массива J
+double J_10_33(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -h_10_AT*y[10];
 }
 
-double J_11_9(double y[34])            //Функция задачи элемента массива J
+double J_11_9(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_10_pl*N_10*y[18];
 }
 
-double J_11_11(double y[34])            //Функция задачи элемента массива J
+double J_11_11(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_10*K_10M*y[23]/(K_10M + y[11])/(K_10M + y[11]) - k_10_min;
 }
 
-double J_11_18(double y[34])            //Функция задачи элемента массива J
+double J_11_18(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_10_pl*N_10*y[9];
 }
 
-double J_11_23(double y[34])            //Функция задачи элемента массива J
+double J_11_23(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_10*y[11]/(K_10M + y[11]);
 }
 
-double J_12_10(double y[34])            //Функция задачи элемента массива J
+double J_12_10(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_10_pl*N_10*y[18];
 }
 
-double J_12_11(double y[34])            //Функция задачи элемента массива J
+double J_12_11(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_10*K_10M*y[23]/(K_10M + y[11])/(K_10M + y[11]);
 }
 
-double J_12_12(double y[34])            //Функция задачи элемента массива J
+double J_12_12(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_PRO_pl*y[27] - k_10_min;
 }
 
-double J_12_18(double y[34])            //Функция задачи элемента массива J
+double J_12_18(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_10_pl*N_10*y[10];
 }
 
-double J_12_23(double y[34])            //Функция задачи элемента массива J
+double J_12_23(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_10*y[11]/(K_10M + y[11]);
 }
 
-double J_12_27(double y[34])            //Функция задачи элемента массива J
+double J_12_27(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_PRO_pl*y[12];
 }
 
-double J_12_28(double y[34])            //Функция задачи элемента массива J
+double J_12_28(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_PRO_min;
 }
 
-double J_13_10(double y[34])            //Функция задачи элемента массива J
+double J_13_10(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_2t*y[13];
 }
 
-double J_13_13(double y[34])            //Функция задачи элемента массива J
+double J_13_13(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_2t*y[10] - k_2_pl*N_2*y[18];
 }
 
-double J_13_15(double y[34])            //Функция задачи элемента массива J
+double J_13_15(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_2_min;
 }
 
-double J_13_18(double y[34])            //Функция задачи элемента массива J
+double J_13_18(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_2_pl*N_2*y[13];
 }
 
-double J_14_10(double y[34])            //Функция задачи элемента массива J
+double J_14_10(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_2t*y[13];
 }
 
-double J_14_13(double y[34])            //Функция задачи элемента массива J
+double J_14_13(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_2t*y[10];
 }
 
-double J_14_14(double y[34])            //Функция задачи элемента массива J
+double J_14_14(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_2_pl*N_2a*y[18] - h_2*y[33];
 }
 
-double J_14_16(double y[34])            //Функция задачи элемента массива J
+double J_14_16(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_2_min;
 }
 
-double J_14_18(double y[34])            //Функция задачи элемента массива J
+double J_14_18(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_2_pl*N_2a*y[14];
 }
 
-double J_14_33(double y[34])            //Функция задачи элемента массива J
+double J_14_33(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -h_2*y[14];
 }
 
-double J_15_13(double y[34])            //Функция задачи элемента массива J
+double J_15_13(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_2_pl*N_2*y[18];
 }
 
-double J_15_15(double y[34])            //Функция задачи элемента массива J
+double J_15_15(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_2*K_2M*y[28]/(K_2M + y[15])/(K_2M + y[15]) - k_2_min;
 }
 
-double J_15_18(double y[34])            //Функция задачи элемента массива J
+double J_15_18(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_2_pl*N_2*y[13];
 }
 
-double J_15_28(double y[34])            //Функция задачи элемента массива J
+double J_15_28(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_2*y[15]/(K_2M + y[15]);
 }
 
-double J_16_14(double y[34])            //Функция задачи элемента массива J
+double J_16_14(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_2_pl*N_2a*y[18];
 }
 
-double J_16_15(double y[34])            //Функция задачи элемента массива J
+double J_16_15(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_2*K_2M*y[28]/(K_2M + y[15])/(K_2M + y[15]);
 }
 
-double J_16_16(double y[34])            //Функция задачи элемента массива J
+double J_16_16(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_2_min;
 }
 
-double J_16_18(double y[34])            //Функция задачи элемента массива J
+double J_16_18(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_2_pl*N_2a*y[14];
 }
 
-double J_16_28(double y[34])            //Функция задачи элемента массива J
+double J_16_28(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_2*y[15]/(K_2M + y[15]);
 }
 
-double J_17_14(double y[34])            //Функция задачи элемента массива J
+double J_17_14(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_p2*K_M14*y[17]/(K_M14 + y[14])/(K_M14 + y[14]);
 }
 
-double J_17_17(double y[34])            //Функция задачи элемента массива J
+double J_17_17(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_pp*y[18] - k_p2*y[14]/(K_M14 + y[14]);
 }
 
-double J_17_18(double y[34])            //Функция задачи элемента массива J
+double J_17_18(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_pp*y[17];
 }
 
-double J_18_14(double y[34])            //Функция задачи элемента массива J
+double J_18_14(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_p2*K_M14*y[17]/(K_M14 + y[14])/(K_M14 + y[14]);
 }
 
-double J_18_17(double y[34])            //Функция задачи элемента массива J
+double J_18_17(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_pp*y[18] + k_p2*y[14]/(K_M14 + y[14]);
 }
 
-double J_18_18(double y[34])            //Функция задачи элемента массива J
+double J_18_18(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_pp*y[17];
 }
 
-double J_19_14(double y[34])            //Функция задачи элемента массива J
+double J_19_14(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_8*y[19]/(K_8M + y[19]);
 }
 
-double J_19_18(double y[34])            //Функция задачи элемента массива J
+double J_19_18(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_8_pl*N_8*y[19];
 }
 
-double J_19_19(double y[34])            //Функция задачи элемента массива J
+double J_19_19(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_8*K_8M*y[14]/(K_8M + y[19])/(K_8M + y[19]) - k_8_pl*N_8*y[18];
 }
 
-double J_19_21(double y[34])            //Функция задачи элемента массива J
+double J_19_21(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_8_min;
 }
 
-double J_20_14(double y[34])            //Функция задачи элемента массива J
+double J_20_14(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_8*y[19]/(K_8M + y[19]);
 }
 
-double J_20_18(double y[34])            //Функция задачи элемента массива J
+double J_20_18(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_8*N_8*y[20];
 }
 
-double J_20_19(double y[34])            //Функция задачи элемента массива J
+double J_20_19(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_8*K_8M*y[14]/(K_8M + y[19])/(K_8M + y[19]);
 }
 
-double J_20_20(double y[34])            //Функция задачи элемента массива J
+double J_20_20(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_8_pl*N_8*y[18] - h_8;
 }
 
-double J_20_22(double y[34])            //Функция задачи элемента массива J
+double J_20_22(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_8_min;
 }
 
-double J_21_12(double y[34])            //Функция задачи элемента массива J
+double J_21_12(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_8t_m*y[21]/(K_8tM_m + y[21]);
 }
 
-double J_21_16(double y[34])            //Функция задачи элемента массива J
+double J_21_16(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_8_m*y[21]/(K_8M_m + y[21]);
 }
 
-double J_21_18(double y[34])            //Функция задачи элемента массива J
+double J_21_18(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_8_pl*N_8*y[19];
 }
 
-double J_21_19(double y[34])            //Функция задачи элемента массива J
+double J_21_19(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_8_pl*N_8*y[18];
 }
 
-double J_21_21(double y[34])            //Функция задачи элемента массива J
+double J_21_21(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_8_m*K_8M_m*y[16]/(K_8M_m + y[21])/(K_8M_m + y[21]) - k_8t_m*K_8tM_m*y[12]/(K_8tM_m + y[21])/(K_8tM_m + y[21]) - k_8_min;
 }
 
-double J_22_8(double y[34])            //Функция задачи элемента массива J
+double J_22_8(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_TEN_pl*y[22];
 }
 
-double J_22_12(double y[34])            //Функция задачи элемента массива J
+double J_22_12(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_8t_m*y[21]/(K_8tM_m + y[21]);
 }
 
-double J_22_16(double y[34])            //Функция задачи элемента массива J
+double J_22_16(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_8_m*y[21]/(K_8M_m + y[21]);
 }
 
-double J_22_18(double y[34])            //Функция задачи элемента массива J
+double J_22_18(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_8_pl*N_8*y[20];
 }
 
-double J_22_20(double y[34])            //Функция задачи элемента массива J
+double J_22_20(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_8_pl*N_8*y[18];
 }
 
-double J_22_21(double y[34])            //Функция задачи элемента массива J
+double J_22_21(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_8_m*K_8M_m*y[16]/(K_8M_m + y[21])/(K_8M_m + y[21]) + k_8t_m*K_8tM_m*y[12]/(K_8tM_m + y[21])/(K_8tM_m + y[21]);
 }
 
-double J_22_22(double y[34])            //Функция задачи элемента массива J
+double J_22_22(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_8_min - k_TEN_pl*y[8];
 }
 
-double J_22_23(double y[34])            //Функция задачи элемента массива J
+double J_22_23(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_TEN_min;
 }
 
-double J_23_8(double y[34])            //Функция задачи элемента массива J
+double J_23_8(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_TEN_pl*y[22];
 }
 
-double J_23_22(double y[34])            //Функция задачи элемента массива J
+double J_23_22(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_TEN_pl*y[8];
 }
 
-double J_23_23(double y[34])            //Функция задачи элемента массива J
+double J_23_23(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_TEN_min;
 }
 
-double J_24_14(double y[34])            //Функция задачи элемента массива J
+double J_24_14(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_5*y[24]/(K_5M + y[24]);
 }
 
-double J_24_18(double y[34])            //Функция задачи элемента массива J
+double J_24_18(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_5_pl*N_5*y[24];
 }
 
-double J_24_24(double y[34])            //Функция задачи элемента массива J
+double J_24_24(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_5*K_5M*y[14]/(K_5M + y[24])/(K_5M + y[24]) - k_5_pl*N_5*y[18];
 }
 
-double J_24_26(double y[34])            //Функция задачи элемента массива J
+double J_24_26(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_5_min;
 }
 
-double J_25_14(double y[34])            //Функция задачи элемента массива J
+double J_25_14(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_5*y[24]/(K_5M + y[24]);
 }
 
-double J_25_18(double y[34])            //Функция задачи элемента массива J
+double J_25_18(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_5_pl*N_5*y[25];
 }
 
-double J_25_24(double y[34])            //Функция задачи элемента массива J
+double J_25_24(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_5*K_5M*y[14]/(K_5M + y[24])/(K_5M + y[24]);
 }
 
-double J_25_25(double y[34])            //Функция задачи элемента массива J
+double J_25_25(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_5_pl*N_5*y[18] - h_5;
 }
 
-double J_25_27(double y[34])            //Функция задачи элемента массива J
+double J_25_27(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_5_min;
 }
 
-double J_26_12(double y[34])            //Функция задачи элемента массива J
+double J_26_12(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_5t_m*y[26]/(K_5tM_m + y[26]);
 }
 
-double J_26_16(double y[34])            //Функция задачи элемента массива J
+double J_26_16(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_5_m*y[26]/(K_5M_m + y[26]);
 }
 
-double J_26_18(double y[34])            //Функция задачи элемента массива J
+double J_26_18(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_5_pl*N_5*y[24];
 }
 
-double J_26_24(double y[34])            //Функция задачи элемента массива J
+double J_26_24(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_5_pl*N_5*y[18];
 }
 
-double J_26_26(double y[34])            //Функция задачи элемента массива J
+double J_26_26(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_5_m*K_5M_m*y[16]/(K_5M_m + y[26])/(K_5M_m + y[26]) - k_5t_m*K_5tM_m*y[12]/(K_5tM_m + y[26])/(K_5tM_m + y[26]) - k_5_min;
 }
 
-double J_27_12(double y[34])            //Функция задачи элемента массива J
+double J_27_12(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_5t_m*y[26]/(K_5tM_m + y[26]) - k_PRO_pl*y[27];
 }
 
-double J_27_16(double y[34])            //Функция задачи элемента массива J
+double J_27_16(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_5_m*y[26]/(K_5M_m + y[26]);
 }
 
-double J_27_18(double y[34])            //Функция задачи элемента массива J
+double J_27_18(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_5_pl*N_5*y[25];
 }
 
-double J_27_25(double y[34])            //Функция задачи элемента массива J
+double J_27_25(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_5_pl*N_5*y[18];
 }
 
-double J_27_26(double y[34])            //Функция задачи элемента массива J
+double J_27_26(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_5_m*K_5M_m*y[16]/(K_5M_m + y[26])/(K_5M_m + y[26]) + k_5t_m*K_5tM_m*y[12]/(K_5tM_m + y[26])/(K_5tM_m + y[26]);
 }
 
-double J_27_27(double y[34])            //Функция задачи элемента массива J
+double J_27_27(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_PRO_pl*y[12] - k_5_min;
 }
 
-double J_27_28(double y[34])            //Функция задачи элемента массива J
+double J_27_28(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_PRO_min;
 }
 
-double J_28_12(double y[34])            //Функция задачи элемента массива J
+double J_28_12(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_PRO_pl*y[27];
 }
 
-double J_28_27(double y[34])            //Функция задачи элемента массива J
+double J_28_27(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_PRO_pl*y[12];
 }
 
-double J_28_28(double y[34])            //Функция задачи элемента массива J
+double J_28_28(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_PRO_pl;
 }
 
-double J_29_14(double y[34])            //Функция задачи элемента массива J
+double J_29_14(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_f*y[29]/(K_fM + y[29]);
 }
 
-double J_29_29(double y[34])            //Функция задачи элемента массива J
+double J_29_29(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -k_f*K_fM*y[14]/(K_fM + y[29])/(K_fM + y[29]);
 }
 
-double J_30_14(double y[34])            //Функция задачи элемента массива J
+double J_30_14(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_f*y[29]/(K_fM + y[29]);
 }
 
-double J_30_29(double y[34])            //Функция задачи элемента массива J
+double J_30_29(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return k_f*K_fM*y[14]/(K_fM + y[29])/(K_fM + y[29]);
 }
 
-double J_31_10(double y[34])            //Функция задачи элемента массива J
+double J_31_10(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -h_10_TP_pl*y[31];
 }
 
-double J_31_31(double y[34])            //Функция задачи элемента массива J
+double J_31_31(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -h_10_TP_pl*y[10];
 }
 
-double J_31_32(double y[34])            //Функция задачи элемента массива J
+double J_31_32(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return h_10_TP_min;
 }
 
-double J_32_4(double y[34])            //Функция задачи элемента массива J
+double J_32_4(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -h_7_TP*y[32];
 }
 
-double J_32_10(double y[34])            //Функция задачи элемента массива J
+double J_32_10(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return h_10_TP_pl*y[31];
 }
 
-double J_32_31(double y[34])            //Функция задачи элемента массива J
+double J_32_31(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return h_10_TP_pl*y[10];
 }
 
-double J_32_32(double y[34])            //Функция задачи элемента массива J
+double J_32_32(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -h_10_TP_min - h_7_TP*y[4];
 }
 
-double J_33_4(double y[34])            //Функция задачи элемента массива J
+double J_33_4(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -h_7_AT*y[33];
 }
 
-double J_33_6(double y[34])            //Функция задачи элемента массива J
+double J_33_6(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -h_9*y[33];
 }
 
-double J_33_10(double y[34])            //Функция задачи элемента массива J
+double J_33_10(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -h_10_AT*y[33];
 }
 
-double J_33_14(double y[34])            //Функция задачи элемента массива J
+double J_33_14(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -h_2*y[33];
 }
 
-double J_33_33(double y[34])            //Функция задачи элемента массива J
+double J_33_33(complex<double> y[34])            //Функция задачи элемента массива J
 {
 	return -h_10_AT*y[10] - h_9*y[6] - h_2*y[14] - h_7_AT*y[4];
 }
 
-double f0(double y[34])               //Функция правой части уравнения
+double f0(complex<double> y[34])               //Функция правой части уравнения
 {
 	return -k_T7_pl*y[0]*y[1] + k_T7_min*y[2] - k_T7a_pl*y[0]*y[3] + k_T7a_min*y[4];
 }
 
-double f1(double y[34])               //Функция правой части уравнения
+double f1(complex<double> y[34])               //Функция правой части уравнения
 {
 	return -k_T7_pl*y[0]*y[1] + k_T7_min*y[2] - k_TF7*y[4]*y[1] - k_10_7*y[10]*y[1] - k_2_7*y[14]*y[1];
 }
 
-double f2(double y[34])               //Функция правой части уравнения
+double f2(complex<double> y[34])               //Функция правой части уравнения
 {
 	return k_T7_pl*y[0]*y[1] - k_T7_min*y[2];
 }
 
-double f3(double y[34])               //Функция правой части уравнения
+double f3(complex<double> y[34])               //Функция правой части уравнения
 {
 	return -k_T7a_pl*y[0]*y[3] + k_T7a_min*y[4] + k_TF7*y[4]*y[1] + k_10_7*y[10]*y[1] + k_2_7*y[14]*y[1];
 }
 
-double f4(double y[34])               //Функция правой части уравнения
+double f4(complex<double> y[34])               //Функция правой части уравнения
 {
 	return k_T7a_pl*y[0]*y[3] - k_T7a_min*y[4] - h_7_TP*y[32]*y[4] - h_7_AT*y[33]*y[4];
 }
 
-double f5(double y[34])               //Функция правой части уравнения
+double f5(complex<double> y[34])               //Функция правой части уравнения
 {
 	return -k_9*y[4]*y[5]/(K_9M + y[5]) - k_9_pl*N_9*y[18]*y[5] + k_9_min*y[7];
 }
 
-double f6(double y[34])               //Функция правой части уравнения
+double f6(complex<double> y[34])               //Функция правой части уравнения
 {
 	return k_9*y[4]*y[5]/(K_9M + y[5]) - k_9_pl*N_9a*y[18]*y[6] + k_9_min*y[8] - h_9*y[6]*y[33];
 }
 
-double f7(double y[34])               //Функция правой части уравнения
+double f7(complex<double> y[34])               //Функция правой части уравнения
 {
 	return k_9_pl*N_9*y[18]*y[5] - k_9_min*y[7];
 }
 
-double f8(double y[34])               //Функция правой части уравнения
+double f8(complex<double> y[34])               //Функция правой части уравнения
 {
 	return -k_TEN_pl*y[22]*y[8] + k_TEN_min*y[23] + k_9_pl*N_9a*y[18]*y[6] - k_9_min*y[8];
 }
 
-double f9(double y[34])               //Функция правой части уравнения
+double f9(complex<double> y[34])               //Функция правой части уравнения
 {
 	return -k_7_10*y[4]*y[9]/(K_7_10M + y[9]) - k_10_pl*N_10*y[18]*y[9] + k_10_min*y[11];
 }
 
-double f10(double y[34])               //Функция правой части уравнения
+double f10(complex<double> y[34])               //Функция правой части уравнения
 {
 	return k_7_10*y[4]*y[9]/(K_7_10M + y[9]) - h_10_TP_pl*y[31]*y[10] + h_10_TP_min*y[32] - h_10_AT*y[33]*y[10] - k_10_pl*N_10*y[18]*y[10] + k_10_min*y[12];
 }
 
-double f11(double y[34])               //Функция правой части уравнения
+double f11(complex<double> y[34])               //Функция правой части уравнения
 {
 	return -k_10*y[23]*y[11]/(K_10M + y[11]) + k_10_pl*N_10*y[18]*y[9] - k_10_min*y[11];
 }
 
-double f12(double y[34])               //Функция правой части уравнения
+double f12(complex<double> y[34])               //Функция правой части уравнения
 {
 	return k_10*y[23]*y[11]/(K_10M + y[11]) - k_PRO_pl*y[27]*y[12] + k_PRO_min*y[28] + k_10_pl*N_10*y[18]*y[10] - k_10_min*y[12];
 }
 
-double f13(double y[34])               //Функция правой части уравнения
+double f13(complex<double> y[34])               //Функция правой части уравнения
 {
 	return -k_2t*y[10]*y[13] - k_2_pl*N_2*y[18]*y[13] + k_2_min*y[15];
 }
 
-double f14(double y[34])               //Функция правой части уравнения
+double f14(complex<double> y[34])               //Функция правой части уравнения
 {
 	return k_2t*y[10]*y[13] - k_2_pl*N_2a*y[18]*y[14] + k_2_min*y[16] - h_2*y[33]*y[14];
 }
 
-double f15(double y[34])               //Функция правой части уравнения
+double f15(complex<double> y[34])               //Функция правой части уравнения
 {
 	return -k_2*y[28]*y[15]/(K_2M + y[15]) + k_2_pl*N_2*y[18]*y[13] - k_2_min*y[15];
 }
 
-double f16(double y[34])               //Функция правой части уравнения
+double f16(complex<double> y[34])               //Функция правой части уравнения
 {
 	return k_2*y[28]*y[15]/(K_2M + y[15]) + k_2_pl*N_2a*y[18]*y[14] - k_2_min*y[16];
 }
 
-double f17(double y[34])               //Функция правой части уравнения
+double f17(complex<double> y[34])               //Функция правой части уравнения
 {
 	return -k_pp*y[17]*y[18] - k_p2*y[17]*y[14]/(K_M14 + y[14]);
 }
 
-double f18(double y[34])               //Функция правой части уравнения
+double f18(complex<double> y[34])               //Функция правой части уравнения
 {
 	return k_pp*y[17]*y[18] + k_p2*y[17]*y[14]/(K_M14 + y[14]);
 }
 
-double f19(double y[34])               //Функция правой части уравнения
+double f19(complex<double> y[34])               //Функция правой части уравнения
 {
 	return -k_8*y[14]*y[19]/(K_8M + y[19]) - k_8_pl*N_8*y[18]*y[19] + k_8_min*y[21];
 }
 
-double f20(double y[34])               //Функция правой части уравнения
+double f20(complex<double> y[34])               //Функция правой части уравнения
 {
 	return k_8*y[14]*y[19]/(K_8M + y[19]) - k_8_pl*N_8*y[18]*y[20] + k_8_min*y[22] - h_8*y[20];
 }
 
-double f21(double y[34])               //Функция правой части уравнения
+double f21(complex<double> y[34])               //Функция правой части уравнения
 {
 	return -k_8_m*y[16]*y[21]/(K_8M_m + y[21]) - k_8t_m*y[12]*y[21]/(K_8tM_m + y[21]) + k_8_pl*N_8*y[18]*y[19] - k_8_min*y[21];
 }
 
-double f22(double y[34])               //Функция правой части уравнения
+double f22(complex<double> y[34])               //Функция правой части уравнения
 {
 	return k_8_m*y[16]*y[21]/(K_8M_m + y[21]) + k_8t_m*y[12]*y[21]/(K_8tM_m + y[21]) + k_8_pl*N_8*y[18]*y[20] - k_8_min*y[22] - k_TEN_pl*y[22]*y[8] + k_TEN_min*y[23];
 }
 
-double f23(double y[34])               //Функция правой части уравнения
+double f23(complex<double> y[34])               //Функция правой части уравнения
 {
 	return k_TEN_pl*y[22]*y[8] - k_TEN_min*y[23];
 }
 
-double f24(double y[34])               //Функция правой части уравнения
+double f24(complex<double> y[34])               //Функция правой части уравнения
 {
 	return -k_5*y[14]*y[24]/(K_5M + y[24]) - k_5_pl*N_5*y[18]*y[24] + k_5_min*y[26];
 }
 
-double f25(double y[34])               //Функция правой части уравнения
+double f25(complex<double> y[34])               //Функция правой части уравнения
 {
 	return k_5*y[14]*y[24]/(K_5M + y[24]) - k_5_pl*N_5*y[18]*y[25] + k_5_min*y[27] - h_5*y[25];
 }
 
-double f26(double y[34])               //Функция правой части уравнения
+double f26(complex<double> y[34])               //Функция правой части уравнения
 {
 	return -k_5_m*y[16]*y[26]/(K_5M_m + y[26]) - k_5t_m*y[12]*y[26]/(K_5tM_m + y[26]) + k_5_pl*N_5*y[18]*y[24] - k_5_min*y[26];
 }
 
-double f27(double y[34])               //Функция правой части уравнения
+double f27(complex<double> y[34])               //Функция правой части уравнения
 {
 	return k_5_m*y[16]*y[26]/(K_5M_m + y[26]) + k_5t_m*y[12]*y[26]/(K_5tM_m + y[26]) - k_PRO_pl*y[12]*y[27] + k_PRO_min*y[28] + k_5_pl*N_5*y[18]*y[25] - k_5_min*y[27];
 }
 
-double f28(double y[34])               //Функция правой части уравнения
+double f28(complex<double> y[34])               //Функция правой части уравнения
 {
 	return k_PRO_pl*y[12]*y[27] - k_PRO_min*y[28];
 }
 
-double f29(double y[34])               //Функция правой части уравнения
+double f29(complex<double> y[34])               //Функция правой части уравнения
 {
 	return -k_f*y[14]*y[29]/(K_fM + y[29]);
 }
 
-double f30(double y[34])               //Функция правой части уравнения
+double f30(complex<double> y[34])               //Функция правой части уравнения
 {
 	return k_f*y[14]*y[29]/(K_fM + y[29]);
 }
 
-double f31(double y[34])               //Функция правой части уравнения
+double f31(complex<double> y[34])               //Функция правой части уравнения
 {
 	return -h_10_TP_pl*y[10]*y[31] + h_10_TP_min*y[32];
 }
 
-double f32(double y[34])               //Функция правой части уравнения
+double f32(complex<double> y[34])               //Функция правой части уравнения
 {
 	return h_10_TP_pl*y[10]*y[31] - h_10_TP_min*y[32] - h_7_TP*y[4]*y[32];
 }
 
-double f33(double y[34])               //Функция правой части уравнения
+double f33(complex<double> y[34])               //Функция правой части уравнения
 {
 	return -y[33]*(h_10_AT*y[10] + h_9*y[6] + h_2*y[14] + h_7_AT*y[4]);
 }
@@ -993,7 +994,7 @@ int main(int argc, char *argv[])
 	
 	double f[34], g[68];            //Массив правых частей и вспомогательный массив с нулями
 	double u[34], z[68];            //Массив вещественной части и вспомогательный
-	double y[34];                  //Искомый массив значения функций
+	complex<double> y[34];                  //Искомый массив значения функций
 	
 	
 	y[0] = TF_0;                   //Начальные условия
@@ -1237,7 +1238,7 @@ int main(int argc, char *argv[])
 				J3[j+34][k] = J2[j][k];
 				J3[j+34][k+34] = J1[j][k];
 			}
-		
+
 		g[0] = f0(y);           //Столбец вспомогательных функций правой части
 		g[1] = f1(y);
 		g[2] = f2(y);
@@ -1272,40 +1273,10 @@ int main(int argc, char *argv[])
 		g[31] = f31(y);
 		g[32] = f32(y);
 		g[33] = f33(y);
-		g[34] = 0.0;
-		g[35] = 0.0;
-		g[36] = 0.0;
-		g[37] = 0.0;
-		g[38] = 0.0;
-		g[39] = 0.0;
-		g[40] = 0.0;
-		g[41] = 0.0;
-		g[42] = 0.0;
-		g[43] = 0.0;
-		g[44] = 0.0;
-		g[45] = 0.0;
-		g[46] = 0.0;
-		g[47] = 0.0;
-		g[48] = 0.0;
-		g[49] = 0.0;
-		g[50] = 0.0;
-		g[51] = 0.0;
-		g[52] = 0.0;
-		g[53] = 0.0;
-		g[54] = 0.0;
-		g[55] = 0.0;
-		g[56] = 0.0;
-		g[57] = 0.0;
-		g[58] = 0.0;
-		g[59] = 0.0;
-		g[60] = 0.0;
-		g[61] = 0.0;
-		g[62] = 0.0;
-		g[63] = 0.0;
-		g[64] = 0.0;
-		g[65] = 0.0;
-		g[66] = 0.0;
-		g[67] = 0.0;
+		for (int i = 34; i < 68; ++i)
+		{
+			g[i] = 0;
+		}
 		
 		double R, c[68], cc;                 //Вспомогательное число для метода Гаусса
 		
@@ -1367,80 +1338,14 @@ int main(int argc, char *argv[])
 		{
 			z[m] = g[m];
 		}
-		
-		u[0] = z[0];
-		u[1] = z[1];
-		u[2] = z[2];
-		u[3] = z[3];
-		u[4] = z[4];
-		u[5] = z[5];
-		u[6] = z[6];
-		u[7] = z[7];
-		u[8] = z[8];
-		u[9] = z[9];
-		u[10] = z[10];
-		u[11] = z[11];
-		u[12] = z[12];
-		u[13] = z[13];
-		u[14] = z[14];
-		u[15] = z[15];
-		u[16] = z[16];
-		u[17] = z[17];
-		u[18] = z[18];
-		u[19] = z[19];
-		u[20] = z[20];
-		u[21] = z[21];
-		u[22] = z[22];
-		u[23] = z[23];
-		u[24] = z[24];
-		u[25] = z[25];
-		u[26] = z[26];
-		u[27] = z[27];
-		u[28] = z[28];
-		u[29] = z[29];
-		u[30] = z[30];
-		u[31] = z[31];
-		u[32] = z[32];
-		u[33] = z[33];
 
-		
-		y[0] = y[0] + h*u[0];
-		y[1] = y[1] + h*u[1];
-		y[2] = y[2] + h*u[2];
-		y[3] = y[3] + h*u[3];
-		y[4] = y[4] + h*u[4];
-		y[5] = y[5] + h*u[5];
-		y[6] = y[6] + h*u[6];
-		y[7] = y[7] + h*u[7];
-		y[8] = y[8] + h*u[8];
-		y[9] = y[9] + h*u[9];
-		y[10] = y[10] + h*u[10];
-		y[11] = y[11] + h*u[11];
-		y[12] = y[12] + h*u[12];
-		y[13] = y[13] + h*u[13];
-		y[14] = y[14] + h*u[14];
-		y[15] = y[15] + h*u[15];
-		y[16] = y[16] + h*u[16];
-		y[17] = y[17] + h*u[17];
-		y[18] = y[18] + h*u[18];
-		y[19] = y[19] + h*u[19];
-		y[20] = y[20] + h*u[20];
-		y[21] = y[21] + h*u[21];
-		y[22] = y[22] + h*u[22];
-		y[23] = y[23] + h*u[23];
-		y[24] = y[24] + h*u[24];
-		y[25] = y[25] + h*u[25];
-		y[26] = y[26] + h*u[26];
-		y[27] = y[27] + h*u[27];
-		y[28] = y[28] + h*u[28];
-		y[29] = y[29] + h*u[29];
-		y[30] = y[30] + h*u[30];
-		y[31] = y[31] + h*u[31];
-		y[32] = y[32] + h*u[32];
-		y[33] = y[33] + h*u[33];
-		
+		for (int i = 0; i < 34; i++) {
+			u[i] = z[i];
+			y[i] += h * u[i];
+		}
+
 		t = T/N*i;
-	
+		
 		fprintf(pf_anand, "%f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f\n", t, y[0], y[1], y[2], y[3], y[4], y[5], y[6], y[7], y[8], y[9], y[10], y[11], y[12], y[13], y[14], y[15], y[16], y[17], y[18], y[19], y[20], y[21], y[22], y[23], y[24], y[25], y[26], y[27], y[28], y[29], y[30], y[31], y[32], y[33], y[14]+y[16]);
 	}
 	return 0;
