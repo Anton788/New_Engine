@@ -180,8 +180,9 @@ with open("Jmatrix.h", "w") as text_file:
     for f in functions:
         for y in coords:
             buff = str(sym.diff(f, y))
-            buff = re.sub(r'(y)(\d+)', r'y[\2]', buff)
             if buff != '0':
+                buff = re.sub(r'(y)(\d+)', r'y[\2]', buff)
+                buff = (re.sub(r'(\(.*?\))\*\*(\d+)', r'pow(\1, \2)', buff))
                 print(f"double J_{i}_{j} (double y[34]) {{\n    return {buff};\n}}\n", file=text_file)
             i += 1
         i = 0
