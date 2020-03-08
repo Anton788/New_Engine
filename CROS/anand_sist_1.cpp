@@ -29,7 +29,7 @@ double k_p2=0.37, k_8=0.9, K_8M=147.0, k_8_pl=0.0043, k_8_min=0.00246, N_8=750, 
 double k_5=0.233, K_5M=71.7, k_5_pl=0.057, k_5_min=0.17, N_5=2700, h_5=0.0028, k_5_m=0.23, K_5M_m=71.7, k_5t_m=0.046, K_5tM_m=10.4, k_f=59.0, K_fM=3160.0;
 double K_M14 = 1;
 
-double h, T=800;
+double h, T = 800;
 int N = 32000;
 
 double J_0_0(complex<double> y[34])            //Функция задачи элемента массива J
@@ -1040,16 +1040,16 @@ int main(int argc, char *argv[])
 	pf_anand = fopen("new3_anand.txt", "w");
 //	pf = fopen("s.txt", "w");
 	
-	double t;
-	
-	t=0;
+	double t = 0;
 	
 	for(int i=0; i<34; i++)
 		for(int j=0; j<34; j++)
 			J[i][j] = 0;			//Начальное значение J, нужно для того, чтобы каждый раз не описывать нули
 	
-	fprintf(pf_anand, "%f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f\n", t, y[0], y[1], y[2], y[3], y[4], y[5], y[6], y[7], y[8], y[9], y[10], y[11], y[12], y[13], y[14], y[15], y[16], y[17], y[18], y[19], y[20], y[21], y[22], y[23], y[24], y[25], y[26], y[27], y[28], y[29], y[30], y[31], y[32], y[33]);
-	
+	for (int i = 0; i < 34; ++i)
+		fprintf(pf_anand, "%f", y[i]);
+	fprintf(pf_anand, "\n");
+
 	for(int i=1; i<=N; i++)
 	{
 		J[0][0] = J_0_0(y);       //Подсчёт текущего значения J
@@ -1221,14 +1221,14 @@ int main(int argc, char *argv[])
 		
 		for(int j=0; j<34; j++)					  //Подсчёт текущего значения J1
 			for(int k=0; k<34; k++)
-				J1[j][k] = -J[j][k]*h/2;
+				J1[j][k] = -J[j][k] * h / 2;
 		
 		for(int j=0; j<34; j++)
 			J1[j][j] = 1.0 + J1[j][j];
 		
 		for(int j=0; j<34; j++)					  //Подсчёт текущего значения J2
 			for(int k=0; k<34; k++)
-				J2[j][k] = -J[j][k]*h/2;
+				J2[j][k] = -J[j][k] * h / 2;
 		
 		for(int j=0; j<34; j++)					  //Подсчёт текущего значения J3
 			for(int k=0; k<34; k++)
@@ -1274,9 +1274,7 @@ int main(int argc, char *argv[])
 		g[32] = f32(y);
 		g[33] = f33(y);
 		for (int i = 34; i < 68; ++i)
-		{
 			g[i] = 0;
-		}
 		
 		double R, c[68], cc;                 //Вспомогательное число для метода Гаусса
 		
@@ -1313,40 +1311,37 @@ int main(int argc, char *argv[])
 				{ 
 					if(J3[j][k] != 0)
 					{
-					R = J3[k][k]/J3[j][k];
-					
-						for(int l=0; l<68; l++)
-						{
-							J3[j][l] = J3[j][l] - J3[k][l]/R;
-						}
-						
-						g[j] = g[j] - g[k]/R;
+						R = J3[k][k] / J3[j][k];
+						for(int l = 0; l < 68; l++)
+							J3[j][l] = J3[j][l] - J3[k][l] / R;
+						g[j] = g[j] - g[k] / R;
 					}
 				}
 			}
 			
 			for(int j=0; j<68; j++)
 				if(j != k)
-					J3[k][j] = J3[k][j]/J3[k][k];
+					J3[k][j] = J3[k][j] / J3[k][k];
 					
-			g[k] = g[k]/J3[k][k];
+			g[k] = g[k] / J3[k][k];
 			
 			J3[k][k] = 1;
 		}
 		
-		for(int m=0; m<68; m++)
+		for(int i = 0; i < 68; i++)
 		{
-			z[m] = g[m];
+			z[i] = g[i];
 		}
 
 		for (int i = 0; i < 34; i++) {
 			u[i] = z[i];
-			y[i] += h * u[i];
+			y[i] += h * u[i].real();
 		}
 
-		t = T/N*i;
-		
-		fprintf(pf_anand, "%f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f\n", t, y[0], y[1], y[2], y[3], y[4], y[5], y[6], y[7], y[8], y[9], y[10], y[11], y[12], y[13], y[14], y[15], y[16], y[17], y[18], y[19], y[20], y[21], y[22], y[23], y[24], y[25], y[26], y[27], y[28], y[29], y[30], y[31], y[32], y[33], y[14]+y[16]);
+		t = T / N * i;
+		for (int i = 0; i < 34; ++i)
+			fprintf(pf_anand, "%f ", y[i].real());
+		fprintf(pf_anand, "\n");
 	}
 	return 0;
 }
